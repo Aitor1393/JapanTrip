@@ -86,6 +86,8 @@
       v.presupuesto = Number(v.presupuesto) || 0;
       // Nota suelta de un día concreto: {"2026-12-02": "El jet lag juega a favor…"}
       if (!v.notasDia || typeof v.notasDia !== 'object') v.notasDia = {};
+      // Foto de cada día: {"2026-12-02": {url, autor, licencia, fuente}}
+      if (!v.imagenesDia || typeof v.imagenesDia !== 'object') v.imagenesDia = {};
       ['reservas', 'lugares', 'actividades', 'gastos', 'equipaje', 'pendientes', 'notas', 'viajeros']
         .forEach(function (clave) {
           if (!Array.isArray(v[clave])) v[clave] = [];
@@ -312,6 +314,20 @@
     if (!v) return;
     if (texto) v.notasDia[dia] = texto;
     else delete v.notasDia[dia];
+    guardar();
+  };
+
+  /** Foto del día: {url, autor, licencia, fuente} o null. */
+  D.imagenDia = function (dia, idViaje) {
+    var v = D.viaje(idViaje);
+    return (v && v.imagenesDia && v.imagenesDia[dia]) || null;
+  };
+
+  D.guardarImagenDia = function (dia, imagen, idViaje) {
+    var v = D.viaje(idViaje);
+    if (!v) return;
+    if (imagen && imagen.url) v.imagenesDia[dia] = imagen;
+    else delete v.imagenesDia[dia];
     guardar();
   };
 

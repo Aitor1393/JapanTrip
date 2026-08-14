@@ -436,6 +436,8 @@
       campo('Día', 'fecha', a.fecha, 'date') +
       campo('Hora', 'hora', a.hora, 'time') +
       '</div>' +
+      '<div class="campo__ayuda">Con hora va a la agenda del día. <strong>Déjala vacía</strong> si es ' +
+      'algo para ver sin hora concreta: irá a «Para ver ese día», donde se puede ir tachando.</div>' +
       '<div class="campo__doble">' +
       selector('Tipo', 'tipo', a.tipo, opcionesTipo()) +
       campo('Cuánto dura', 'duracion', a.duracion, 'text', ' placeholder="2 h"') +
@@ -790,6 +792,148 @@
       D.guardarNotaDia(dia, datos.nota, viaje.id);
       U.cerrarModal();
       App.pintar();
+    });
+  };
+
+  /* ══════════════════════════════════════════════════════════
+     Foto de un día
+     ══════════════════════════════════════════════════════════ */
+
+  /**
+   * Busca imágenes en Wikipedia. Se usa la imagen principal de cada
+   * artículo, que suele ser la foto representativa del sitio, en vez de
+   * rebuscar en Commons y sacar el plano de una estación.
+   */
+  function buscarImagenes(consulta) {
+    var url = 'https://es.wikipedia.org/w/api.php?action=query&format=json&origin=*' +
+      '&generator=search&gsrsearch=' + encodeURIComponent(consulta) + '&gsrlimit=8' +
+      '&prop=pageimages&piprop=thumbnail|original|name&pithumbsize=320&redirects=1';
+    return fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        var paginas = (j.query && j.query.pages) || {};
+        return Object.keys(paginas).map(function (k) { return paginas[k]; })
+          .filter(function (p) { return p.thumbnail && p.original; })
+          .map(function (p) {
+            return {
+              titulo: p.title,
+              miniatura: p.thumbnail.source,
+              url: p.original.source,
+              fichero: p.pageimage,
+              fuente: 'https://es.wikipedia.org/wiki/' + encodeURIComponent(p.title)
+            };
+          });
+      });
+  }
+
+  /** Autor y licencia del fichero, que hay que enseñar por la licencia. */
+  function creditosDe(fichero) {
+    var url = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*' +
+      '&prop=imageinfo&iiprop=extmetadata&titles=' + encodeURIComponent('File:' + fichero);
+    return fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        var paginas = (j.query && j.query.pages) || {};
+        var p = paginas[Object.keys(paginas)[0]];
+        var m = p && p.imageinfo && p.imageinfo[0] && p.imageinfo[0].extmetadata;
+        function limpiar(v) {
+          return String((v && v.value) || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+        }
+        return m
+          ? { autor: limpiar(m.Artist).slice(0, 90), licencia: limpiar(m.LicenseShortName).slice(0, 40) }
+          : { autor: '', licencia: '' };
+      })
+      .catch(function () { return { autor: '', licencia: '' }; });
+  }
+
+  F.fotoDia = function (dia) {
+    var viaje = D.activo();
+    var actual = D.imagenDia(dia, viaje.id) || {};
+
+    var html = '<h2>Foto del día</h2>' +
+      '<p class="apagado">' + U.esc(U.mayus1(U.fechaDia(dia))) + '</p>' +
+      '<div class="campo"><span>Buscar en Wikipedia</span>' +
+      '<div class="campo__doble">' +
+      '<input type="search" id="buscarFoto" placeholder="Ginzan Onsen, Senso-ji, Kawagoe…">' +
+      '<button type="button" class="btn" id="btnBuscarFoto">Buscar</button>' +
+      '</div>' +
+      '<div class="campo__ayuda">Se coge la foto principal del artículo, con su autor y su licencia.</div>' +
+      '</div>' +
+      '<div id="resultadosFoto" class="resultados"></div>' +
+      campo('Dirección de la imagen', 'url', actual.url, 'url', ' placeholder="https://…"') +
+      '<div class="campo__doble">' +
+      campo('Autor', 'autor', actual.autor) +
+      campo('Licencia', 'licencia', actual.licencia) +
+      '</div>' +
+      campo('Enlace de origen', 'fuente', actual.fuente, 'url') +
+      '<div id="vistaPrevia" class="vista-previa">' +
+      (actual.url ? '<img src="' + U.esc(actual.url) + '" alt="">' : '') +
+      '</div>' +
+      botones('Guardar', actual.url
+        ? '<button type="button" class="btn btn--peligro" data-quitar>Quitar la foto</button>' : '');
+
+    var form = montar(html, function (datos) {
+      D.guardarImagenDia(dia, datos.url ? {
+        url: datos.url, autor: datos.autor, licencia: datos.licencia, fuente: datos.fuente
+      } : null, viaje.id);
+      U.cerrarModal();
+      U.aviso(datos.url ? 'Foto guardada.' : 'Foto quitada.', 'ok');
+      App.pintar();
+    }, 'ancha');
+
+    var quitar = U.$('[data-quitar]', form);
+    if (quitar) {
+      quitar.addEventListener('click', function () {
+        D.guardarImagenDia(dia, null, viaje.id);
+        U.cerrarModal();
+        U.aviso('Foto quitada.', 'ok');
+        App.pintar();
+      });
+    }
+
+    var caja = U.$('#buscarFoto', form);
+    var resultados = U.$('#resultadosFoto', form);
+    var previa = U.$('#vistaPrevia', form);
+
+    function ponerFoto(r) {
+      U.$('[name="url"]', form).value = r.url;
+      U.$('[name="fuente"]', form).value = r.fuente;
+      previa.innerHTML = '<img src="' + U.esc(r.miniatura) + '" alt="">';
+      creditosDe(r.fichero).then(function (c) {
+        U.$('[name="autor"]', form).value = c.autor;
+        U.$('[name="licencia"]', form).value = c.licencia;
+      });
+    }
+
+    function buscar() {
+      var q = caja.value.trim();
+      if (!q) return;
+      resultados.innerHTML = '<p class="apagado">Buscando…</p>';
+      buscarImagenes(q).then(function (lista) {
+        if (!lista.length) {
+          resultados.innerHTML = '<p class="apagado">Sin resultados con foto. Prueba con otro nombre.</p>';
+          return;
+        }
+        resultados.innerHTML = lista.map(function (r, i) {
+          return '<button type="button" class="resultado" data-i="' + i + '">' +
+            '<img src="' + U.esc(r.miniatura) + '" alt="" loading="lazy">' +
+            '<span>' + U.esc(r.titulo) + '</span></button>';
+        }).join('');
+        U.$$('.resultado', resultados).forEach(function (b) {
+          b.addEventListener('click', function () {
+            ponerFoto(lista[Number(b.getAttribute('data-i'))]);
+            U.$$('.resultado', resultados).forEach(function (o) { o.classList.remove('resultado--elegido'); });
+            b.classList.add('resultado--elegido');
+          });
+        });
+      }).catch(function () {
+        resultados.innerHTML = '<p class="apagado">No se ha podido buscar. ¿Estás sin conexión?</p>';
+      });
+    }
+
+    U.$('#btnBuscarFoto', form).addEventListener('click', buscar);
+    caja.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); buscar(); }
     });
   };
 

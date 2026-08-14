@@ -247,18 +247,70 @@
       '</li>';
   }
 
+  /** Lo que no tiene hora se ve como una lista de recados, no como agenda. */
+  function sueltoHtml(evento, viaje) {
+    var meta = D.tipo(evento.tipo);
+    var esActividad = evento.clase === 'actividad';
+    var fuente = esActividad ? evento.actividad : evento.reserva;
+    var hecho = esActividad && evento.actividad.hecho;
+
+    var detalle = '';
+    if (esActividad) {
+      detalle = evento.actividad.notas || '';
+    } else {
+      var r = evento.reserva;
+      detalle = [r.localizador ? 'Localizador ' + r.localizador : '',
+        r.desde && r.desde.direccion ? r.desde.direccion : ''].filter(Boolean).join(' · ');
+    }
+
+    return '<li class="suelto' + (hecho ? ' suelto--hecho' : '') + '">' +
+      (esActividad
+        ? '<input type="checkbox" data-accion="marcar-actividad" data-id="' + fuente.id + '"' +
+          (hecho ? ' checked' : '') + ' aria-label="Marcar como visto">'
+        : '<span class="suelto__punto">' + meta.icono + '</span>') +
+      '<div class="crece">' +
+      '<div class="suelto__titulo">' + (esActividad ? '' : meta.icono + ' ') + U.esc(evento.titulo) +
+      (!esActividad && evento.reserva.estado === 'pendiente'
+        ? ' <span class="etiqueta etiqueta--ambar">Sin confirmar</span>' : '') +
+      '</div>' +
+      (detalle ? '<div class="suelto__detalle">' + U.esc(detalle) + '</div>' : '') +
+      '</div>' +
+      '<button class="btn btn--icono btn--pequeno" data-accion="' +
+      (esActividad ? 'editar-actividad' : 'editar-reserva') + '" data-id="' + fuente.id +
+      '" title="Editar">✏️</button>' +
+      '</li>';
+  }
+
+  /** Foto del día, con el crédito que exige la licencia. */
+  function fotoHtml(imagen, dia) {
+    if (!imagen || !imagen.url) return '';
+    var credito = [imagen.autor, imagen.licencia].filter(Boolean).join(' · ');
+    return '<figure class="dia__foto">' +
+      '<img src="' + U.esc(imagen.url) + '" alt="" loading="lazy" decoding="async">' +
+      (credito
+        ? '<figcaption>' +
+          (imagen.fuente
+            ? '<a href="' + U.esc(imagen.fuente) + '" target="_blank" rel="noopener">' + U.esc(credito) + '</a>'
+            : U.esc(credito)) +
+          '</figcaption>'
+        : '') +
+      '</figure>';
+  }
+
   V.itinerario = {
     titulo: 'Itinerario',
-    html: function (viaje) {
+    html: function (viaje, estado) {
       var dias = D.diasViaje(viaje.id);
+      var abiertos = (estado && estado.abiertos) || {};
 
       var html = '<div class="vista__cabecera">' +
         '<div class="crece"><h1>Itinerario</h1>' +
         '<p>' + (dias.length
           ? U.plural(dias.length, 'día') + ' · ' + U.esc(U.rangoTexto(dias[0], dias[dias.length - 1]))
           : 'Sin fechas todavía') + '</p></div>' +
+        boton('desplegar-todo', '⌄ Desplegar todo', '') +
+        boton('plegar-todo', '⌃ Plegar todo', '') +
         boton('nueva-actividad', '+ Añadir plan', 'btn--primario') +
-        boton('pegar-reserva', '📋 Pegar confirmación', '') +
         '</div>';
 
       if (!dias.length) {
@@ -284,23 +336,43 @@
       dias.forEach(function (dia, i) {
         var eventos = D.eventosDelDia(dia, viaje.id);
         var alojamiento = D.alojamientoDe(dia, viaje.id);
-        var esHoy = dia === U.isoHoy();
-
-        html += '<section class="dia' + (esHoy ? ' dia--hoy' : '') + '" id="dia-' + dia + '">' +
-          '<header class="dia__cabecera">' +
-          '<div><span class="dia__numero">Día ' + (i + 1) + '</span>' +
-          '<h2>' + U.esc(U.mayus1(U.fechaDia(dia))) + '</h2></div>' +
-          (esHoy ? '<span class="etiqueta etiqueta--acento">Hoy</span>' : '') +
-          '<div class="crece"></div>' +
-          '<button class="btn btn--pequeno btn--fantasma" data-accion="nota-dia" data-dia="' + dia + '">📝</button>' +
-          '<button class="btn btn--pequeno" data-accion="nueva-actividad" data-dia="' + dia + '">+ Añadir</button>' +
-          '</header>';
-
+        var imagen = D.imagenDia(dia, viaje.id);
         var nota = D.notaDia(dia, viaje.id);
-        if (nota) {
-          html += '<div class="dia__nota">' + U.esc(nota) + '</div>';
-        }
+        var esHoy = dia === U.isoHoy();
+        var abierto = !!abiertos[dia];
 
+        // Lo que tiene hora es una agenda; lo que no, una lista de sitios
+        // que ver ese día. Son dos cosas distintas y se leen distinto.
+        var conHora = eventos.filter(function (e) { return !!e.hora; });
+        var sinHora = eventos.filter(function (e) { return !e.hora; });
+
+        var resumen = [];
+        if (conHora.length) resumen.push(U.plural(conHora.length, 'cita'));
+        if (sinHora.length) resumen.push(sinHora.length + ' para ver');
+        if (!eventos.length) resumen.push('día libre');
+        if (alojamiento) resumen.push('🛏️ ' + U.recortar(alojamiento.titulo, 28));
+
+        html += '<section class="dia' + (esHoy ? ' dia--hoy' : '') +
+          (abierto ? ' dia--abierto' : '') + '" id="dia-' + dia + '">' +
+
+          '<button class="dia__cabecera" data-accion="plegar-dia" data-dia="' + dia + '"' +
+          ' aria-expanded="' + (abierto ? 'true' : 'false') + '">' +
+          (imagen && imagen.url
+            ? '<img class="dia__miniatura" src="' + U.esc(imagen.url) + '" alt="" loading="lazy" decoding="async">'
+            : '<span class="dia__miniatura dia__miniatura--vacia">' + U.esc(viaje.emoji) + '</span>') +
+          '<span class="dia__titulos">' +
+          '<span class="dia__numero">Día ' + (i + 1) +
+          (esHoy ? ' · <span class="etiqueta etiqueta--acento">Hoy</span>' : '') + '</span>' +
+          '<span class="dia__fecha">' + U.esc(U.mayus1(U.fechaDia(dia))) + '</span>' +
+          '<span class="dia__resumen">' + U.esc(resumen.join(' · ')) + '</span>' +
+          '</span>' +
+          '<span class="dia__flecha">⌄</span>' +
+          '</button>' +
+
+          '<div class="dia__cuerpo">';
+
+        html += fotoHtml(imagen, dia);
+        if (nota) html += '<div class="dia__nota">' + U.esc(nota) + '</div>';
         if (alojamiento) {
           html += '<div class="dia__cama">🛏️ Duermes en <strong>' +
             U.esc(alojamiento.titulo) + '</strong></div>';
@@ -308,26 +380,49 @@
 
         if (!eventos.length) {
           html += '<p class="dia__vacio">Día libre. Nada planificado todavía.</p>';
-        } else {
-          html += '<ul class="linea-tiempo">';
-          // Lo que no tiene hora va detrás de lo que sí la tiene. Sin avisar
-          // parece que el orden está mal, así que se separa con un rótulo.
-          var huboConHora = false, cortePuesto = false;
-          eventos.forEach(function (e) {
-            if (e.hora) {
-              huboConHora = true;
-            } else if (huboConHora && !cortePuesto) {
-              html += '<li class="corte">Sin hora fija</li>';
-              cortePuesto = true;
-            }
-            html += eventoHtml(e, viaje);
-          });
-          html += '</ul>';
         }
-        html += '</section>';
+
+        if (conHora.length) {
+          html += '<div class="bloque"><h3 class="bloque__titulo">🕘 A una hora</h3>' +
+            '<ul class="linea-tiempo">';
+          conHora.forEach(function (e) { html += eventoHtml(e, viaje); });
+          html += '</ul></div>';
+        }
+
+        if (sinHora.length) {
+          html += '<div class="bloque"><h3 class="bloque__titulo">📍 Para ver ese día' +
+            '<small>sin hora fija</small></h3>' +
+            '<ul class="sueltos">';
+          sinHora.forEach(function (e) { html += sueltoHtml(e, viaje); });
+          html += '</ul></div>';
+        }
+
+        html += '<div class="dia__acciones">' +
+          '<button class="btn btn--pequeno" data-accion="nueva-actividad" data-dia="' + dia + '">+ Añadir plan</button>' +
+          '<button class="btn btn--pequeno btn--fantasma" data-accion="nota-dia" data-dia="' + dia + '">📝 Nota del día</button>' +
+          '<button class="btn btn--pequeno btn--fantasma" data-accion="foto-dia" data-dia="' + dia + '">🖼️ Foto</button>' +
+          '</div>';
+
+        html += '</div></section>';
       });
 
       return html;
+    },
+    activar: function (viaje, estado) {
+      // La primera vez que se entra, el día de hoy aparece desplegado: es lo
+      // que se quiere mirar estando de viaje. El resto, plegado.
+      if (estado && !estado.abiertos) {
+        estado.abiertos = {};
+        var hoy = U.isoHoy();
+        if (D.diasViaje(viaje.id).indexOf(hoy) !== -1) {
+          estado.abiertos[hoy] = true;
+          var seccion = document.getElementById('dia-' + hoy);
+          if (seccion) {
+            seccion.classList.add('dia--abierto');
+            U.$('.dia__cabecera', seccion).setAttribute('aria-expanded', 'true');
+          }
+        }
+      }
     }
   };
 

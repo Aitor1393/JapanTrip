@@ -210,6 +210,28 @@
     'nueva-actividad': function (el) { F.actividad(null, el.getAttribute('data-dia')); },
     'editar-actividad': function (el) { F.actividad(el.getAttribute('data-id')); },
     'nota-dia': function (el) { F.notaDia(el.getAttribute('data-dia')); },
+    'foto-dia': function (el) { F.fotoDia(el.getAttribute('data-dia')); },
+    'marcar-actividad': function (el) {
+      D.actividades.actualizar(el.getAttribute('data-id'), { hecho: el.checked });
+      // Sin repintar: se marca en el sitio y el día no se cierra ni salta.
+      var fila = el.closest('.suelto');
+      if (fila) fila.classList.toggle('suelto--hecho', el.checked);
+    },
+
+    /* Plegar y desplegar días. Se toca la clase directamente en vez de
+       repintar: así el día no da un salto ni se pierde el scroll. */
+    'plegar-dia': function (el) {
+      var dia = el.getAttribute('data-dia');
+      var seccion = document.getElementById('dia-' + dia);
+      if (!seccion) return;
+      App.estado.abiertos = App.estado.abiertos || {};
+      var abierto = seccion.classList.toggle('dia--abierto');
+      el.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      if (abierto) App.estado.abiertos[dia] = true;
+      else delete App.estado.abiertos[dia];
+    },
+    'desplegar-todo': function () { todosLosDias(true); },
+    'plegar-todo': function () { todosLosDias(false); },
 
     /* Pendientes */
     'nuevo-pendiente': function () { F.pendiente(); },
@@ -344,6 +366,19 @@
     },
     'publicar': publicar
   };
+
+  /** Abre o cierra todos los días del itinerario de una vez. */
+  function todosLosDias(abrir) {
+    App.estado.abiertos = {};
+    U.$$('.dia').forEach(function (seccion) {
+      seccion.classList.toggle('dia--abierto', abrir);
+      var cabecera = U.$('.dia__cabecera', seccion);
+      if (cabecera) {
+        cabecera.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+        if (abrir) App.estado.abiertos[cabecera.getAttribute('data-dia')] = true;
+      }
+    });
+  }
 
   /** Busca unas coordenadas y las guarda con el callback que se le pase. */
   function localizar(boton, consulta, guardar) {

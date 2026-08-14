@@ -216,23 +216,96 @@ main { padding: 28px 0 60px; }
 .cinta-dias__fecha { display: block; font-size: .7rem; color: var(--texto-3); text-transform: capitalize; }
 .cinta-dias__puntos { display: block; font-size: .6rem; color: var(--acento); height: 10px; letter-spacing: 1px; }
 
-.dia { margin-bottom: 30px; scroll-margin-top: 80px; }
-/* Un día sin nada no merece el mismo hueco que uno lleno. */
-.dia:has(.dia__vacio) { margin-bottom: 14px; }
-.dia__cabecera { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.dia__cabecera h2 { margin: 0; }
+/* ── El día, plegable ── */
+.dia {
+  margin-bottom: 10px; scroll-margin-top: 80px;
+  background: var(--panel); border: 1px solid var(--borde); border-radius: var(--radio);
+  overflow: hidden;
+}
+.dia--hoy { border-color: var(--acento); }
+
+.dia__cabecera {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  padding: 12px 16px; background: none; border: 0; color: inherit;
+  font: inherit; text-align: left; cursor: pointer; transition: var(--transicion);
+}
+.dia__cabecera:hover { background: var(--panel-2); }
+
+.dia__miniatura {
+  flex: 0 0 auto; width: 66px; height: 66px; border-radius: var(--radio-s);
+  object-fit: cover; background: var(--panel-2);
+}
+.dia__miniatura--vacia {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; border: 1px dashed var(--borde);
+}
+
+.dia__titulos { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
 .dia__numero {
-  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
+  font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
   color: var(--acento);
 }
-.dia--hoy .dia__cabecera h2 { color: var(--acento); }
+.dia__fecha { font-size: 1.05rem; font-weight: 700; letter-spacing: -.01em; }
+.dia__resumen {
+  font-size: .82rem; color: var(--texto-3);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.dia__flecha {
+  flex: 0 0 auto; color: var(--texto-3); font-size: 1.2rem; line-height: 1;
+  transition: transform var(--transicion);
+}
+.dia--abierto .dia__flecha { transform: rotate(180deg); }
+
+.dia__cuerpo { display: none; padding: 0 16px 16px; }
+.dia--abierto .dia__cuerpo { display: block; }
+
+.dia__foto { margin: 0 0 14px; }
+.dia__foto img {
+  width: 100%; height: 220px; object-fit: cover;
+  border-radius: var(--radio-s); display: block; background: var(--panel-2);
+}
+.dia__foto figcaption { font-size: .72rem; color: var(--texto-3); margin-top: 5px; }
+.dia__foto figcaption a { text-decoration: underline; }
+
+.dia__acciones { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+
+/* ── Bloques dentro del día ── */
+.bloque { margin-top: 16px; }
+.bloque__titulo {
+  display: flex; align-items: baseline; gap: 8px; margin: 0 0 8px;
+  font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--texto-2);
+}
+.bloque__titulo small {
+  font-size: .68rem; font-weight: 500; text-transform: none; letter-spacing: 0;
+  color: var(--texto-3);
+}
+
+/* ── Cosas sin hora: lista para ir tachando ── */
+.sueltos { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.suelto {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 9px 12px; border: 1px solid var(--borde); border-radius: var(--radio-s);
+  background: var(--fondo-2);
+}
+.suelto input[type="checkbox"] {
+  width: 17px; height: 17px; accent-color: var(--verde); cursor: pointer; margin-top: 2px;
+}
+.suelto__punto { font-size: 1rem; line-height: 1.3; }
+.suelto__titulo { font-weight: 500; font-size: .93rem; }
+.suelto__detalle { font-size: .82rem; color: var(--texto-2); margin-top: 2px; }
+.suelto--hecho .suelto__titulo { color: var(--texto-3); text-decoration: line-through; }
+.suelto--hecho .suelto__detalle { color: var(--texto-3); }
+.suelto .btn { opacity: 0; transition: var(--transicion); }
+.suelto:hover .btn { opacity: 1; }
 .dia__cama {
   font-size: .85rem; color: var(--texto-2); background: var(--panel);
   border: 1px solid var(--borde); border-left: 3px solid var(--verde);
   padding: 8px 12px; border-radius: var(--radio-s); margin-bottom: 12px;
 }
 .dia__nota {
-  font-size: .88rem; color: var(--texto-2); background: var(--panel);
+  font-size: .88rem; color: var(--texto-2); background: var(--fondo-2);
   border: 1px solid var(--borde); border-left: 3px solid var(--acento);
   padding: 10px 14px; border-radius: var(--radio-s); margin-bottom: 12px;
   white-space: pre-wrap;
@@ -476,6 +549,25 @@ main { padding: 28px 0 60px; }
   background: var(--fondo-2); border: 1px solid var(--borde); border-radius: var(--radio-s);
   padding: 14px; font-size: .82rem; color: var(--texto-2);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Buscador de fotos */
+.resultados { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.resultado {
+  display: flex; flex-direction: column; gap: 6px; padding: 6px;
+  background: var(--fondo-2); border: 1px solid var(--borde); border-radius: var(--radio-s);
+  cursor: pointer; font: inherit; color: inherit; text-align: left;
+  transition: var(--transicion);
+}
+.resultado:hover { border-color: var(--texto-3); }
+.resultado--elegido { border-color: var(--acento); background: var(--acento-suave); }
+.resultado img { width: 100%; height: 92px; object-fit: cover; border-radius: 6px; }
+.resultado span { font-size: .76rem; color: var(--texto-2); line-height: 1.25; }
+
+.vista-previa:not(:empty) { margin-top: 4px; }
+.vista-previa img {
+  width: 100%; max-height: 220px; object-fit: cover;
+  border-radius: var(--radio-s); display: block;
 }
 
 .sugerencias { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }

@@ -20,11 +20,31 @@ alquileres de coche, autobuses y ferris. También se pueden meter a mano.
 
 **Itinerario.** El día a día se calcula solo juntando las reservas con los
 planes que añadas. Un vuelo aparece el día de salida y otra vez el de llegada,
-un hotel pone su entrada y su salida y marca dónde duermes cada noche, y los
-días sin nada se ven de un vistazo. Cada día admite una nota suelta (el botón
-📝) para lo que no es un plan a una hora: «el jet lag juega a favor, os
-despertaréis sobre las 5-6». Los planes sin hora van al final del día bajo el
-rótulo «Sin hora fija», en el orden en que los metiste.
+y un hotel pone su entrada y su salida y marca dónde duermes cada noche.
+
+Los días salen **plegados**: se ve la foto, la fecha y un resumen («2 citas ·
+8 para ver · 🛏️ Gracery»), y se abre el que interese. Arriba hay
+*Desplegar todo* y *Plegar todo*. Si estás de viaje, el día de hoy se abre
+solo al entrar.
+
+Dentro, cada día separa dos cosas que no se planifican igual:
+
+- **A una hora** — lo que tiene hora y no se mueve: el Shibuya Sky a las
+  15:40, el shinkansen a las 8:00, la entrada al hotel. Va en una línea de
+  tiempo con su hora a la izquierda.
+- **Para ver ese día** — lo que quieres hacer pero no depende del reloj: el
+  cruce de Shibuya, dar una vuelta por Harajuku. Va como lista con casilla,
+  para ir tachando sobre la marcha.
+
+Basta con dejar la hora vacía al crear un plan para que caiga en el segundo
+grupo. Cada día admite además una **nota** (botón 📝) para lo que no es un
+plan —«el jet lag juega a favor, os despertaréis sobre las 5-6»— y una
+**foto** (botón 🖼️).
+
+**Fotos de los días.** Cada día puede llevar una imagen. El buscador del
+botón 🖼️ consulta Wikipedia, coge la foto principal del artículo y rellena
+solo el autor y la licencia, que se muestran debajo como exige la licencia.
+También se puede pegar la dirección de cualquier imagen a mano.
 
 **Lugares.** La lista de lo que quieres ver, agrupada por ciudad, con
 categorías y un catálogo de sugerencias de Japón con las coordenadas ya
@@ -134,6 +154,10 @@ por si el parser se comió algo.
 - **tile.openstreetmap.org** — las teselas del mapa.
 - **nominatim.openstreetmap.org** — buscar las coordenadas de una dirección,
   solo cuando pulsas «Localizar» o «buscar por la dirección».
+- **es.wikipedia.org** y **commons.wikimedia.org** — solo al buscar una foto
+  de día desde el botón 🖼️.
+- **upload.wikimedia.org** — las fotos de los días, que no se guardan en el
+  repositorio: se enlazan y se cargan solo al desplegar el día.
 - **api.github.com** — al publicar.
 
 Nada más sale de tu navegador.
