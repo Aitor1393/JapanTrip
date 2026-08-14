@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "actualizado": "2026-08-14",
+  "viajeActivo": "japon",
+  "viajes": [
+    {
+      "id": "japon",
+      "nombre": "Japón",
+      "destino": "Tokio, Kioto y Osaka",
+      "emoji": "🗾",
+      "inicio": "",
+      "fin": "",
+      "moneda": "JPY",
+      "monedaBase": "EUR",
+      "cambio": 0.0058,
+      "presupuesto": 0,
+      "notasGenerales": "Pon las fechas del viaje en Ajustes del viaje (botón «Editar») y actualiza el cambio del yen antes de salir.",
+      "viajeros": [],
+      "reservas": [],
+      "lugares": [],
+      "actividades": [],
+      "gastos": [],
+      "equipaje": [],
+      "notas": []
+    }
+  ]
+}
