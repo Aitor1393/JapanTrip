@@ -170,8 +170,8 @@
             "nombre": "Hotel Gracery Shinjuku",
             "direccion": "",
             "ciudad": "Tokio",
-            "lat": null,
-            "lon": null
+            "lat": 35.6955627,
+            "lon": 139.7022767
           },
           "hasta": null,
           "precio": null,
