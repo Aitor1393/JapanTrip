@@ -1,26 +1,1445 @@
 {
   "version": 1,
   "actualizado": "2026-08-14",
-  "viajeActivo": "japon",
+  "viajeActivo": "tokio-2026",
   "viajes": [
     {
-      "id": "japon",
-      "nombre": "Japón",
-      "destino": "Tokio, Kioto y Osaka",
-      "emoji": "🗾",
-      "inicio": "",
-      "fin": "",
+      "id": "tokio-2026",
+      "nombre": "Tokio",
+      "destino": "Tokio, Yamagata y Ginzan Onsen",
+      "emoji": "🗼",
+      "inicio": "2026-11-30",
+      "fin": "2026-12-15",
       "moneda": "JPY",
       "monedaBase": "EUR",
       "cambio": 0.0058,
       "presupuesto": 0,
-      "notasGenerales": "Pon las fechas del viaje en Ajustes del viaje (botón «Editar») y actualiza el cambio del yen antes de salir.",
+      "notasGenerales": "NOTAS DE TRANSPORTE Y LOGÍSTICA\n\n· El JR Pass no compensa. La ida y vuelta a Ōishida son unos 27.500 ¥ por persona y el día del Fuji unos 9.000 ¥ más. Un pase de 7 días cuesta unos 50.000 ¥ y, al estar la escapada (3-5 dic) y el Fuji (10 dic) separados por más de una semana, ningún pase de 7 días cubre las dos cosas.\n· El Tsubasa se acopla a un Yamabiko y se separa en Fukushima. Hay que ir en el vagón correcto desde Tokio.\n· Anochece a las 16:30 todos los días. Exteriores y excursiones por la mañana; miradores e iluminaciones a partir de las 16:00.\n· Nieve: en Tokio prácticamente descartada. En Ginzan a principios de diciembre puede haber algo, pero no contéis con ello.\n· Check-out de Takimikan a las 10:00, más temprano de lo habitual. Tenedlo en cuenta para el desayuno y el último paseo.\n· Nikko y Kawagoe intercambiados respecto a la v3: Nikko al martes 8 (laborable, buses del lago más libres) y Kawagoe al sábado 12.\n· Al dormir en el Gracery salvo la escapada, las maletas se quedan en recepción. Sin takkyubin y sin cambio de hotel.\n· Tsukiji movido del miércoles 9 al lunes 14: en lunes abre igual, está a 15 min andando de Ginza y así el último día deja de ser solo compras.",
+      "notasDia": {
+        "2026-12-02": "El jet lag juega a favor: os despertaréis sobre las 5-6 de la mañana.",
+        "2026-12-06": "Ordenado de norte a sur para bajar andando y acabar en el mirador al atardecer.",
+        "2026-12-08": "Movido del sábado al martes: entre semana los buses de la Irohazaka hacia Chuzenji van mucho más descargados, que era lo que hacía imposible el plan completo.",
+        "2026-12-09": "Tsukiji se ha movido al último día. Este queda como día tranquilo, sin madrugón, entre Nikko del martes y el Fuji del jueves.",
+        "2026-12-11": "Día de recuperación después del Fuji. Empezad tarde a propósito: casi todo lo de hoy es interior y de tarde-noche.",
+        "2026-12-12": "Movido del martes. Aguanta bien el sábado: es una excursión corta de calles y tiendas, sin nada que dependa de un bus de montaña.",
+        "2026-12-14": "El vuelo sale a las 22:10 JST (14:10 hora española: son el mismo momento, Japón va 8 horas por delante en diciembre). Tenéis el día entero hasta las 17:00."
+      },
       "viajeros": [],
-      "reservas": [],
-      "lugares": [],
-      "actividades": [],
+      "reservas": [
+        {
+          "id": "r-093",
+          "estado": "confirmada",
+          "proveedor": "Iberia",
+          "localizador": "",
+          "desde": {
+            "nombre": "Adolfo Suárez Madrid-Barajas (MAD)",
+            "codigo": "MAD",
+            "ciudad": "Madrid",
+            "lat": 40.4936,
+            "lon": -3.5668
+          },
+          "hasta": {
+            "nombre": "Narita (NRT)",
+            "codigo": "NRT",
+            "ciudad": "Tokio",
+            "lat": 35.7647,
+            "lon": 140.3864
+          },
+          "precio": null,
+          "pagado": true,
+          "detalles": {},
+          "notas": "Salida 20:20 CET, llegada 18:30 JST. Contad 60-75 min de inmigración y equipaje.",
+          "tipo": "vuelo",
+          "titulo": "Iberia · Madrid → Tokio Narita",
+          "inicio": "2026-11-30T20:20",
+          "fin": "2026-12-01T18:30"
+        },
+        {
+          "id": "r-094",
+          "estado": "confirmada",
+          "proveedor": "Iberia",
+          "localizador": "",
+          "desde": {
+            "nombre": "Narita (NRT)",
+            "codigo": "NRT",
+            "ciudad": "Tokio",
+            "lat": 35.7647,
+            "lon": 140.3864
+          },
+          "hasta": {
+            "nombre": "Adolfo Suárez Madrid-Barajas (MAD)",
+            "codigo": "MAD",
+            "ciudad": "Madrid",
+            "lat": 40.4936,
+            "lon": -3.5668
+          },
+          "precio": null,
+          "pagado": true,
+          "detalles": {},
+          "notas": "Salida 22:10 JST (14:10 hora española: es el mismo momento, Japón va 8 horas por delante en diciembre). Estar en Narita a las 19:30.",
+          "tipo": "vuelo",
+          "titulo": "Iberia · Tokio Narita → Madrid",
+          "inicio": "2026-12-14T22:10",
+          "fin": "2026-12-15T05:45"
+        },
+        {
+          "id": "r-095",
+          "estado": "confirmada",
+          "proveedor": "",
+          "localizador": "",
+          "desde": {
+            "nombre": "Hotel Gracery Shinjuku",
+            "direccion": "",
+            "ciudad": "Tokio",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": null,
+          "precio": null,
+          "pagado": true,
+          "detalles": {
+            "direccion": "",
+            "personas": 0,
+            "noches": 2
+          },
+          "notas": "Noches del 1 y el 2 de diciembre. Misma reserva que la del 5 al 14: las maletas grandes se quedan en recepción durante la escapada.",
+          "tipo": "alojamiento",
+          "titulo": "Hotel Gracery Shinjuku",
+          "inicio": "2026-12-01T15:00",
+          "fin": "2026-12-03T11:00"
+        },
+        {
+          "id": "r-096",
+          "estado": "confirmada",
+          "proveedor": "",
+          "localizador": "",
+          "desde": {
+            "nombre": "Daiwa Roynet Hotel Yamagata Ekimae",
+            "direccion": "",
+            "ciudad": "Yamagata",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": null,
+          "precio": null,
+          "pagado": true,
+          "detalles": {
+            "direccion": "",
+            "personas": 0,
+            "noches": 1
+          },
+          "notas": "A dos minutos de la estación de Yamagata. Dejad allí las mochilas antes de subir a Yamadera.",
+          "tipo": "alojamiento",
+          "titulo": "Daiwa Roynet Hotel Yamagata Ekimae",
+          "inicio": "2026-12-03T15:00",
+          "fin": "2026-12-04T11:00"
+        },
+        {
+          "id": "r-097",
+          "estado": "confirmada",
+          "proveedor": "",
+          "localizador": "16498",
+          "desde": {
+            "nombre": "Takimikan",
+            "direccion": "Ginzan Onsen, Obanazawa, Yamagata",
+            "ciudad": "Ginzan Onsen",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": null,
+          "precio": null,
+          "pagado": true,
+          "detalles": {
+            "direccion": "Ginzan Onsen, Obanazawa, Yamagata",
+            "habitacion": "Habitación japonesa",
+            "personas": 0,
+            "noches": 1
+          },
+          "notas": "Plan \"Adult Retreat with Relaxation Lounge Access – Creative Kaiseki & All-Inclusive Drinks\". Cena kaiseki, desayuno y bebidas incluidas, más acceso al salón de relajación. Check-out a las 10:00, más temprano de lo habitual. Confirmar que la habitación es del edificio principal y NO del anexo Bettei Takimitate.",
+          "tipo": "alojamiento",
+          "titulo": "Takimikan, Ginzan Onsen",
+          "inicio": "2026-12-04T15:00",
+          "fin": "2026-12-05T10:00"
+        },
+        {
+          "id": "r-098",
+          "estado": "confirmada",
+          "proveedor": "",
+          "localizador": "",
+          "desde": {
+            "nombre": "Hotel Gracery Shinjuku",
+            "direccion": "",
+            "ciudad": "Tokio",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": null,
+          "precio": null,
+          "pagado": true,
+          "detalles": {
+            "direccion": "",
+            "personas": 0,
+            "noches": 9
+          },
+          "notas": "Del 5 al 14 de diciembre. Sin takkyubin y sin cambio de hotel: las maletas se quedan en recepción durante la escapada a Yamagata.",
+          "tipo": "alojamiento",
+          "titulo": "Hotel Gracery Shinjuku",
+          "inicio": "2026-12-05T15:00",
+          "fin": "2026-12-14T11:00"
+        },
+        {
+          "id": "r-099",
+          "estado": "pendiente",
+          "proveedor": "",
+          "localizador": "",
+          "desde": {
+            "nombre": "Estación de Mishima, salida norte",
+            "direccion": "",
+            "ciudad": "Mishima",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": null,
+          "precio": {
+            "cantidad": 13000,
+            "moneda": "JPY"
+          },
+          "pagado": false,
+          "detalles": {
+            "direccion": "Salida norte de la estación de Mishima"
+          },
+          "notas": "SIN RESERVAR. Punto de encuentro a las 8:20. Unas 9 horas, guía en español, grupo de 2 a 13 personas. 13.000 ¥ POR PERSONA, entradas incluidas: el precio apuntado es el de una sola persona, ajustadlo. Termina en Shin-Fuji, a 60 min de Tokio en Shinkansen.",
+          "tipo": "actividad",
+          "titulo": "Tour del Fuji en español",
+          "inicio": "2026-12-10T08:20",
+          "fin": "2026-12-10T17:20"
+        },
+        {
+          "id": "r-100",
+          "estado": "pendiente",
+          "proveedor": "",
+          "localizador": "",
+          "desde": {
+            "nombre": "Shibuya Sky",
+            "direccion": "",
+            "ciudad": "Tokio",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": null,
+          "precio": null,
+          "pagado": false,
+          "detalles": {},
+          "notas": "SIN RESERVAR. Franja de las 15:40. Se agota: comprar online en cuanto se abra la venta.",
+          "tipo": "actividad",
+          "titulo": "Shibuya Sky",
+          "inicio": "2026-12-06T15:40",
+          "fin": ""
+        },
+        {
+          "id": "r-101",
+          "estado": "pendiente",
+          "proveedor": "",
+          "localizador": "",
+          "desde": {
+            "nombre": "TeamLab Planets",
+            "direccion": "Toyosu",
+            "ciudad": "Tokio",
+            "lat": 35.6497,
+            "lon": 139.7906
+          },
+          "hasta": null,
+          "precio": null,
+          "pagado": false,
+          "detalles": {
+            "direccion": "Toyosu"
+          },
+          "notas": "SIN RESERVAR y sin hora todavía. Entrada con hora. Es lo que antes se agota. Se anda por el agua: pantalón corto o remangable.",
+          "tipo": "actividad",
+          "titulo": "TeamLab Planets",
+          "inicio": "2026-12-13",
+          "fin": ""
+        },
+        {
+          "id": "r-102",
+          "estado": "pendiente",
+          "proveedor": "",
+          "localizador": "",
+          "desde": {
+            "nombre": "Busta Shinjuku",
+            "direccion": "4ª planta de la estación de Shinjuku",
+            "ciudad": "Tokio",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": {
+            "nombre": "Gotemba Premium Outlets",
+            "direccion": "",
+            "ciudad": "Gotemba",
+            "lat": null,
+            "lon": null
+          },
+          "precio": {
+            "cantidad": 1800,
+            "moneda": "JPY"
+          },
+          "pagado": false,
+          "detalles": {},
+          "notas": "SIN RESERVAR. Reservar en highwaybus.com. ~1h40 y unos 1.800 ¥ por trayecto y persona.",
+          "tipo": "autobus",
+          "titulo": "Bus Shinjuku → Gotemba (ida y vuelta)",
+          "inicio": "2026-12-02T07:30",
+          "fin": ""
+        }
+      ],
+      "lugares": [
+        {
+          "id": "l-125",
+          "nombre": "Yokohama: Minato Mirai, Chinatown y Cup Noodles Museum",
+          "ciudad": "Yokohama",
+          "categoria": "otro",
+          "direccion": "",
+          "lat": null,
+          "lon": null,
+          "visitado": false,
+          "notas": "A 30 min desde Shibuya."
+        },
+        {
+          "id": "l-126",
+          "nombre": "Partido de la B.League",
+          "ciudad": "Tokio",
+          "categoria": "otro",
+          "direccion": "",
+          "lat": null,
+          "lon": null,
+          "visitado": false,
+          "notas": "Alvark Tokyo y Sunrockers Shibuya juegan en casa en diciembre. Entrada normal desde unos 3.000 ¥."
+        },
+        {
+          "id": "l-127",
+          "nombre": "Partido de la J1 League",
+          "ciudad": "Tokio",
+          "categoria": "otro",
+          "direccion": "",
+          "lat": null,
+          "lon": null,
+          "visitado": false,
+          "notas": "Con el cambio a calendario de otoño-primavera puede haber jornada antes del parón invernal. Mirad el fixture del FC Tokyo cuando salga."
+        },
+        {
+          "id": "l-128",
+          "nombre": "Tokyo Skytree y Solamachi",
+          "ciudad": "Tokio",
+          "categoria": "mirador",
+          "direccion": "",
+          "lat": 35.7101,
+          "lon": 139.8107,
+          "visitado": false,
+          "notas": "Fáciles de encadenar con el día de Asakusa."
+        }
+      ],
+      "actividades": [
+        {
+          "id": "a-001",
+          "titulo": "Inmigración y recogida de equipaje",
+          "fecha": "2026-12-01",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Contad 60-75 minutos."
+        },
+        {
+          "id": "a-002",
+          "titulo": "Narita → Shinjuku",
+          "fecha": "2026-12-01",
+          "hora": "",
+          "tipo": "traslado",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Narita Express (~80 min, el último sale sobre las 21:40) o Keisei Skyliner hasta Nippori + JR (~75 min)."
+        },
+        {
+          "id": "a-003",
+          "titulo": "Cena rápida cerca del hotel",
+          "fecha": "2026-12-01",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": "No forcéis, al día siguiente se madruga."
+        },
+        {
+          "id": "a-004",
+          "titulo": "Bus Busta Shinjuku → Gotemba Premium Outlets",
+          "fecha": "2026-12-02",
+          "hora": "07:30",
+          "tipo": "autobus",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Busta Shinjuku está en la 4ª planta de la estación. Unos 1h40 y ~1.800 ¥ por trayecto. Reservar en highwaybus.com. Salida hacia las 7:30-8:00; el outlet abre a las 10:00."
+        },
+        {
+          "id": "a-005",
+          "titulo": "El Fuji se ve mejor por la mañana",
+          "fecha": "2026-12-02",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A partir del mediodía suele nublarse la cumbre."
+        },
+        {
+          "id": "a-006",
+          "titulo": "Comida en el outlet",
+          "fecha": "2026-12-02",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Patio central del outlet o Gotemba Kogen Beer, cervecería con restaurante y lanzadera propia."
+        },
+        {
+          "id": "a-007",
+          "titulo": "Iluminación de Gotemba Kogen Toki no Sumika",
+          "fecha": "2026-12-02",
+          "hora": "16:30",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Una de las iluminaciones más grandes de la zona, y a las 16:30 ya es de noche."
+        },
+        {
+          "id": "a-008",
+          "titulo": "Vuelta a Shinjuku en bus",
+          "fecha": "2026-12-02",
+          "hora": "",
+          "tipo": "autobus",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Preparad la mochila de tres días: las maletas grandes se quedan en el Gracery."
+        },
+        {
+          "id": "a-009",
+          "titulo": "Dejar las maletas grandes en recepción del Gracery",
+          "fecha": "2026-12-03",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Al mantener la misma reserva las guardan sin coste y os ahorráis el takkyubin."
+        },
+        {
+          "id": "a-010",
+          "titulo": "Shinjuku → Tokio",
+          "fecha": "2026-12-03",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Chuo Rapid, 15 min."
+        },
+        {
+          "id": "a-011",
+          "titulo": "Tokio → Yamagata en Tsubasa",
+          "fecha": "2026-12-03",
+          "hora": "08:00",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Yamagata Shinkansen, ~2h45. El Tsubasa va acoplado a un Yamabiko y se separa en Fukushima: hay que ir en el vagón correcto desde el principio."
+        },
+        {
+          "id": "a-012",
+          "titulo": "Llegada a Yamagata y dejar las mochilas en el Daiwa Roynet",
+          "fecha": "2026-12-03",
+          "hora": "10:45",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "El hotel está a dos minutos de la estación. Salid ligeros: las taquillas de Yamadera son pocas."
+        },
+        {
+          "id": "a-013",
+          "titulo": "Yamagata → Yamadera",
+          "fecha": "2026-12-03",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Línea JR Senzan, 20 min, ~240 ¥. Pasa aproximadamente cada hora, con algún hueco mayor a media mañana. Apuntad el horario de vuelta ANTES de empezar a subir."
+        },
+        {
+          "id": "a-014",
+          "titulo": "Templo Risshakuji",
+          "fecha": "2026-12-03",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "1.015 escalones hasta el mirador de Godaido. Entrada 300 ¥. Entre subir y bajar, hora y media o dos."
+        },
+        {
+          "id": "a-015",
+          "titulo": "Última subida",
+          "fecha": "2026-12-03",
+          "hora": "15:00",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En invierno la última subida es sobre las 15:00 y los peldaños se hielan. Nada de suela lisa."
+        },
+        {
+          "id": "a-016",
+          "titulo": "Vuelta a Yamagata y cena",
+          "fecha": "2026-12-03",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Check-in en el Daiwa Roynet y cena por la zona de la estación."
+        },
+        {
+          "id": "a-017",
+          "titulo": "Check-out sin prisa",
+          "fecha": "2026-12-04",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "La lanzadera de Takimikan marca la hora: cuadrad el tren con ella."
+        },
+        {
+          "id": "a-018",
+          "titulo": "Yamagata → Ōishida en Tsubasa",
+          "fecha": "2026-12-04",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "~30 min. AVISO: solo la mitad de los Tsubasa continúan más allá de Yamagata hacia Shinjo, que son los que paran en Ōishida. En la práctica hay uno cada hora y media o dos horas. Alternativa: línea local Ōu, ~50 min."
+        },
+        {
+          "id": "a-019",
+          "titulo": "Ōishida → Ginzan en la lanzadera de Takimikan",
+          "fecha": "2026-12-04",
+          "hora": "",
+          "tipo": "traslado",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Reservada por correo. Plan B: bus de Yamagata Kotsu, 40 min, 1.000 ¥ POR PERSONA Y EN EFECTIVO, no aceptan tarjeta ni IC. Solo hay cinco o seis idas y vueltas al día."
+        },
+        {
+          "id": "a-020",
+          "titulo": "Paseo por el pueblo",
+          "fecha": "2026-12-04",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Se recorre en media hora. Cascada Shirogane a 10 min andando y galería de la mina de Nobesawa."
+        },
+        {
+          "id": "a-021",
+          "titulo": "Baño exterior panorámico de Takimikan",
+          "fecha": "2026-12-04",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "El más alto del pueblo: tejados nevados y nada que tape el horizonte."
+        },
+        {
+          "id": "a-022",
+          "titulo": "Encendido de las farolas de gas",
+          "fecha": "2026-12-04",
+          "hora": "16:30",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Como huéspedes podéis estar en la calle cuando los visitantes de día ya se han ido, que es el momento bueno."
+        },
+        {
+          "id": "a-023",
+          "titulo": "Desayuno pronto y último paseo",
+          "fecha": "2026-12-05",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "El check-out es a las 10:00, más temprano de lo habitual."
+        },
+        {
+          "id": "a-024",
+          "titulo": "Lanzadera a Ōishida",
+          "fecha": "2026-12-05",
+          "hora": "",
+          "tipo": "traslado",
+          "duracion": "",
+          "lugar": "",
+          "notas": ""
+        },
+        {
+          "id": "a-025",
+          "titulo": "Ōishida → Tokio en Tsubasa",
+          "fecha": "2026-12-05",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "~3h20, unos 13.780 ¥."
+        },
+        {
+          "id": "a-026",
+          "titulo": "Llegada a Shinjuku y recoger las maletas",
+          "fecha": "2026-12-05",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Sobre las 15:00-16:00. Vuelta al Gracery y recoger las maletas de recepción."
+        },
+        {
+          "id": "a-027",
+          "titulo": "Noche suave por el barrio",
+          "fecha": "2026-12-05",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Omoide Yokocho, Golden Gai, Kabukicho."
+        },
+        {
+          "id": "a-028",
+          "titulo": "Santuario Meiji y parque Yoyogi",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Por la mañana. En domingo suele haber bodas sintoístas."
+        },
+        {
+          "id": "a-029",
+          "titulo": "Harajuku",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Calle Takeshita, Tokyu Plaza Harajuku, avenida Omotesando."
+        },
+        {
+          "id": "a-030",
+          "titulo": "Chiikawa Bakery",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Desayuno o merienda."
+        },
+        {
+          "id": "a-031",
+          "titulo": "Comida en Henry's Burger Harajuku",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": ""
+        },
+        {
+          "id": "a-032",
+          "titulo": "Bajar por Cat Street hasta Shibuya",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Unos 20 min andando."
+        },
+        {
+          "id": "a-033",
+          "titulo": "Shibuya",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Cruce, Miyashita Park, Nintendo Tokyo (en Parco), Adidas —camisetas— y tiendas de deporte."
+        },
+        {
+          "id": "a-034",
+          "titulo": "Shibuya Sky",
+          "fecha": "2026-12-06",
+          "hora": "15:40",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Anochece a las 16:30 y con el aire seco de diciembre se ve el Fuji. Se agota: comprar online."
+        },
+        {
+          "id": "a-035",
+          "titulo": "Cena en Ichiran Shibuya o Kumachan Onsen",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": ""
+        },
+        {
+          "id": "a-036",
+          "titulo": "Daikanyama si sobra tiempo",
+          "fecha": "2026-12-06",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A 15 min andando."
+        },
+        {
+          "id": "a-037",
+          "titulo": "Templo Gotokuji",
+          "fecha": "2026-12-07",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Primera hora. Odakyu desde Shinjuku, o línea Setagaya hasta Miyanosaka. Los maneki-neko con la luz de la mañana."
+        },
+        {
+          "id": "a-038",
+          "titulo": "Shimokitazawa",
+          "fecha": "2026-12-07",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A 10 min: vintage, cafés y tiendas de discos."
+        },
+        {
+          "id": "a-039",
+          "titulo": "Nakano",
+          "fecha": "2026-12-07",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Nakano Broadway, Nakano Central Park y templo Arai Yakushi Baishoin."
+        },
+        {
+          "id": "a-040",
+          "titulo": "Koenji",
+          "fecha": "2026-12-07",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Pal Shotengai, santuario Koenji Hikawa y el mural de Yohei Takahashi."
+        },
+        {
+          "id": "a-041",
+          "titulo": "Cena en Barikote",
+          "fecha": "2026-12-07",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En Koenji."
+        },
+        {
+          "id": "a-042",
+          "titulo": "Salir de Shinjuku hacia Asakusa",
+          "fecha": "2026-12-08",
+          "hora": "06:45",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": ""
+        },
+        {
+          "id": "a-043",
+          "titulo": "Asakusa → Nikko en Tobu",
+          "fecha": "2026-12-08",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Spacia X o Revaty Kegon, ~1h50. Alternativa: el JR-Tobu Nikko-go sale directo desde Shinjuku, ~2h, pero solo hay 3 o 4 al día."
+        },
+        {
+          "id": "a-044",
+          "titulo": "El All Area Pass de Tobu tiene que estar ya comprado",
+          "fecha": "2026-12-08",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Compradlo el domingo 6 o el lunes 7 en Asakusa, no la misma mañana."
+        },
+        {
+          "id": "a-045",
+          "titulo": "Puente Shinkyo, Toshogu, Rinnoji y Futarasan",
+          "fecha": "2026-12-08",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Por la mañana."
+        },
+        {
+          "id": "a-046",
+          "titulo": "Bus por la Irohazaka a Chuzenji",
+          "fecha": "2026-12-08",
+          "hora": "",
+          "tipo": "autobus",
+          "duracion": "",
+          "lugar": "",
+          "notas": "50 min. Cascada Kegon y lago."
+        },
+        {
+          "id": "a-047",
+          "titulo": "Aviso de tiempos",
+          "fecha": "2026-12-08",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En martes las dos cosas caben, pero van justas: anochece a las 16:30 y la Irohazaka puede ir lenta con hielo. Si por la mañana vais mal de tiempo, sacrificad el lago sin dudarlo."
+        },
+        {
+          "id": "a-048",
+          "titulo": "Volver con margen",
+          "fecha": "2026-12-08",
+          "hora": "19:00",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Los últimos trenes cómodos salen sobre las 19:00."
+        },
+        {
+          "id": "a-049",
+          "titulo": "Asakusa: Sensoji y Nakamise",
+          "fecha": "2026-12-09",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Salida con calma."
+        },
+        {
+          "id": "a-050",
+          "titulo": "Opcional: jardín Hamarikyu y barco por el río Sumida",
+          "fecha": "2026-12-09",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Hasta Asakusa (~35 min), si preferís llegar por el agua."
+        },
+        {
+          "id": "a-051",
+          "titulo": "Akihabara",
+          "fecha": "2026-12-09",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A 25 min: tiendas, retro y arcades."
+        },
+        {
+          "id": "a-052",
+          "titulo": "Opcional: Tokyo Skytree y Solamachi",
+          "fecha": "2026-12-09",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Si queda energía; quedan de camino."
+        },
+        {
+          "id": "a-053",
+          "titulo": "Salir de Shinjuku hacia Mishima",
+          "fecha": "2026-12-10",
+          "hora": "06:15",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Chuo Rapid hasta Tokio y Kodama hasta Mishima (~55 min). Billetes comprados el día antes."
+        },
+        {
+          "id": "a-054",
+          "titulo": "Ruta del tour",
+          "fecha": "2026-12-10",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Pagoda Chureito · Aokigahara · santuario Kitaguchi Hongu Fuji Sengen · aldea Oshino · cataratas Shiraito · lagos Yamanaka, Kawaguchi, Sai y Motosu."
+        },
+        {
+          "id": "a-055",
+          "titulo": "Comida: probar los fideos hoto",
+          "fecha": "2026-12-10",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": ""
+        },
+        {
+          "id": "a-056",
+          "titulo": "Vuelta desde Shin-Fuji",
+          "fecha": "2026-12-10",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A 60 min de Tokio en Shinkansen. Llegaréis reventados: cena cerca del hotel."
+        },
+        {
+          "id": "a-057",
+          "titulo": "Sin despertador, salir del hotel",
+          "fecha": "2026-12-11",
+          "hora": "10:30",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Sobre las 10:30-11:00."
+        },
+        {
+          "id": "a-058",
+          "titulo": "Shinjuku → Ikebukuro",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Línea Yamanote o Fukutoshin, 5-8 min."
+        },
+        {
+          "id": "a-059",
+          "titulo": "Parque Nishiguchi Koen",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En la salida oeste, junto al Teatro Metropolitano. Cinco minutos para ubicarse antes de meterse en los centros comerciales."
+        },
+        {
+          "id": "a-060",
+          "titulo": "Comida en Izumo o Ichiran",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Si vais con hambre, el Ramen Junk de la zona este también funciona."
+        },
+        {
+          "id": "a-061",
+          "titulo": "Animate Ikebukuro",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "La tienda insignia, nueve plantas. Está en la salida este, a 5 min de la estación."
+        },
+        {
+          "id": "a-062",
+          "titulo": "Otome Road",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Justo detrás de Animate: manga, doujinshi y tiendas de segunda mano. Es la calle friki de referencia de Ikebukuro."
+        },
+        {
+          "id": "a-063",
+          "titulo": "Sunshine City",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A 8 min andando de la salida este. Es un complejo enorme: entrad con una idea clara de qué queréis ver o se os va la tarde."
+        },
+        {
+          "id": "a-064",
+          "titulo": "Pokémon Center Mega Tokyo y Pikachu Sweets",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Planta 2 del edificio Alpa."
+        },
+        {
+          "id": "a-065",
+          "titulo": "Sanrio Vivitix y Sesame Street Market",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En el mismo edificio."
+        },
+        {
+          "id": "a-066",
+          "titulo": "Acuario de Sunshine",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En la azotea, con la zona exterior de pingüinos y leones marinos. Entrada aparte."
+        },
+        {
+          "id": "a-067",
+          "titulo": "Planetario Konica Minolta Manten",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Sesiones con hora, se llenan los viernes: mirad disponibilidad al llegar."
+        },
+        {
+          "id": "a-068",
+          "titulo": "Mirador Tenbo Park",
+          "fecha": "2026-12-11",
+          "hora": "16:00",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Planta 60. Es una terraza tipo césped, no un mirador clásico. Anochece a las 16:30, así que subid sobre las 16:00 si queréis luz y luces a la vez."
+        },
+        {
+          "id": "a-069",
+          "titulo": "Namja Town",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Si os apetece algo tonto: parque temático de interior con la zona de gyoza y de postres."
+        },
+        {
+          "id": "a-070",
+          "titulo": "Compras en Bic Camera",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Varias sucursales alrededor de la estación."
+        },
+        {
+          "id": "a-071",
+          "titulo": "Salir de Ikebukuro hacia Roppongi",
+          "fecha": "2026-12-11",
+          "hora": "17:00",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Metro: Marunouchi hasta Kasumigaseki y transbordo a Hibiya hasta Roppongi. Unos 25-30 min."
+        },
+        {
+          "id": "a-072",
+          "titulo": "Cuesta de Keyakizaka, en Roppongi Hills",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Los árboles iluminados en azul y blanco con la Torre de Tokio al fondo. Es LA foto de las iluminaciones de Tokio."
+        },
+        {
+          "id": "a-073",
+          "titulo": "Tokyo Midtown",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A 8 min andando: el Starlight Garden del jardín exterior es la otra instalación grande de la zona."
+        },
+        {
+          "id": "a-074",
+          "titulo": "Opcional: mirador Tokyo City View",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En Roppongi Hills, abierto hasta tarde. Si ya habéis subido a Shibuya Sky y a Tenbo Park, quizá sobra."
+        },
+        {
+          "id": "a-075",
+          "titulo": "Cena en Roppongi o Midtown",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Es viernes por la noche y se llena: si queréis algo concreto, reservad. Alternativa: cenar antes en Ikebukuro y bajar solo a ver las luces."
+        },
+        {
+          "id": "a-076",
+          "titulo": "Vuelta a Shinjuku",
+          "fecha": "2026-12-11",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Roppongi → Shinjuku en Toei Oedo, directo, 10 min."
+        },
+        {
+          "id": "a-077",
+          "titulo": "Seibu-Shinjuku → Hon-Kawagoe en el \"Red Arrow\"",
+          "fecha": "2026-12-12",
+          "hora": "",
+          "tipo": "tren",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Koedo Limited Express, ~45 min. Ojo: Seibu-Shinjuku NO es la estación de JR, son 10 min andando. Alternativa: línea Tobu Tojo desde Ikebukuro, ~30 min en express."
+        },
+        {
+          "id": "a-078",
+          "titulo": "Calles estilo Edo",
+          "fecha": "2026-12-12",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Sobre todo Kurazukuri. En sábado hay más gente: id pronto si queréis las fotos despejadas."
+        },
+        {
+          "id": "a-079",
+          "titulo": "Toki no Kane, templo Kitain y Kashiya Yokocho",
+          "fecha": "2026-12-12",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Kashiya Yokocho es la calle de dulces tradicionales."
+        },
+        {
+          "id": "a-080",
+          "titulo": "Volver a media tarde",
+          "fecha": "2026-12-12",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Es media jornada larga. Dejad la noche libre en Shinjuku."
+        },
+        {
+          "id": "a-081",
+          "titulo": "Toyosu Senkyaku Banrai",
+          "fecha": "2026-12-13",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Al lado de TeamLab: baños con vistas y zona de comida."
+        },
+        {
+          "id": "a-082",
+          "titulo": "Odaiba",
+          "fecha": "2026-12-13",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "DiverCity, el Gundam y el paseo de la playa con el puente Rainbow al anochecer."
+        },
+        {
+          "id": "a-083",
+          "titulo": "Cena en Odaiba o vuelta a Shinjuku",
+          "fecha": "2026-12-13",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": ""
+        },
+        {
+          "id": "a-084",
+          "titulo": "Tsukiji Outer Market",
+          "fecha": "2026-12-14",
+          "hora": "07:30",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "De 7:30 a 9:30. En lunes está todo abierto, al contrario que en domingo. Salid del hotel sin hacer check-out todavía."
+        },
+        {
+          "id": "a-085",
+          "titulo": "Vuelta al Gracery para el check-out",
+          "fecha": "2026-12-14",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "A media mañana. Decidid qué hacer con las maletas: dejarlas en recepción, o llevarlas a las taquillas de la estación de Tokio. Si las lleváis allí ganáis casi media hora al final, porque el N’EX desde la estación de Tokio a Narita son 55 min frente a los 80 desde Shinjuku. Pega: las taquillas grandes de esa estación vuelan."
+        },
+        {
+          "id": "a-086",
+          "titulo": "Jardín Hamarikyu",
+          "fecha": "2026-12-14",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Justo al lado de Tsukiji, si el tiempo acompaña."
+        },
+        {
+          "id": "a-087",
+          "titulo": "De Tsukiji a Ginza andando",
+          "fecha": "2026-12-14",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "15 minutos."
+        },
+        {
+          "id": "a-088",
+          "titulo": "Ginza",
+          "fecha": "2026-12-14",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Itoya (papelería), Uniqlo y GU flagship, Muji flagship, Ginza Six y cafés."
+        },
+        {
+          "id": "a-089",
+          "titulo": "Si sobra tiempo: Nihonbashi y la Character Street",
+          "fecha": "2026-12-14",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "En el sótano de la estación de Tokio."
+        },
+        {
+          "id": "a-090",
+          "titulo": "AVISO DE LUNES",
+          "fecha": "2026-12-14",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Museos y varios jardines cierran, y el Palacio Imperial también. Nada de planes de ese tipo para hoy."
+        },
+        {
+          "id": "a-091",
+          "titulo": "Comida temprana y últimas compras",
+          "fecha": "2026-12-14",
+          "hora": "",
+          "tipo": "restaurante",
+          "duracion": "",
+          "lugar": "",
+          "notas": ""
+        },
+        {
+          "id": "a-092",
+          "titulo": "Recoger maletas y salir hacia Narita",
+          "fecha": "2026-12-14",
+          "hora": "17:00",
+          "tipo": "traslado",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Estar en Narita a las 19:30."
+        }
+      ],
       "gastos": [],
       "equipaje": [],
+      "pendientes": [
+        {
+          "id": "p-103",
+          "titulo": "Escribir a Takimikan (reserva 16498)",
+          "grupo": "Ya — esta semana",
+          "fecha": "",
+          "hecho": false,
+          "notas": "Tres cosas: 1) reservar la lanzadera desde la estación de Ōishida y confirmar la hora; 2) confirmar que la habitación es del edificio principal y NO del anexo Bettei Takimitate, que está abajo junto a la cascada; 3) avisar de alergias o restricciones de dieta, que en kaiseki se gestionan al reservar, no el día de la cena."
+        },
+        {
+          "id": "p-104",
+          "titulo": "Comprar el All Area Pass de Tobu",
+          "grupo": "Ya — esta semana",
+          "fecha": "2026-12-07",
+          "hecho": false,
+          "notas": "Tiene que estar antes del martes 8. Online en tobu-japantrip-tickets.com para recoger en Asakusa, o presencial el domingo 6 o el lunes 7."
+        },
+        {
+          "id": "p-105",
+          "titulo": "Reservar el tour del Fuji del 10 de diciembre",
+          "grupo": "Ya — esta semana",
+          "fecha": "",
+          "hecho": false,
+          "notas": "13.000 ¥ por persona."
+        },
+        {
+          "id": "p-106",
+          "titulo": "Comprar TeamLab Planets para el domingo 13",
+          "grupo": "Ya — esta semana",
+          "fecha": "",
+          "hecho": false,
+          "notas": "Es lo que antes se agota."
+        },
+        {
+          "id": "p-107",
+          "titulo": "Reservar el bus Shinjuku – Gotemba del 2 de diciembre",
+          "grupo": "Ya — esta semana",
+          "fecha": "",
+          "hecho": false,
+          "notas": "En highwaybus.com."
+        },
+        {
+          "id": "p-108",
+          "titulo": "Tokio–Yamagata del jueves 3 de diciembre",
+          "grupo": "Un mes antes — reservas de Shinkansen",
+          "fecha": "2026-11-03",
+          "hecho": false,
+          "notas": "Los asientos se abren un mes antes a las 10:00 hora japonesa, que son las 2:00 de la madrugada en España."
+        },
+        {
+          "id": "p-109",
+          "titulo": "Yamagata–Ōishida del viernes 4",
+          "grupo": "Un mes antes — reservas de Shinkansen",
+          "fecha": "2026-11-04",
+          "hecho": false,
+          "notas": "Comprobad antes qué Tsubasa continúan hacia Shinjo, que son los únicos que paran en Ōishida."
+        },
+        {
+          "id": "p-110",
+          "titulo": "Ōishida–Tokio del sábado 5",
+          "grupo": "Un mes antes — reservas de Shinkansen",
+          "fecha": "2026-11-05",
+          "hecho": false,
+          "notas": "Es el trayecto más lleno de los tres, sábado y vuelta a Tokio: reservad sí o sí."
+        },
+        {
+          "id": "p-111",
+          "titulo": "Shibuya Sky del domingo 6",
+          "grupo": "Un mes antes — reservas de Shinkansen",
+          "fecha": "2026-11-06",
+          "hecho": false,
+          "notas": "Comprar en cuanto se abra la venta, franja de las 15:40."
+        },
+        {
+          "id": "p-112",
+          "titulo": "Tokio–Mishima y Shin-Fuji–Tokio del jueves 10",
+          "grupo": "Un mes antes — reservas de Shinkansen",
+          "fecha": "2026-11-10",
+          "hecho": false,
+          "notas": ""
+        },
+        {
+          "id": "p-113",
+          "titulo": "Suica en la Wallet del iPhone",
+          "grupo": "Antes de salir de casa",
+          "fecha": "",
+          "hecho": false,
+          "notas": "No hace falta tarjeta física y se recarga con Revolut sin comisión."
+        },
+        {
+          "id": "p-114",
+          "titulo": "Revolut operativa y con saldo",
+          "grupo": "Antes de salir de casa",
+          "fecha": "",
+          "hecho": false,
+          "notas": ""
+        },
+        {
+          "id": "p-115",
+          "titulo": "Sacar o prever efectivo en yenes",
+          "grupo": "Antes de salir de casa",
+          "fecha": "",
+          "hecho": false,
+          "notas": "El bus de Ōishida a Ginzan es solo efectivo (1.000 ¥ por persona) y en Ginzan no hay cajeros. Llevad un colchón por si la lanzadera falla."
+        },
+        {
+          "id": "p-116",
+          "titulo": "Calzado con suela agresiva",
+          "grupo": "Antes de salir de casa",
+          "fecha": "",
+          "hecho": false,
+          "notas": "Para los escalones de Yamadera y el hielo de Ginzan. Nada de suela lisa."
+        },
+        {
+          "id": "p-117",
+          "titulo": "Guardar los justificantes",
+          "grupo": "Antes de salir de casa",
+          "fecha": "",
+          "hecho": false,
+          "notas": "Takimikan nº 16498, Daiwa Roynet Yamagata Ekimae, Gracery Shinjuku."
+        },
+        {
+          "id": "p-118",
+          "titulo": "Preparar la mochila de tres días",
+          "grupo": "Ya en Japón",
+          "fecha": "2026-12-02",
+          "hecho": false,
+          "notas": "Por la noche, y dejar las maletas listas."
+        },
+        {
+          "id": "p-119",
+          "titulo": "Dejar las maletas grandes en recepción del Gracery",
+          "grupo": "Ya en Japón",
+          "fecha": "2026-12-03",
+          "hecho": false,
+          "notas": "Por la mañana, antes de salir hacia Yamagata."
+        },
+        {
+          "id": "p-120",
+          "titulo": "Dejar las mochilas en el Daiwa Roynet antes de ir a Yamadera",
+          "grupo": "Ya en Japón",
+          "fecha": "2026-12-03",
+          "hecho": false,
+          "notas": "Las taquillas de la estación de Yamadera son pocas."
+        },
+        {
+          "id": "p-121",
+          "titulo": "Apuntar el horario de vuelta del tren de Yamadera",
+          "grupo": "Ya en Japón",
+          "fecha": "2026-12-03",
+          "hecho": false,
+          "notas": "ANTES de empezar a subir los 1.015 escalones."
+        },
+        {
+          "id": "p-122",
+          "titulo": "Comprar el All Area Pass de Tobu en Asakusa",
+          "grupo": "Ya en Japón",
+          "fecha": "2026-12-07",
+          "hecho": false,
+          "notas": "El 6 o el 7, en el centro de información de Tobu de la estación de Asakusa. OJO: ahora Nikko es el martes 8, así que hay que tenerlo ANTES. También se puede sacar online en tobu-japantrip-tickets.com y recogerlo allí."
+        },
+        {
+          "id": "p-123",
+          "titulo": "Comprar los billetes del Shinkansen a Mishima",
+          "grupo": "Ya en Japón",
+          "fecha": "2026-12-09",
+          "hecho": false,
+          "notas": "Para el día siguiente, si no los llevabais reservados."
+        },
+        {
+          "id": "p-124",
+          "titulo": "Check-out y decidir qué hacer con las maletas",
+          "grupo": "Ya en Japón",
+          "fecha": "2026-12-14",
+          "hecho": false,
+          "notas": "Recepción del Gracery, o taquillas de la estación de Tokio para ganar media hora en el traslado a Narita."
+        }
+      ],
       "notas": []
     }
   ]

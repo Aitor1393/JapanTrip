@@ -13,7 +13,7 @@
   App.estado = {};    // filtros y búsquedas de la vista actual
 
   var VISTAS = ['resumen', 'itinerario', 'reservas', 'lugares', 'mapa', 'gastos',
-    'equipaje', 'viajes', 'ajustes'];
+    'equipaje', 'pendientes', 'viajes', 'ajustes'];
 
   /* ══════════════════════════════════════════════════════════
      Tema
@@ -209,6 +209,25 @@
     /* Itinerario */
     'nueva-actividad': function (el) { F.actividad(null, el.getAttribute('data-dia')); },
     'editar-actividad': function (el) { F.actividad(el.getAttribute('data-id')); },
+    'nota-dia': function (el) { F.notaDia(el.getAttribute('data-dia')); },
+
+    /* Pendientes */
+    'nuevo-pendiente': function () { F.pendiente(); },
+    'editar-pendiente': function (el) { F.pendiente(el.getAttribute('data-id')); },
+    'marcar-pendiente': function (el) {
+      D.pendientes.actualizar(el.getAttribute('data-id'), { hecho: el.checked });
+      App.pintar(true);
+    },
+    'borrar-pendiente': function (el) {
+      var id = el.getAttribute('data-id');
+      var p = D.pendientes.uno(id);
+      if (!p) return;
+      U.confirmar('Borrar la tarea', '¿Borrar «' + U.recortar(p.titulo, 60) + '»?').then(function (si) {
+        if (!si) return;
+        D.pendientes.borrar(id);
+        App.pintar();
+      });
+    },
 
     /* Lugares */
     'nuevo-lugar': function () { F.lugar(); },

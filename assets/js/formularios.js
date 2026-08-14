@@ -729,6 +729,71 @@
   };
 
   /* ══════════════════════════════════════════════════════════
+     Pendientes
+     ══════════════════════════════════════════════════════════ */
+
+  F.pendiente = function (id) {
+    var viaje = D.activo();
+    var p = id ? D.pendientes.uno(id) : null;
+    var esNuevo = !p;
+    p = p || { grupo: 'General' };
+
+    // Se ofrecen los grupos que ya existan para no acabar con «Antes de
+    // salir» y «Antes de salir de casa» como dos listas distintas.
+    var grupos = [];
+    viaje.pendientes.forEach(function (x) {
+      if (x.grupo && grupos.indexOf(x.grupo) === -1) grupos.push(x.grupo);
+    });
+
+    var html = '<h2>' + (esNuevo ? 'Nueva tarea' : 'Editar tarea') + '</h2>' +
+      campo('Qué hay que hacer', 'titulo', p.titulo, 'text',
+        ' required placeholder="Reservar el shinkansen a Yamagata"') +
+      '<div class="campo__doble">' +
+      campo('Grupo', 'grupo', p.grupo, 'text', ' list="gruposPendientes" placeholder="Antes de salir de casa"') +
+      campo('Fecha límite', 'fecha', p.fecha, 'date') +
+      '</div>' +
+      '<datalist id="gruposPendientes">' +
+      grupos.map(function (g) { return '<option value="' + U.esc(g) + '">'; }).join('') +
+      '</datalist>' +
+      casilla('Ya está hecho', 'hecho', !!p.hecho) +
+      area('Detalles', 'notas', p.notas) +
+      botones(esNuevo ? 'Añadir tarea' : 'Guardar');
+
+    montar(html, function (datos) {
+      if (!datos.titulo) { U.aviso('Escribe qué hay que hacer.', 'error'); return; }
+      var campos = {
+        titulo: datos.titulo, grupo: datos.grupo || 'General',
+        fecha: datos.fecha, hecho: datos.hecho, notas: datos.notas
+      };
+      if (esNuevo) D.pendientes.anadir(campos);
+      else D.pendientes.actualizar(id, campos);
+      U.cerrarModal();
+      U.aviso('Tarea guardada.', 'ok');
+      App.pintar();
+    });
+  };
+
+  /* ══════════════════════════════════════════════════════════
+     Nota de un día
+     ══════════════════════════════════════════════════════════ */
+
+  F.notaDia = function (dia) {
+    var viaje = D.activo();
+    var html = '<h2>Nota del día</h2>' +
+      '<p class="apagado">' + U.esc(U.mayus1(U.fechaDia(dia))) + '</p>' +
+      area('Nota', 'nota', D.notaDia(dia, viaje.id), 4) +
+      '<div class="campo__ayuda">Sale arriba del día, encima de los planes. ' +
+      'Déjala vacía para quitarla.</div>' +
+      botones('Guardar');
+
+    montar(html, function (datos) {
+      D.guardarNotaDia(dia, datos.nota, viaje.id);
+      U.cerrarModal();
+      App.pintar();
+    });
+  };
+
+  /* ══════════════════════════════════════════════════════════
      Viaje
      ══════════════════════════════════════════════════════════ */
 

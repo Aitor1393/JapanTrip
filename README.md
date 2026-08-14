@@ -21,7 +21,10 @@ alquileres de coche, autobuses y ferris. También se pueden meter a mano.
 **Itinerario.** El día a día se calcula solo juntando las reservas con los
 planes que añadas. Un vuelo aparece el día de salida y otra vez el de llegada,
 un hotel pone su entrada y su salida y marca dónde duermes cada noche, y los
-días sin nada se ven de un vistazo.
+días sin nada se ven de un vistazo. Cada día admite una nota suelta (el botón
+📝) para lo que no es un plan a una hora: «el jet lag juega a favor, os
+despertaréis sobre las 5-6». Los planes sin hora van al final del día bajo el
+rótulo «Sin hora fija», en el orden en que los metiste.
 
 **Lugares.** La lista de lo que quieres ver, agrupada por ciudad, con
 categorías y un catálogo de sugerencias de Japón con las coordenadas ya
@@ -34,6 +37,10 @@ tenga sale en una lista aparte con un botón para buscarlas por la dirección.
 Las reservas con precio ya cuentan, así que no hay que apuntarlas dos veces.
 
 **Equipaje.** Lista con grupos y una plantilla para Japón.
+
+**Pendientes.** Las tareas con fecha límite: reservar el shinkansen en cuanto
+se abra la venta, comprar las entradas que se agotan, escribir al ryokan.
+Agrupadas y con aviso en rojo cuando se pasa la fecha y siguen sin marcar.
 
 ## Cómo se usa
 
@@ -115,8 +122,28 @@ por si el parser se comió algo.
 
 Nada más sale de tu navegador.
 
-## Antes de salir de viaje
+## El viaje que viene cargado
 
-- Pon las fechas de ida y vuelta en **Viajes → Editar**.
-- Actualiza el cambio del yen ahí mismo: el valor que trae puesto es
-  orientativo y se queda viejo enseguida.
+`data/viajes.json` trae el itinerario de **Tokio, 30 nov – 15 dic de 2026**
+volcado desde `TOKIO_V6.docx`: los dos vuelos, los cuatro alojamientos, los
+92 planes repartidos por los 16 días, las 22 tareas pendientes con sus fechas
+y las notas de logística.
+
+Cosas que quedaron a medias a propósito, porque el documento no las decía:
+
+- **Las horas de entrada y salida de los hoteles** son las de siempre (15:00 y
+  11:00) salvo el check-out de Takimikan, que sí venía puesto a las 10:00.
+- **Los hoteles no tienen coordenadas.** El documento da el nombre, no la
+  dirección, y no se inventan: en **Mapa → Sin situar** hay un botón
+  «Localizar» que las busca por el nombre.
+- **El tour del Fuji está apuntado a 13.000 ¥**, que es el precio *por
+  persona*. En cuanto sepas cuántos vais, multiplícalo.
+- **Los vuelos no llevan precio ni localizador**, que no venían en el
+  documento.
+- **El presupuesto está a cero** y el cambio del yen a 0,0058 €, que es
+  orientativo y se queda viejo enseguida. Los dos se cambian en
+  **Viajes → Editar**.
+
+Las cuatro reservas todavía sin cerrar (tour del Fuji, Shibuya Sky, TeamLab
+Planets y el bus de Gotemba) están metidas como **sin confirmar**, así que
+salen en el itinerario con su aviso pero no cuentan como cerradas.

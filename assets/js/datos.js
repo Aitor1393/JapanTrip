@@ -84,7 +84,9 @@
       v.monedaBase = v.monedaBase || 'EUR';
       if (typeof v.cambio !== 'number' || !v.cambio) v.cambio = 1;
       v.presupuesto = Number(v.presupuesto) || 0;
-      ['reservas', 'lugares', 'actividades', 'gastos', 'equipaje', 'notas', 'viajeros']
+      // Nota suelta de un día concreto: {"2026-12-02": "El jet lag juega a favor…"}
+      if (!v.notasDia || typeof v.notasDia !== 'object') v.notasDia = {};
+      ['reservas', 'lugares', 'actividades', 'gastos', 'equipaje', 'pendientes', 'notas', 'viajeros']
         .forEach(function (clave) {
           if (!Array.isArray(v[clave])) v[clave] = [];
         });
@@ -106,6 +108,10 @@
         g.categoria = D.CATEGORIAS_GASTO[g.categoria] ? g.categoria : 'otro';
       });
       v.equipaje.forEach(function (e) { e.id = e.id || U.id(); });
+      v.pendientes.forEach(function (p) {
+        p.id = p.id || U.id();
+        p.grupo = p.grupo || 'General';
+      });
       v.notas.forEach(function (n) { n.id = n.id || U.id(); });
     });
     if (!d.viajeActivo || !d.viajes.some(function (v) { return v.id === d.viajeActivo; })) {
@@ -207,8 +213,10 @@
       cambio: Number(campos.cambio) || 1,
       presupuesto: Number(campos.presupuesto) || 0,
       notasGenerales: campos.notasGenerales || '',
+      notasDia: {},
       viajeros: campos.viajeros || [],
-      reservas: [], lugares: [], actividades: [], gastos: [], equipaje: [], notas: []
+      reservas: [], lugares: [], actividades: [], gastos: [], equipaje: [],
+      pendientes: [], notas: []
     };
     datos.viajes.push(viaje);
     datos.viajeActivo = viaje.id;
@@ -239,9 +247,10 @@
     copia.id = U.babosa(v.nombre) + '-' + U.id().slice(0, 4);
     copia.nombre = v.nombre + ' (copia)';
     // Identificadores nuevos: si no, editar la copia tocaría también el original.
-    ['reservas', 'lugares', 'actividades', 'gastos', 'equipaje', 'notas'].forEach(function (clave) {
-      copia[clave].forEach(function (item) { item.id = U.id(); });
-    });
+    ['reservas', 'lugares', 'actividades', 'gastos', 'equipaje', 'pendientes', 'notas']
+      .forEach(function (clave) {
+        copia[clave].forEach(function (item) { item.id = U.id(); });
+      });
     datos.viajes.push(copia);
     guardar();
     return copia;
@@ -289,7 +298,22 @@
   D.actividades = coleccion('actividades');
   D.gastos = coleccion('gastos');
   D.equipaje = coleccion('equipaje');
+  D.pendientes = coleccion('pendientes');
   D.notas = coleccion('notas');
+
+  /** Nota suelta de un día del itinerario. */
+  D.notaDia = function (dia, idViaje) {
+    var v = D.viaje(idViaje);
+    return (v && v.notasDia && v.notasDia[dia]) || '';
+  };
+
+  D.guardarNotaDia = function (dia, texto, idViaje) {
+    var v = D.viaje(idViaje);
+    if (!v) return;
+    if (texto) v.notasDia[dia] = texto;
+    else delete v.notasDia[dia];
+    guardar();
+  };
 
   /* ---------- Itinerario ----------
      El itinerario no se guarda: se calcula juntando reservas y actividades
@@ -476,6 +500,12 @@
       actividades: v.actividades.length,
       equipajeTotal: v.equipaje.length,
       equipajeListo: v.equipaje.filter(function (e) { return e.hecho; }).length,
+      pendientesTotal: v.pendientes.length,
+      pendientesHechos: v.pendientes.filter(function (p) { return p.hecho; }).length,
+      // Lo que ya se ha pasado de fecha y sigue sin hacer.
+      pendientesVencidos: v.pendientes.filter(function (p) {
+        return !p.hecho && p.fecha && p.fecha < U.isoHoy();
+      }).length,
       gastos: D.resumenGastos(idViaje)
     };
   };

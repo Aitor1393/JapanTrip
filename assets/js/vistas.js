@@ -144,8 +144,8 @@
           r.lugaresVistos ? r.lugaresVistos + ' ya visitados' : '') +
         '</div>';
 
-      // Gastos y equipaje, uno al lado del otro.
-      html += '<div class="dos-columnas">';
+      // Gastos, equipaje y pendientes, uno al lado del otro.
+      html += '<div class="tres-columnas">';
 
       html += '<div class="tarjeta"><div class="tarjeta__rotulo">Gastos</div>' +
         '<div class="cifra-grande">' + U.dinero(g.total, viaje.monedaBase) + '</div>';
@@ -169,6 +169,19 @@
           : 'Aún no has hecho la lista.') + '</p>' +
         (r.equipajeTotal ? barra(U.porcentaje(r.equipajeListo, r.equipajeTotal), 'var(--verde)') : '') +
         '<a class="btn btn--pequeno btn--fantasma" href="#/equipaje">Ver la lista</a></div>';
+
+      html += '<div class="tarjeta"><div class="tarjeta__rotulo">Pendientes</div>' +
+        '<div class="cifra-grande">' + r.pendientesHechos + ' / ' + r.pendientesTotal + '</div>' +
+        '<p class="apagado">' + (r.pendientesTotal
+          ? (r.pendientesVencidos
+            ? U.plural(r.pendientesVencidos, 'tarea') + ' con la fecha pasada'
+            : 'tareas resueltas')
+          : 'No hay nada apuntado.') + '</p>' +
+        (r.pendientesTotal
+          ? barra(U.porcentaje(r.pendientesHechos, r.pendientesTotal),
+              r.pendientesVencidos ? 'var(--rojo)' : 'var(--verde)')
+          : '') +
+        '<a class="btn btn--pequeno btn--fantasma" href="#/pendientes">Ver las tareas</a></div>';
 
       html += '</div>';
 
@@ -211,7 +224,9 @@
       var a = evento.actividad;
       if (a.lugar) lineas.push(U.esc(a.lugar));
       if (a.duracion) lineas.push(U.esc(a.duracion));
-      if (a.notas) lineas.push(U.esc(U.recortar(a.notas, 120)));
+      // Sin recortar: aquí es donde acaban los avisos que hay que leer
+      // enteros ("no aceptan tarjeta", "el último tren sale a las…").
+      if (a.notas) lineas.push(U.esc(a.notas));
     }
 
     return '<li class="evento evento--' + meta.color + '">' +
@@ -277,8 +292,14 @@
           '<h2>' + U.esc(U.mayus1(U.fechaDia(dia))) + '</h2></div>' +
           (esHoy ? '<span class="etiqueta etiqueta--acento">Hoy</span>' : '') +
           '<div class="crece"></div>' +
+          '<button class="btn btn--pequeno btn--fantasma" data-accion="nota-dia" data-dia="' + dia + '">📝</button>' +
           '<button class="btn btn--pequeno" data-accion="nueva-actividad" data-dia="' + dia + '">+ Añadir</button>' +
           '</header>';
+
+        var nota = D.notaDia(dia, viaje.id);
+        if (nota) {
+          html += '<div class="dia__nota">' + U.esc(nota) + '</div>';
+        }
 
         if (alojamiento) {
           html += '<div class="dia__cama">🛏️ Duermes en <strong>' +
@@ -289,7 +310,18 @@
           html += '<p class="dia__vacio">Día libre. Nada planificado todavía.</p>';
         } else {
           html += '<ul class="linea-tiempo">';
-          eventos.forEach(function (e) { html += eventoHtml(e, viaje); });
+          // Lo que no tiene hora va detrás de lo que sí la tiene. Sin avisar
+          // parece que el orden está mal, así que se separa con un rótulo.
+          var huboConHora = false, cortePuesto = false;
+          eventos.forEach(function (e) {
+            if (e.hora) {
+              huboConHora = true;
+            } else if (huboConHora && !cortePuesto) {
+              html += '<li class="corte">Sin hora fija</li>';
+              cortePuesto = true;
+            }
+            html += eventoHtml(e, viaje);
+          });
           html += '</ul>';
         }
         html += '</section>';
@@ -727,6 +759,79 @@
             (e.cantidad > 1 ? ' <span class="apagado">×' + e.cantidad + '</span>' : '') + '</span>' +
             '<button class="btn btn--pequeno btn--peligro" data-accion="borrar-equipaje" data-id="' + e.id + '">✕</button>' +
             '</label>';
+        });
+        html += '</div></section>';
+      });
+
+      return html;
+    }
+  };
+
+  /* ══════════════════════════════════════════════════════════
+     Pendientes
+     ══════════════════════════════════════════════════════════ */
+
+  V.pendientes = {
+    titulo: 'Pendientes',
+    html: function (viaje) {
+      var total = viaje.pendientes.length;
+      var hechos = viaje.pendientes.filter(function (p) { return p.hecho; }).length;
+      var hoy = U.isoHoy();
+
+      var html = '<div class="vista__cabecera">' +
+        '<div class="crece"><h1>Pendientes</h1>' +
+        '<p>' + (total ? hechos + ' de ' + total + ' resueltos' : 'Sin tareas') + '</p></div>' +
+        boton('nuevo-pendiente', '+ Añadir tarea', 'btn--primario') +
+        '</div>';
+
+      if (!total) {
+        return html + vacio('✅', 'No hay nada pendiente',
+          'Aquí van las cosas con fecha límite: reservar el shinkansen, comprar entradas, escribir al ryokan.',
+          boton('nuevo-pendiente', '+ Añadir la primera', 'btn--primario'));
+      }
+
+      var vencidos = viaje.pendientes.filter(function (p) {
+        return !p.hecho && p.fecha && p.fecha < hoy;
+      });
+      if (vencidos.length) {
+        html += '<div class="avisos avisos--rojo">' +
+          '<strong>' + U.plural(vencidos.length, 'tarea') + ' con la fecha pasada</strong> ' +
+          'y sin marcar: ' + U.esc(vencidos.map(function (p) { return p.titulo; })
+            .map(function (t) { return U.recortar(t, 40); }).join('; ')) + '.' +
+          '</div>';
+      }
+
+      html += '<div class="tarjeta">' + barra(U.porcentaje(hechos, total), 'var(--verde)') + '</div>';
+
+      // Se conserva el orden en que están guardadas: los grupos vienen de
+      // menos a más lejano en el tiempo y reordenarlos lo empeoraría.
+      var grupos = U.agrupar(viaje.pendientes, function (p) { return p.grupo || 'General'; });
+
+      Object.keys(grupos).forEach(function (grupo) {
+        var items = grupos[grupo];
+        var listos = items.filter(function (p) { return p.hecho; }).length;
+        html += '<section class="seccion">' +
+          '<div class="seccion__titulo"><h2>' + U.esc(grupo) + '</h2>' +
+          '<span class="contador">' + listos + '/' + items.length + '</span></div>' +
+          '<div class="lista-simple">';
+
+        U.ordenarPor(items, function (p) { return p.fecha || '9999'; }).forEach(function (p) {
+          var vencido = !p.hecho && p.fecha && p.fecha < hoy;
+          html += '<div class="pendiente' + (p.hecho ? ' pendiente--hecho' : '') +
+            (vencido ? ' pendiente--vencido' : '') + '">' +
+            '<input type="checkbox" data-accion="marcar-pendiente" data-id="' + p.id + '"' +
+            (p.hecho ? ' checked' : '') + ' aria-label="Marcar como hecho">' +
+            '<div class="crece">' +
+            '<div class="pendiente__titulo">' + U.esc(p.titulo) + '</div>' +
+            (p.notas ? '<div class="pendiente__notas">' + U.esc(p.notas) + '</div>' : '') +
+            '</div>' +
+            (p.fecha
+              ? '<span class="etiqueta' + (vencido ? ' etiqueta--rojo' : p.hecho ? '' : ' etiqueta--ambar') + '">' +
+                U.esc(U.fechaCorta(p.fecha)) + ' · ' + U.esc(U.cuando(p.fecha)) + '</span>'
+              : '') +
+            '<button class="btn btn--pequeno btn--fantasma" data-accion="editar-pendiente" data-id="' + p.id + '">Editar</button>' +
+            '<button class="btn btn--pequeno btn--peligro" data-accion="borrar-pendiente" data-id="' + p.id + '">✕</button>' +
+            '</div>';
         });
         html += '</div></section>';
       });
