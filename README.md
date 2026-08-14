@@ -42,6 +42,17 @@ Las reservas con precio ya cuentan, así que no hay que apuntarlas dos veces.
 se abra la venta, comprar las entradas que se agotan, escribir al ryokan.
 Agrupadas y con aviso en rojo cuando se pasa la fecha y siguen sin marcar.
 
+## Activar GitHub Pages (una sola vez)
+
+En **Settings → Pages → Build and deployment → Source**, elige
+**GitHub Actions**. Hay que hacerlo a mano una vez: el token del workflow no
+tiene permiso para crear el sitio y hasta entonces el despliegue falla con
+«Get Pages site failed».
+
+Después, cada push a `main` publica solo en
+<https://aitor1393.github.io/JapanTrip/>. Para relanzar el despliegue que
+falló, en la pestaña **Actions** dale a *Re-run jobs*.
+
 ## Cómo se usa
 
 Los cambios se guardan al momento en el navegador que estés usando. Para que

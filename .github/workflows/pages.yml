@@ -27,11 +27,11 @@ jobs:
       - name: Validar data/viajes.json
         run: python3 -c "import json;json.load(open('data/viajes.json'));print('JSON correcto')"
 
-      # enablement activa Pages en el repositorio la primera vez. Sin esto
-      # hay que entrar a mano en Settings → Pages y elegir GitHub Actions.
+      # Pages tiene que estar activado a mano una vez en
+      # Settings → Pages → Source: GitHub Actions. El token del workflow no
+      # puede crear el sitio («Resource not accessible by integration»), así
+      # que enablement: true no sirve de nada aquí.
       - uses: actions/configure-pages@v6
-        with:
-          enablement: true
 
       - name: Subir el sitio
         uses: actions/upload-pages-artifact@v5
