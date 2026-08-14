@@ -1,0 +1,25 @@
+name: Validar los datos
+
+# GitHub Pages sirve la rama main directamente (Settings → Pages →
+# Deploy from a branch), así que aquí no se despliega nada: este workflow
+# solo avisa si se rompe el JSON de los viajes o el JavaScript.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Comprobar que el JSON es válido
+        run: python3 -c "import json;json.load(open('data/viajes.json'));print('JSON correcto')"
+
+      - name: Comprobar la sintaxis del JavaScript
+        run: for f in assets/js/*.js; do node --check "$f"; done

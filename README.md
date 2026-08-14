@@ -42,16 +42,18 @@ Las reservas con precio ya cuentan, así que no hay que apuntarlas dos veces.
 se abra la venta, comprar las entradas que se agotan, escribir al ryokan.
 Agrupadas y con aviso en rojo cuando se pasa la fecha y siguen sin marcar.
 
-## Activar GitHub Pages (una sola vez)
+## Dónde está publicado
 
-En **Settings → Pages → Build and deployment → Source**, elige
-**GitHub Actions**. Hay que hacerlo a mano una vez: el token del workflow no
-tiene permiso para crear el sitio y hasta entonces el despliegue falla con
-«Get Pages site failed».
+<https://aitor1393.github.io/JapanTrip/>
 
-Después, cada push a `main` publica solo en
-<https://aitor1393.github.io/JapanTrip/>. Para relanzar el despliegue que
-falló, en la pestaña **Actions** dale a *Re-run jobs*.
+GitHub Pages sirve la rama `main` tal cual (**Settings → Pages → Source:
+Deploy from a branch**, `main` / `(root)`). No hay compilación de por medio,
+así que cada push a `main` se publica solo en un par de minutos. El fichero
+`.nojekyll` de la raíz evita que Jekyll toque nada.
+
+El único workflow que queda, `validar.yml`, no despliega: comprueba que
+`data/viajes.json` sigue siendo JSON válido y que el JavaScript no tiene
+errores de sintaxis.
 
 ## Cómo se usa
 
