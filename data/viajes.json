@@ -91,8 +91,8 @@
             "nombre": "Hotel Gracery Shinjuku",
             "direccion": "",
             "ciudad": "Tokio",
-            "lat": null,
-            "lon": null
+            "lat": 35.6955627,
+            "lon": 139.7022767
           },
           "hasta": null,
           "precio": null,
@@ -117,8 +117,8 @@
             "nombre": "Daiwa Roynet Hotel Yamagata Ekimae",
             "direccion": "",
             "ciudad": "Yamagata",
-            "lat": null,
-            "lon": null
+            "lat": 38.2473076,
+            "lon": 140.329581
           },
           "hasta": null,
           "precio": null,
