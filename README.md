@@ -46,14 +46,17 @@ Agrupadas y con aviso en rojo cuando se pasa la fecha y siguen sin marcar.
 
 <https://aitor1393.github.io/JapanTrip/>
 
-GitHub Pages sirve la rama `main` tal cual (**Settings → Pages → Source:
-Deploy from a branch**, `main` / `(root)`). No hay compilación de por medio,
-así que cada push a `main` se publica solo en un par de minutos. El fichero
-`.nojekyll` de la raíz evita que Jekyll toque nada.
-
-El único workflow que queda, `validar.yml`, no despliega: comprueba que
-`data/viajes.json` sigue siendo JSON válido y que el JavaScript no tiene
+Cada push a `main` lo publica el workflow `pages.yml`, que antes comprueba
+que `data/viajes.json` sigue siendo JSON válido y que el JavaScript no tiene
 errores de sintaxis.
+
+Hacen falta dos ajustes en el repositorio, una sola vez:
+
+1. **Settings → Pages → Source**: `GitHub Actions`.
+2. **Settings → Environments → `github-pages` → Deployment branches and
+   tags**: que `main` esté permitida. El entorno se crea con la rama por
+   defecto que hubiera en ese momento, así que si se renombra después hay
+   que actualizarlo o el trabajo se rechaza antes de arrancar.
 
 ## Cómo se usa
 
