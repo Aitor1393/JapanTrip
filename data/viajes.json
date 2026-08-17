@@ -518,6 +518,30 @@
           "lon": 139.8107,
           "visitado": false,
           "notas": "Fáciles de encadenar con el día de Asakusa."
+        },
+        {
+          "nombre": "Kawagoe",
+          "ciudad": "Kawagoe",
+          "categoria": "barrio",
+          "direccion": "",
+          "lat": 35.9251145,
+          "lon": 139.4856927,
+          "visitado": false,
+          "notas": "",
+          "id": "2d0f021a-bd66-4bd8-aa79-6b8e39e1d8a5",
+          "creado": "2026-08-17T13:12:02.822Z"
+        },
+        {
+          "nombre": "Nikko",
+          "ciudad": "Nikko",
+          "categoria": "naturaleza",
+          "direccion": "",
+          "lat": 36.7471805,
+          "lon": 139.6219414,
+          "visitado": false,
+          "notas": "",
+          "id": "02e076eb-317f-435a-804d-061d7c604e0a",
+          "creado": "2026-08-17T13:13:17.942Z"
         }
       ],
       "actividades": [
@@ -1298,7 +1322,7 @@
           "hora": "",
           "tipo": "actividad",
           "duracion": "",
-          "lugar": "",
+          "lugar": "Kawagoe",
           "notas": "Sobre todo Kurazukuri. En sábado hay más gente: id pronto si queréis las fotos despejadas."
         },
         {
