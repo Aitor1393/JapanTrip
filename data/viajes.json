@@ -157,7 +157,7 @@
             "personas": 0,
             "direccion": ""
           },
-          "notas": "A dos minutos de la estación de Yamagata. Dejad allí las mochilas antes de subir a Yamadera.",
+          "notas": "Dejar allí las mochilas antes de subir a Yamadera.",
           "tipo": "alojamiento",
           "titulo": "Daiwa Roynet Hotel Yamagata Ekimae",
           "inicio": "2026-12-03T15:00",
@@ -189,7 +189,7 @@
             "personas": 0,
             "direccion": "Ginzan Onsen, Obanazawa, Yamagata"
           },
-          "notas": "Plan \"Adult Retreat with Relaxation Lounge Access – Creative Kaiseki & All-Inclusive Drinks\". Cena kaiseki, desayuno y bebidas incluidas, más acceso al salón de relajación. Check-out a las 10:00, más temprano de lo habitual. Confirmar que la habitación es del edificio principal y NO del anexo Bettei Takimitate.",
+          "notas": "Plan Adult Retreat with Relaxation Lounge Access – Creative Kaiseki & All-Inclusive Drinks: Cena kaiseki + Wagyu Reservado + Desayuno y bebidas incluidas, más acceso al salón de relajación. \nCheck-out a las 10:00, más temprano de lo habitual.",
           "tipo": "alojamiento",
           "titulo": "Takimikan, Ginzan Onsen",
           "inicio": "2026-12-04T15:00",
@@ -268,19 +268,26 @@
           "desde": {
             "nombre": "Shibuya Sky",
             "direccion": "",
-            "ciudad": "Tokio",
             "lat": null,
             "lon": null
           },
           "hasta": null,
           "precio": null,
           "pagado": false,
-          "detalles": {},
-          "notas": "SIN RESERVAR. Franja de las 15:40. Se agota: comprar online en cuanto se abra la venta.",
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
+          "notas": "SIN RESERVAR - Nota en el móvil para comprar\nFranja de las 15:40.",
           "tipo": "actividad",
           "titulo": "Shibuya Sky",
           "inicio": "2026-12-06T15:40",
-          "fin": ""
+          "fin": "",
+          "excluirGasto": false
         },
         {
           "id": "r-101",
@@ -290,7 +297,6 @@
           "desde": {
             "nombre": "TeamLab Planets",
             "direccion": "Toyosu",
-            "ciudad": "Tokio",
             "lat": 35.6497,
             "lon": 139.7906
           },
@@ -298,13 +304,19 @@
           "precio": null,
           "pagado": false,
           "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
             "direccion": "Toyosu"
           },
-          "notas": "SIN RESERVAR y sin hora todavía. Entrada con hora. Es lo que antes se agota. Se anda por el agua: pantalón corto o remangable.",
+          "notas": "SIN RESERVAR - Nota en el móvil para reservar",
           "tipo": "actividad",
           "titulo": "TeamLab Planets",
           "inicio": "2026-12-13",
-          "fin": ""
+          "fin": "",
+          "excluirGasto": false
         },
         {
           "id": "r-102",
@@ -336,7 +348,7 @@
             "personas": 0,
             "direccion": "4ª planta de la estación de Shinjuku"
           },
-          "notas": "SIN RESERVAR. Reservar en highwaybus.com. ~1h40 y unos 1.800 ¥ por trayecto y persona.",
+          "notas": "SIN RESERVAR. \nReservar en highwaybus.com. ~1h40",
           "tipo": "autobus",
           "titulo": "Bus Shinjuku → Gotemba (ida y vuelta)",
           "inicio": "2026-12-02T07:30",
