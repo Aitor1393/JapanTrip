@@ -1431,14 +1431,119 @@
         }
       ],
       "gastos": [],
-      "equipaje": [],
+      "equipaje": [
+        {
+          "nombre": "Pasaporte",
+          "grupo": "Documentos",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "9474d08c-2bd1-4b5f-a1f7-91615df4938c",
+          "creado": "2026-08-17T12:04:34.851Z"
+        },
+        {
+          "nombre": "Copia del pasaporte",
+          "grupo": "Documentos",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "e6e9a79c-94d0-4668-9b5f-ea765d7686cf",
+          "creado": "2026-08-17T12:04:34.852Z"
+        },
+        {
+          "nombre": "Seguro de viaje",
+          "grupo": "Documentos",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "3b4817fe-9f9c-49a9-abcd-15bd0f464f4c",
+          "creado": "2026-08-17T12:04:34.852Z"
+        },
+        {
+          "nombre": "Tarjetas de embarque",
+          "grupo": "Documentos",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "712739b4-4e30-4fc6-9310-151ab9b16a72",
+          "creado": "2026-08-17T12:04:34.854Z"
+        },
+        {
+          "nombre": "Japan Rail Pass o billetes",
+          "grupo": "Documentos",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "b351fdbc-9980-4ed7-9e71-ed4f5749a68d",
+          "creado": "2026-08-17T12:04:34.854Z"
+        },
+        {
+          "nombre": "Reservas de hotel impresas",
+          "grupo": "Documentos",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "6f849c6a-e7fa-450f-bb2d-0f1b10236fb6",
+          "creado": "2026-08-17T12:04:34.855Z"
+        },
+        {
+          "nombre": "Tarjeta de crédito sin comisiones",
+          "grupo": "Documentos",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "dc5f0228-e5af-4eb6-926b-3c88c2eba4d5",
+          "creado": "2026-08-17T12:04:34.856Z"
+        },
+        {
+          "nombre": "Yenes en efectivo",
+          "grupo": "Dinero y móvil",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "ab530316-df48-4d17-ab66-b242da2f2752",
+          "creado": "2026-08-17T12:04:34.856Z"
+        },
+        {
+          "nombre": "Tarjeta Suica o Pasmo",
+          "grupo": "Dinero y móvil",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "68bc508b-2a1c-46c5-a5a4-b7ea57c57884",
+          "creado": "2026-08-17T12:04:34.857Z"
+        },
+        {
+          "nombre": "eSIM o wifi de bolsillo",
+          "grupo": "Dinero y móvil",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "da8bef37-3e7a-412b-b069-ce9089683ca3",
+          "creado": "2026-08-17T12:04:34.857Z"
+        },
+        {
+          "nombre": "Adaptador de enchufe tipo A",
+          "grupo": "Dinero y móvil",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "ad187a4e-395d-4019-9aa0-d16a1df66076",
+          "creado": "2026-08-17T12:04:34.858Z"
+        },
+        {
+          "nombre": "Batería externa",
+          "grupo": "Dinero y móvil",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "915ee0f5-b72a-412e-acbf-ba843f8c7462",
+          "creado": "2026-08-17T12:04:34.858Z"
+        },
+        {
+          "nombre": "Cables de carga",
+          "grupo": "Dinero y móvil",
+          "cantidad": 1,
+          "hecho": false,
+          "id": "a39d7486-9ed7-4881-b02d-f5ddc75e8f70",
+          "creado": "2026-08-17T12:04:34.859Z"
+        }
+      ],
       "pendientes": [
         {
           "id": "p-103",
           "titulo": "Escribir a Takimikan (reserva 16498)",
           "grupo": "Ya — esta semana",
           "fecha": "",
-          "hecho": false,
+          "hecho": true,
           "notas": "Tres cosas: 1) reservar la lanzadera desde la estación de Ōishida y confirmar la hora; 2) confirmar que la habitación es del edificio principal y NO del anexo Bettei Takimitate, que está abajo junto a la cascada; 3) avisar de alergias o restricciones de dieta, que en kaiseki se gestionan al reservar, no el día de la cena."
         },
         {
@@ -1454,7 +1559,7 @@
           "titulo": "Reservar el tour del Fuji del 10 de diciembre",
           "grupo": "Ya — esta semana",
           "fecha": "",
-          "hecho": false,
+          "hecho": true,
           "notas": "13.000 ¥ por persona."
         },
         {
