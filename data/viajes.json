@@ -33,26 +33,35 @@
           "localizador": "",
           "desde": {
             "nombre": "Adolfo Suárez Madrid-Barajas (MAD)",
-            "codigo": "MAD",
-            "ciudad": "Madrid",
+            "direccion": "",
             "lat": 40.4936,
             "lon": -3.5668
           },
           "hasta": {
             "nombre": "Narita (NRT)",
-            "codigo": "NRT",
-            "ciudad": "Tokio",
+            "direccion": "",
             "lat": 35.7647,
             "lon": 140.3864
           },
-          "precio": null,
+          "precio": {
+            "cantidad": 1057.18,
+            "moneda": "EUR"
+          },
           "pagado": true,
-          "detalles": {},
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
           "notas": "Salida 20:20 CET, llegada 18:30 JST. Contad 60-75 min de inmigración y equipaje.",
           "tipo": "vuelo",
           "titulo": "Iberia · Madrid → Tokio Narita",
           "inicio": "2026-11-30T20:20",
-          "fin": "2026-12-01T18:30"
+          "fin": "2026-12-01T18:30",
+          "excluirGasto": false
         },
         {
           "id": "r-094",
@@ -61,26 +70,35 @@
           "localizador": "",
           "desde": {
             "nombre": "Narita (NRT)",
-            "codigo": "NRT",
-            "ciudad": "Tokio",
+            "direccion": "",
             "lat": 35.7647,
             "lon": 140.3864
           },
           "hasta": {
             "nombre": "Adolfo Suárez Madrid-Barajas (MAD)",
-            "codigo": "MAD",
-            "ciudad": "Madrid",
+            "direccion": "",
             "lat": 40.4936,
             "lon": -3.5668
           },
-          "precio": null,
+          "precio": {
+            "cantidad": 1057.14,
+            "moneda": "EUR"
+          },
           "pagado": true,
-          "detalles": {},
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
           "notas": "Salida 22:10 JST (14:10 hora española: es el mismo momento, Japón va 8 horas por delante en diciembre). Estar en Narita a las 19:30.",
           "tipo": "vuelo",
           "titulo": "Iberia · Tokio Narita → Madrid",
           "inicio": "2026-12-14T22:10",
-          "fin": "2026-12-15T05:45"
+          "fin": "2026-12-15T05:45",
+          "excluirGasto": false
         },
         {
           "id": "r-095",
