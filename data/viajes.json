@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "actualizado": "2026-08-14",
+  "actualizado": "2026-08-17",
   "viajeActivo": "tokio-2026",
   "viajes": [
     {
@@ -116,23 +116,29 @@
           "desde": {
             "nombre": "Daiwa Roynet Hotel Yamagata Ekimae",
             "direccion": "",
-            "ciudad": "Yamagata",
             "lat": 38.2473076,
             "lon": 140.329581
           },
           "hasta": null,
-          "precio": null,
+          "precio": {
+            "cantidad": 68.99,
+            "moneda": "EUR"
+          },
           "pagado": true,
           "detalles": {
-            "direccion": "",
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
             "personas": 0,
-            "noches": 1
+            "direccion": ""
           },
           "notas": "A dos minutos de la estación de Yamagata. Dejad allí las mochilas antes de subir a Yamadera.",
           "tipo": "alojamiento",
           "titulo": "Daiwa Roynet Hotel Yamagata Ekimae",
           "inicio": "2026-12-03T15:00",
-          "fin": "2026-12-04T11:00"
+          "fin": "2026-12-04T11:00",
+          "excluirGasto": false
         },
         {
           "id": "r-097",
@@ -142,24 +148,29 @@
           "desde": {
             "nombre": "Takimikan",
             "direccion": "Ginzan Onsen, Obanazawa, Yamagata",
-            "ciudad": "Ginzan Onsen",
             "lat": null,
             "lon": null
           },
           "hasta": null,
-          "precio": null,
+          "precio": {
+            "cantidad": 680.13,
+            "moneda": "EUR"
+          },
           "pagado": true,
           "detalles": {
-            "direccion": "Ginzan Onsen, Obanazawa, Yamagata",
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
             "habitacion": "Habitación japonesa",
             "personas": 0,
-            "noches": 1
+            "direccion": "Ginzan Onsen, Obanazawa, Yamagata"
           },
           "notas": "Plan \"Adult Retreat with Relaxation Lounge Access – Creative Kaiseki & All-Inclusive Drinks\". Cena kaiseki, desayuno y bebidas incluidas, más acceso al salón de relajación. Check-out a las 10:00, más temprano de lo habitual. Confirmar que la habitación es del edificio principal y NO del anexo Bettei Takimitate.",
           "tipo": "alojamiento",
           "titulo": "Takimikan, Ginzan Onsen",
           "inicio": "2026-12-04T15:00",
-          "fin": "2026-12-05T10:00"
+          "fin": "2026-12-05T10:00",
+          "excluirGasto": false
         },
         {
           "id": "r-098",
@@ -170,8 +181,8 @@
             "nombre": "Hotel Gracery Shinjuku",
             "direccion": "",
             "ciudad": "Tokio",
-            "lat": 35.6955627,
-            "lon": 139.7022767
+            "lat": null,
+            "lon": null
           },
           "hasta": null,
           "precio": null,
@@ -230,7 +241,7 @@
           "precio": null,
           "pagado": false,
           "detalles": {},
-          "notas": "SIN RESERVAR. Franja de las 15:40. Se agota: comprar online en cuanto se abra la venta. Anochece a las 16:30 y con el aire seco de diciembre se ve el Fuji desde arriba.",
+          "notas": "SIN RESERVAR. Franja de las 15:40. Se agota: comprar online en cuanto se abra la venta.",
           "tipo": "actividad",
           "titulo": "Shibuya Sky",
           "inicio": "2026-12-06T15:40",
@@ -285,7 +296,7 @@
           },
           "pagado": false,
           "detalles": {},
-          "notas": "SIN RESERVAR. Reservar en highwaybus.com. ~1h40 y unos 1.800 ¥ por trayecto y persona. Busta Shinjuku está en la 4ª planta de la estación. Salida hacia las 7:30-8:00; el outlet abre a las 10:00.",
+          "notas": "SIN RESERVAR. Reservar en highwaybus.com. ~1h40 y unos 1.800 ¥ por trayecto y persona.",
           "tipo": "autobus",
           "titulo": "Bus Shinjuku → Gotemba (ida y vuelta)",
           "inicio": "2026-12-02T07:30",
@@ -368,6 +379,16 @@
           "duracion": "",
           "lugar": "",
           "notas": "No forcéis, al día siguiente se madruga."
+        },
+        {
+          "id": "a-004",
+          "titulo": "Bus Busta Shinjuku → Gotemba Premium Outlets",
+          "fecha": "2026-12-02",
+          "hora": "07:30",
+          "tipo": "autobus",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Busta Shinjuku está en la 4ª planta de la estación. Unos 1h40 y ~1.800 ¥ por trayecto. Reservar en highwaybus.com. Salida hacia las 7:30-8:00; el outlet abre a las 10:00."
         },
         {
           "id": "a-005",
@@ -658,6 +679,16 @@
           "duracion": "",
           "lugar": "",
           "notas": "Cruce, Miyashita Park, Nintendo Tokyo (en Parco), Adidas —camisetas— y tiendas de deporte."
+        },
+        {
+          "id": "a-034",
+          "titulo": "Shibuya Sky",
+          "fecha": "2026-12-06",
+          "hora": "15:40",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "Anochece a las 16:30 y con el aire seco de diciembre se ve el Fuji. Se agota: comprar online."
         },
         {
           "id": "a-035",
@@ -1420,105 +1451,7 @@
           "notas": "Recepción del Gracery, o taquillas de la estación de Tokio para ganar media hora en el traslado a Narita."
         }
       ],
-      "notas": [],
-      "imagenesDia": {
-        "2026-11-30": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Barajas_terminal_4_panorama%2C_Madrid.jpg/1280px-Barajas_terminal_4_panorama%2C_Madrid.jpg",
-          "autor": "(aeropagitica)",
-          "licencia": "Public domain",
-          "fuente": "https://commons.wikimedia.org/wiki/File:Barajas_terminal_4_panorama,_Madrid.jpg"
-        },
-        "2026-12-01": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Narita_Nemzetk%C3%B6zi_Rep%C3%BCl%C5%91t%C3%A9r.jpg",
-          "autor": "Petra.G09",
-          "licencia": "CC BY-SA 4.0",
-          "fuente": "https://es.wikipedia.org/wiki/Aeropuerto%20Internacional%20de%20Narita"
-        },
-        "2026-12-02": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Gotemba_premium_outlets1.jpg/1280px-Gotemba_premium_outlets1.jpg",
-          "autor": "myself",
-          "licencia": "CC BY-SA 3.0",
-          "fuente": "https://en.wikipedia.org/wiki/Gotemba%20Premium%20Outlets"
-        },
-        "2026-12-03": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Risshaku-ji_Kaisan-do_201706b.jpg/1280px-Risshaku-ji_Kaisan-do_201706b.jpg",
-          "autor": "Tak1701d",
-          "licencia": "CC BY-SA 3.0",
-          "fuente": "https://en.wikipedia.org/wiki/Yama-dera"
-        },
-        "2026-12-04": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/%E9%8A%80%E5%B1%B1%E6%B8%A9%E6%B3%89_Ginzan_Onsen_%287809473788%29.jpg/1280px-%E9%8A%80%E5%B1%B1%E6%B8%A9%E6%B3%89_Ginzan_Onsen_%287809473788%29.jpg",
-          "autor": "ume-y",
-          "licencia": "CC BY 2.0",
-          "fuente": "https://en.wikipedia.org/wiki/Ginzan%20Onsen"
-        },
-        "2026-12-05": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/US_Air_Force_photo_170903-F-PM645-1558_An_aerial_view_of_Shinjuku%E2%80%99s_skyscraper_district_from_a_UH-1N_Iroquois.jpg/1280px-US_Air_Force_photo_170903-F-PM645-1558_An_aerial_view_of_Shinjuku%E2%80%99s_skyscraper_district_from_a_UH-1N_Iroquois.jpg",
-          "autor": "U.S. Air Force photo by Yasuo Osakabe",
-          "licencia": "Public domain",
-          "fuente": "https://es.wikipedia.org/wiki/Shinjuku"
-        },
-        "2026-12-06": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Shibuya_Crossing%2C_Aerial.jpg/1280px-Shibuya_Crossing%2C_Aerial.jpg",
-          "autor": "David Kernan",
-          "licencia": "CC BY 4.0",
-          "fuente": "https://en.wikipedia.org/wiki/Shibuya%20Crossing"
-        },
-        "2026-12-07": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Gotokuji.jpg/1280px-Gotokuji.jpg",
-          "autor": "Akonnchiroll",
-          "licencia": "CC BY-SA 4.0",
-          "fuente": "https://en.wikipedia.org/wiki/G%C5%8Dtoku-ji"
-        },
-        "2026-12-08": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PagodaNikkoJapan.JPG/1280px-PagodaNikkoJapan.JPG",
-          "autor": "No machine-readable author provided. Sergio~commonswiki assumed (based on copyright claims",
-          "licencia": "CC BY 2.5",
-          "fuente": "https://es.wikipedia.org/wiki/Nikk%C5%8D%20T%C5%8Dsh%C5%8D-g%C5%AB"
-        },
-        "2026-12-09": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sensoji_2023.jpg/1280px-Sensoji_2023.jpg",
-          "autor": "Akonnchiroll",
-          "licencia": "CC0",
-          "fuente": "https://es.wikipedia.org/wiki/Sens%C5%8D-ji"
-        },
-        "2026-12-10": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Chuurei-tou_Fujiyoshida_17025277650_c59733d6ba_o.jpg/1280px-Chuurei-tou_Fujiyoshida_17025277650_c59733d6ba_o.jpg",
-          "autor": "https://www.flickr.com/photos/reggiepen/",
-          "licencia": "CC BY 2.0",
-          "fuente": "https://en.wikipedia.org/wiki/Arakurayama%20Sengen%20Park"
-        },
-        "2026-12-11": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Roppongi_Hills_2013-12-01.jpg/1280px-Roppongi_Hills_2013-12-01.jpg",
-          "autor": "Shampoorobot at Japanese Wikipedia aka ja:User:A16504601",
-          "licencia": "CC BY-SA 3.0",
-          "fuente": "https://en.wikipedia.org/wiki/Roppongi%20Hills"
-        },
-        "2026-12-12": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Alley_in_Kawagoe.jpg/1280px-Alley_in_Kawagoe.jpg",
-          "autor": "Collin Grady",
-          "licencia": "CC BY-SA 2.0",
-          "fuente": "https://en.wikipedia.org/wiki/Kawagoe%2C%20Saitama"
-        },
-        "2026-12-13": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/2018_FCG_Headquarters_Building_2.jpg/1280px-2018_FCG_Headquarters_Building_2.jpg",
-          "autor": "Kakidai",
-          "licencia": "CC BY-SA 4.0",
-          "fuente": "https://es.wikipedia.org/wiki/Odaiba"
-        },
-        "2026-12-14": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/170312_Ginza_Tokyo_Japan01s3.jpg/1280px-170312_Ginza_Tokyo_Japan01s3.jpg",
-          "autor": "663highland",
-          "licencia": "CC BY-SA 4.0",
-          "fuente": "https://es.wikipedia.org/wiki/Ginza"
-        },
-        "2026-12-15": {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Barajas_terminal_4_panorama%2C_Madrid.jpg/1280px-Barajas_terminal_4_panorama%2C_Madrid.jpg",
-          "autor": "(aeropagitica)",
-          "licencia": "Public domain",
-          "fuente": "https://commons.wikimedia.org/wiki/File:Barajas_terminal_4_panorama,_Madrid.jpg"
-        }
-      }
+      "notas": []
     }
   ]
 }
