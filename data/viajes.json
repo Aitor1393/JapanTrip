@@ -90,23 +90,29 @@
           "desde": {
             "nombre": "Hotel Gracery Shinjuku",
             "direccion": "",
-            "ciudad": "Tokio",
             "lat": 35.6955627,
             "lon": 139.7022767
           },
           "hasta": null,
-          "precio": null,
-          "pagado": true,
-          "detalles": {
-            "direccion": "",
-            "personas": 0,
-            "noches": 2
+          "precio": {
+            "cantidad": 287.3,
+            "moneda": "EUR"
           },
-          "notas": "Noches del 1 y el 2 de diciembre. Misma reserva que la del 5 al 14: las maletas grandes se quedan en recepción durante la escapada.",
+          "pagado": false,
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
+          "notas": "PENDIENTE DE PAGO\nNoches del 1 y el 2 de diciembre. \nLas maletas grandes se quedan en recepción durante la escapada.",
           "tipo": "alojamiento",
           "titulo": "Hotel Gracery Shinjuku",
           "inicio": "2026-12-01T15:00",
-          "fin": "2026-12-03T11:00"
+          "fin": "2026-12-03T11:00",
+          "excluirGasto": false
         },
         {
           "id": "r-096",
@@ -180,23 +186,29 @@
           "desde": {
             "nombre": "Hotel Gracery Shinjuku",
             "direccion": "",
-            "ciudad": "Tokio",
             "lat": null,
             "lon": null
           },
           "hasta": null,
-          "precio": null,
-          "pagado": true,
-          "detalles": {
-            "direccion": "",
-            "personas": 0,
-            "noches": 9
+          "precio": {
+            "cantidad": 317138,
+            "moneda": "JPY"
           },
-          "notas": "Del 5 al 14 de diciembre. Sin takkyubin y sin cambio de hotel: las maletas se quedan en recepción durante la escapada a Yamagata.",
+          "pagado": false,
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
+          "notas": "PENDIENTE DE PAGO\nDel 5 al 14 de diciembre.",
           "tipo": "alojamiento",
           "titulo": "Hotel Gracery Shinjuku",
           "inicio": "2026-12-05T15:00",
-          "fin": "2026-12-14T11:00"
+          "fin": "2026-12-14T11:00",
+          "excluirGasto": false
         },
         {
           "id": "r-099",
