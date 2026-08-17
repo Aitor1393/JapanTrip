@@ -171,9 +171,9 @@
           "localizador": "16498",
           "desde": {
             "nombre": "Takimikan",
-            "direccion": "522 Ginzanshinhata, Obanazawa, Yamagata 999-4333, Japón",
-            "lat": null,
-            "lon": null
+            "direccion": "",
+            "lat": 38.5682672,
+            "lon": 140.5305336
           },
           "hasta": null,
           "precio": {
@@ -187,7 +187,7 @@
             "terminal": "",
             "habitacion": "Habitación japonesa",
             "personas": 0,
-            "direccion": "522 Ginzanshinhata, Obanazawa, Yamagata 999-4333, Japón"
+            "direccion": ""
           },
           "notas": "Plan Adult Retreat with Relaxation Lounge Access – Creative Kaiseki & All-Inclusive Drinks: Cena kaiseki + Wagyu Reservado + Desayuno y bebidas incluidas, más acceso al salón de relajación. \nCheck-out a las 10:00, más temprano de lo habitual.",
           "tipo": "alojamiento",
@@ -234,10 +234,10 @@
           "proveedor": "",
           "localizador": "",
           "desde": {
-            "nombre": "Estación de Mishima, salida norte",
+            "nombre": "Estación Mishima",
             "direccion": "",
-            "lat": null,
-            "lon": null
+            "lat": 35.1272,
+            "lon": 138.9106
           },
           "hasta": null,
           "precio": {
