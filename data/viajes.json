@@ -171,7 +171,7 @@
           "localizador": "16498",
           "desde": {
             "nombre": "Takimikan",
-            "direccion": "Ginzan Onsen, Obanazawa, Yamagata",
+            "direccion": "522 Ginzanshinhata, Obanazawa, Yamagata 999-4333, Japón",
             "lat": null,
             "lon": null
           },
@@ -187,7 +187,7 @@
             "terminal": "",
             "habitacion": "Habitación japonesa",
             "personas": 0,
-            "direccion": "Ginzan Onsen, Obanazawa, Yamagata"
+            "direccion": "522 Ginzanshinhata, Obanazawa, Yamagata 999-4333, Japón"
           },
           "notas": "Plan Adult Retreat with Relaxation Lounge Access – Creative Kaiseki & All-Inclusive Drinks: Cena kaiseki + Wagyu Reservado + Desayuno y bebidas incluidas, más acceso al salón de relajación. \nCheck-out a las 10:00, más temprano de lo habitual.",
           "tipo": "alojamiento",
@@ -204,8 +204,8 @@
           "desde": {
             "nombre": "Hotel Gracery Shinjuku",
             "direccion": "",
-            "lat": null,
-            "lon": null
+            "lat": 35.6955627,
+            "lon": 139.7022767
           },
           "hasta": null,
           "precio": {
