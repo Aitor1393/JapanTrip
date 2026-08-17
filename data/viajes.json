@@ -342,6 +342,146 @@
           "inicio": "2026-12-02T07:30",
           "fin": "",
           "excluirGasto": false
+        },
+        {
+          "tipo": "tren",
+          "estado": "pendiente",
+          "titulo": "Tren Tokio a Yamagata",
+          "proveedor": "",
+          "localizador": "",
+          "inicio": "2026-12-03",
+          "fin": "2026-12-03",
+          "precio": null,
+          "pagado": false,
+          "excluirGasto": false,
+          "desde": {
+            "nombre": "Shinjuku",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": {
+            "nombre": "Yamagata",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
+          "notas": "POR RESERVAR",
+          "id": "6fbd17e9-c051-4753-bf88-1a43fec0a4e0",
+          "creado": "2026-08-17T11:56:52.788Z"
+        },
+        {
+          "tipo": "tren",
+          "estado": "pendiente",
+          "titulo": "Tren Yamagata a Ginzan Onsen",
+          "proveedor": "",
+          "localizador": "",
+          "inicio": "2026-12-04",
+          "fin": "2026-12-04",
+          "precio": null,
+          "pagado": false,
+          "excluirGasto": false,
+          "desde": {
+            "nombre": "Yamagata",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": {
+            "nombre": "Ginzan Onsen",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
+          "notas": "PENDIENTE RESERVAR",
+          "id": "ab55338b-f869-4023-98d0-3fa141f6b5d4",
+          "creado": "2026-08-17T11:58:22.390Z"
+        },
+        {
+          "tipo": "tren",
+          "estado": "pendiente",
+          "titulo": "Tren Ginzan Onsen a Tokio",
+          "proveedor": "",
+          "localizador": "",
+          "inicio": "2026-12-05",
+          "fin": "2026-12-05",
+          "precio": null,
+          "pagado": false,
+          "excluirGasto": false,
+          "desde": {
+            "nombre": "Ginzan Onsen",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": {
+            "nombre": "Tokio",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
+          "notas": "",
+          "id": "5cb0fae1-24f5-4828-81c9-46eb365623b7",
+          "creado": "2026-08-17T11:59:53.959Z"
+        },
+        {
+          "tipo": "tren",
+          "estado": "pendiente",
+          "titulo": "Tren Shinjuku a Kawagoe",
+          "proveedor": "",
+          "localizador": "",
+          "inicio": "2026-12-12",
+          "fin": "2026-12-12",
+          "precio": null,
+          "pagado": false,
+          "excluirGasto": false,
+          "desde": {
+            "nombre": "Shinjuku",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "hasta": {
+            "nombre": "Hon-Kawagoe",
+            "direccion": "",
+            "lat": null,
+            "lon": null
+          },
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
+          },
+          "notas": "",
+          "id": "ec0c7f30-6091-48a1-9522-3fcc9dd4eea9",
+          "creado": "2026-08-17T12:02:56.787Z"
         }
       ],
       "lugares": [
@@ -355,28 +495,6 @@
           "lon": null,
           "visitado": false,
           "notas": "A 30 min desde Shibuya."
-        },
-        {
-          "id": "l-126",
-          "nombre": "Partido de la B.League",
-          "ciudad": "Tokio",
-          "categoria": "otro",
-          "direccion": "",
-          "lat": null,
-          "lon": null,
-          "visitado": false,
-          "notas": "Alvark Tokyo y Sunrockers Shibuya juegan en casa en diciembre. Entrada normal desde unos 3.000 ¥."
-        },
-        {
-          "id": "l-127",
-          "nombre": "Partido de la J1 League",
-          "ciudad": "Tokio",
-          "categoria": "otro",
-          "direccion": "",
-          "lat": null,
-          "lon": null,
-          "visitado": false,
-          "notas": "Con el cambio a calendario de otoño-primavera puede haber jornada antes del parón invernal. Mirad el fixture del FC Tokyo cuando salga."
         },
         {
           "id": "l-128",
