@@ -236,24 +236,29 @@
           "desde": {
             "nombre": "Estación de Mishima, salida norte",
             "direccion": "",
-            "ciudad": "Mishima",
             "lat": null,
             "lon": null
           },
           "hasta": null,
           "precio": {
-            "cantidad": 13000,
+            "cantidad": 26000,
             "moneda": "JPY"
           },
           "pagado": false,
           "detalles": {
-            "direccion": "Salida norte de la estación de Mishima"
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": ""
           },
-          "notas": "SIN RESERVAR. Punto de encuentro a las 8:20. Unas 9 horas, guía en español, grupo de 2 a 13 personas. 13.000 ¥ POR PERSONA, entradas incluidas: el precio apuntado es el de una sola persona, ajustadlo. Termina en Shin-Fuji, a 60 min de Tokio en Shinkansen.",
+          "notas": "RESERVADO Y PAGAR EN EFECTIVO\nPunto de encuentro a las 8:20. Unas 9 horas, guía en español, grupo de 2 a 13 personas. 13.000 ¥ POR PERSONA (entradas incluida) . Termina en Shin-Fuji, a 60 min de Tokio en Shinkansen.",
           "tipo": "actividad",
           "titulo": "Tour del Fuji en español",
           "inicio": "2026-12-10T08:20",
-          "fin": "2026-12-10T17:20"
+          "fin": "2026-12-10T17:20",
+          "excluirGasto": false
         },
         {
           "id": "r-100",
@@ -309,14 +314,12 @@
           "desde": {
             "nombre": "Busta Shinjuku",
             "direccion": "4ª planta de la estación de Shinjuku",
-            "ciudad": "Tokio",
             "lat": null,
             "lon": null
           },
           "hasta": {
             "nombre": "Gotemba Premium Outlets",
             "direccion": "",
-            "ciudad": "Gotemba",
             "lat": null,
             "lon": null
           },
@@ -325,12 +328,20 @@
             "moneda": "JPY"
           },
           "pagado": false,
-          "detalles": {},
+          "detalles": {
+            "asiento": "",
+            "coche": "",
+            "terminal": "",
+            "habitacion": "",
+            "personas": 0,
+            "direccion": "4ª planta de la estación de Shinjuku"
+          },
           "notas": "SIN RESERVAR. Reservar en highwaybus.com. ~1h40 y unos 1.800 ¥ por trayecto y persona.",
           "tipo": "autobus",
           "titulo": "Bus Shinjuku → Gotemba (ida y vuelta)",
           "inicio": "2026-12-02T07:30",
-          "fin": ""
+          "fin": "",
+          "excluirGasto": false
         }
       ],
       "lugares": [
