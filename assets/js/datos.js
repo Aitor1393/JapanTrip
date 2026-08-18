@@ -422,6 +422,113 @@
     })[0] || null;
   };
 
+  /* ---------- Repartir lugares por días según dónde caen ---------- */
+
+  /**
+   * Zonas que toca un día, y los puntos que ya tiene situados.
+   * Las zonas salen del texto de lo planificado (el itinerario dice
+   * «Harajuku», «Asakusa»…) y también de las coordenadas de las reservas.
+   */
+  function perfilDelDia(dia, idViaje) {
+    var v = D.viaje(idViaje);
+    var textos = [];
+    var puntos = [];
+
+    v.actividades.forEach(function (a) {
+      if (a.fecha !== dia) return;
+      textos.push([a.titulo, a.lugar, a.notas].filter(Boolean).join(' '));
+    });
+
+    v.reservas.forEach(function (r) {
+      if (r.estado === 'cancelada') return;
+      var toca = U.soloDia(r.inicio) === dia || (r.fin && U.soloDia(r.fin) === dia);
+      if (!toca) return;
+      // El alojamiento dice dónde duermes, no lo que visitas ese día: cuenta
+      // como punto para desempatar, pero no marca la zona del día.
+      var esCama = D.tipo(r.tipo).estancia;
+      if (!esCama) textos.push([r.titulo, r.notas].filter(Boolean).join(' '));
+      [r.desde, r.hasta].forEach(function (l) {
+        if (l && typeof l.lat === 'number') puntos.push({ lat: l.lat, lon: l.lon, cama: esCama });
+      });
+    });
+
+    var zonas = {};
+    var total = 0;
+    textos.forEach(function (t) {
+      CAT.zonasEnTexto(t).forEach(function (z) {
+        zonas[z] = (zonas[z] || 0) + 1;
+        total++;
+      });
+    });
+
+    return { zonas: zonas, menciones: total, puntos: puntos, planes: textos.length };
+  }
+
+  /**
+   * Propone el día que mejor le cuadra a un punto.
+   *
+   * Primero por zona: si el día ya va a Shibuya y el sitio está en Shibuya,
+   * ese es. Si empatan varios días, gana el que menos cosas tenga, para no
+   * cargar siempre el mismo. Si ninguna zona cuadra, se mira la distancia a
+   * lo que ya está situado, y solo se acepta si cae razonablemente cerca.
+   *
+   * @returns {{dia: string, motivo: string, confianza: string}|null}
+   */
+  D.sugerirDia = function (lat, lon, idViaje) {
+    if (typeof lat !== 'number' || typeof lon !== 'number') return null;
+    var dias = D.diasViaje(idViaje);
+    if (!dias.length) return null;
+
+    var zona = CAT.zonaDe(lat, lon);
+    var perfiles = dias.map(function (d) { return { dia: d, perfil: perfilDelDia(d, idViaje) }; });
+
+    if (zona) {
+      var candidatos = perfiles.filter(function (p) { return p.perfil.zonas[zona]; });
+      if (candidatos.length) {
+        // No basta con cuántas veces se nombra la zona, sino cuánto pesa en
+        // ese día. El día de Nikko nombra Asakusa tres veces, pero solo para
+        // coger el tren: ese día va de Nikko. El día siguiente la nombra
+        // menos y no habla de otra cosa, y es el que toca.
+        function peso(p) {
+          return p.perfil.menciones ? p.perfil.zonas[zona] / p.perfil.menciones : 0;
+        }
+        candidatos.sort(function (a, b) {
+          return (peso(b) - peso(a)) ||
+                 (b.perfil.zonas[zona] - a.perfil.zonas[zona]) ||
+                 (a.perfil.planes - b.perfil.planes);
+        });
+        var elegido = candidatos[0];
+        return {
+          dia: elegido.dia,
+          motivo: 'está en ' + zona + ', y ese día ya vas por ahí',
+          confianza: peso(elegido) >= 0.34 ? 'alta' : 'media'
+        };
+      }
+    }
+
+    // Sin zona en común: lo más cerca de algo ya situado ese día.
+    var mejor = null;
+    perfiles.forEach(function (p) {
+      p.perfil.puntos.forEach(function (pt) {
+        if (pt.cama) return;   // dormir cerca no significa visitar ese día
+        var d = CAT.distanciaKm(lat, lon, pt.lat, pt.lon);
+        if (!mejor || d < mejor.km) mejor = { dia: p.dia, km: d };
+      });
+    });
+    if (mejor && mejor.km <= 6) {
+      return {
+        dia: mejor.dia,
+        motivo: 'a ' + (mejor.km < 1 ? 'menos de 1 km' : Math.round(mejor.km) + ' km') +
+          ' de algo que ya tienes ese día',
+        confianza: mejor.km <= 2 ? 'media' : 'baja'
+      };
+    }
+
+    return zona
+      ? { dia: '', motivo: 'está en ' + zona + ', pero no hay ningún día por esa zona', confianza: 'ninguna' }
+      : null;
+  };
+
   /** La siguiente reserva a partir de ahora (para el resumen). */
   D.proximaReserva = function (idViaje) {
     var v = D.viaje(idViaje);

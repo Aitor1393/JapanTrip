@@ -48,7 +48,23 @@ También se puede pegar la dirección de cualquier imagen a mano.
 
 **Lugares.** La lista de lo que quieres ver, agrupada por ciudad, con
 categorías y un catálogo de sugerencias de Japón con las coordenadas ya
-puestas. Cualquier lugar se manda al itinerario al día que elijas.
+puestas.
+
+Con **Pegar una lista** se vuelca una lista entera de golpe: un sitio por
+línea, se buscan sus coordenadas en OpenStreetMap y se enseña lo encontrado
+para revisarlo. Es la forma de traerse una lista guardada de Google Maps, que
+desde fuera no se puede leer de ninguna otra manera (la página se monta con
+JavaScript y no hay API pública para las listas de un usuario).
+
+**Repartir por días** propone a qué día va cada sitio **según dónde cae**. No
+mira solo la distancia: reparte Tokio en zonas —Shibuya, Asakusa, Ikebukuro,
+Kawagoe, Nikko…— mira en cuál cae el sitio y busca el día que va por esa
+zona. Y pesa cuánto habla el día de esa zona, no cuántas veces la nombra: el
+día de Nikko menciona Asakusa tres veces, pero solo para coger el tren, así
+que el Senso-ji se va al día siguiente, que es el que de verdad va a Asakusa.
+Si un sitio cae fuera de todas las zonas, se mira la distancia a lo que ya
+tengas situado ese día, y si tampoco cuadra lo dice en vez de colocarlo a
+ojo. Todo lo propuesto se puede cambiar antes de aceptar.
 
 **Mapa.** Todo lo que tenga coordenadas, sobre OpenStreetMap. Lo que no las
 tenga sale en una lista aparte con un botón para buscarlas por la dirección.

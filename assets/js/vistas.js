@@ -561,14 +561,16 @@
       var html = '<div class="vista__cabecera">' +
         '<div class="crece"><h1>Lugares</h1>' +
         '<p>Lo que quieres ver, con o sin fecha todavía</p></div>' +
-        boton('nuevo-lugar', '+ Añadir lugar', 'btn--primario') +
+        boton('importar-lugares', '📋 Pegar una lista', 'btn--primario') +
+        boton('repartir-lugares', '🗓️ Repartir por días', '') +
+        boton('nuevo-lugar', '+ Añadir', '') +
         boton('sugerencias', '✨ Sugerencias', '') +
         '</div>';
 
       if (!viaje.lugares.length) {
         return html + vacio('📍', 'Aún no has guardado ningún sitio',
-          'Ve apuntando lo que te apetezca ver y luego lo repartes por días en el itinerario.',
-          boton('sugerencias', '✨ Ver sugerencias de Japón', 'btn--primario'));
+          'Pega una lista de sitios y se buscan sus coordenadas solas, o empieza por las sugerencias.',
+          boton('importar-lugares', '📋 Pegar una lista', 'btn--primario'));
       }
 
       html += '<div class="barra-busqueda">' +

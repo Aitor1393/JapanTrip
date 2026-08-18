@@ -590,12 +590,22 @@
       return;
     }
 
+    var sugerencia = D.sugerirDia(l.lat, l.lon, viaje.id);
+    var porDefecto = (sugerencia && sugerencia.dia) || dias[0];
+
     var html = '<h2>Añadir al itinerario</h2>' +
       '<p class="apagado">' + U.esc(l.nombre) + '</p>' +
-      selector('Día', 'fecha', dias[0], dias.map(function (d, i) {
+      (sugerencia && sugerencia.dia
+        ? '<div class="sugerido">📍 Sugerido el <strong>' + U.esc(U.fechaCorta(sugerencia.dia)) +
+          '</strong>: ' + U.esc(sugerencia.motivo) + '.</div>'
+        : sugerencia
+          ? '<div class="avisos">' + U.esc(U.mayus1(sugerencia.motivo)) + '. Elige tú el día.</div>'
+          : '') +
+      selector('Día', 'fecha', porDefecto, dias.map(function (d, i) {
         return { valor: d, texto: 'Día ' + (i + 1) + ' · ' + U.mayus1(U.fechaDia(d)) };
       })) +
       campo('Hora (opcional)', 'hora', '', 'time') +
+      '<div class="campo__ayuda">Sin hora va a «Para ver ese día», con casilla para ir tachando.</div>' +
       botones('Añadir al itinerario');
 
     montar(html, function (datos) {
@@ -607,6 +617,222 @@
       U.aviso('Añadido al día ' + U.fechaCorta(datos.fecha) + '.', 'ok');
       App.pintar();
     });
+  };
+
+  /* ══════════════════════════════════════════════════════════
+     Importar una lista de lugares
+     ══════════════════════════════════════════════════════════ */
+
+  /**
+   * Pega una lista de sitios (uno por línea) y los busca en OpenStreetMap.
+   * Sirve para volcar una lista guardada de Google Maps: allí no hay forma
+   * de sacar los datos desde fuera, pero los nombres se copian y pegan.
+   */
+  F.importarLugares = function () {
+    var html = '<h2>Importar una lista de lugares</h2>' +
+      '<p class="apagado">Un sitio por línea. Se buscan en OpenStreetMap para sacar sus ' +
+      'coordenadas y luego se pueden repartir por días. Si un nombre es muy genérico, ' +
+      'añade la ciudad: <em>Nishiki Market, Kioto</em>.</p>' +
+      '<label class="campo"><span>Lista</span>' +
+      '<textarea name="lista" rows="10" placeholder="Senso-ji&#10;Cruce de Shibuya&#10;teamLab Planets&#10;Nakano Broadway"></textarea></label>' +
+      '<div class="campo__doble">' +
+      campo('Añadir a la ciudad', 'ciudad', 'Tokio', 'text', ' placeholder="Tokio"') +
+      selector('Categoría', 'categoria', 'imprescindible', Object.keys(D.CATEGORIAS_LUGAR).map(function (k) {
+        return { valor: k, texto: D.CATEGORIAS_LUGAR[k].icono + ' ' + D.CATEGORIAS_LUGAR[k].etiqueta };
+      })) +
+      '</div>' +
+      '<div class="campo__ayuda">La ciudad se usa para afinar la búsqueda y para agrupar la lista.</div>' +
+      '<div id="progresoImport"></div>' +
+      botones('Buscar los sitios');
+
+    var form = montar(html, function (datos, f) {
+      var nombres = datos.lista.split('\n')
+        .map(function (l) { return l.replace(/^\s*[-*•\d.)\s]+/, '').trim(); })
+        .filter(function (l) { return l.length > 1; });
+      if (!nombres.length) { U.aviso('Pega antes la lista.', 'error'); return; }
+
+      var boton = U.$('button[type="submit"]', f);
+      var progreso = U.$('#progresoImport', f);
+      boton.disabled = true;
+
+      var resultados = [];
+      var i = 0;
+
+      // Nominatim pide no bombardearlo: uno por segundo y de uno en uno.
+      function siguiente() {
+        if (i >= nombres.length) {
+          U.cerrarModal();
+          F.revisarLugares(resultados, datos.ciudad, datos.categoria);
+          return;
+        }
+        var nombre = nombres[i];
+        progreso.innerHTML = '<p class="apagado">Buscando ' + (i + 1) + ' de ' +
+          nombres.length + ': ' + U.esc(nombre) + '…</p>';
+        // La ciudad se añade solo si el nombre no la lleva ya: buscar
+        // «Tokio, Tokio» estrecha el resultado hasta no encontrar nada.
+        var yaLleva = datos.ciudad &&
+          U.normalizar(nombre).indexOf(U.normalizar(datos.ciudad)) !== -1;
+        var consulta = (datos.ciudad && !yaLleva) ? nombre + ', ' + datos.ciudad : nombre;
+        M.geocodificar(consulta)
+          .then(function (c) {
+            resultados.push({ nombre: nombre, lat: c.lat, lon: c.lon, encontrado: c.nombre });
+          })
+          .catch(function () {
+            resultados.push({ nombre: nombre, lat: null, lon: null, encontrado: '' });
+          })
+          .then(function () {
+            i++;
+            setTimeout(siguiente, 1100);
+          });
+      }
+      siguiente();
+    }, 'ancha');
+
+    return form;
+  };
+
+  /** Revisión de lo encontrado, con el día que le tocaría a cada uno. */
+  F.revisarLugares = function (resultados, ciudad, categoria) {
+    var viaje = D.activo();
+    var dias = D.diasViaje(viaje.id);
+
+    var opcionesDia = [{ valor: '', texto: '— sin día —' }].concat(dias.map(function (d, i) {
+      return { valor: d, texto: 'Día ' + (i + 1) + ' · ' + U.fechaCorta(d) };
+    }));
+
+    var encontrados = resultados.filter(function (r) { return r.lat !== null; }).length;
+
+    var html = '<h2>Revisa la lista</h2>' +
+      '<div class="analisis">' +
+      '<span class="chip chip--' + (encontrados === resultados.length ? 'verde' : 'ambar') + '">' +
+      encontrados + ' de ' + resultados.length + ' localizados</span>' +
+      '<span class="apagado">Los que no se han encontrado se guardan igual, sin punto en el mapa.</span>' +
+      '</div>' +
+      '<div class="lista-import">';
+
+    resultados.forEach(function (r, i) {
+      var sug = r.lat !== null ? D.sugerirDia(r.lat, r.lon, viaje.id) : null;
+      var zona = r.lat !== null ? CAT.zonaDe(r.lat, r.lon) : null;
+      html += '<div class="import-fila">' +
+        '<label class="import-fila__usar">' +
+        '<input type="checkbox" name="usar' + i + '" checked></label>' +
+        '<div class="crece">' +
+        '<input type="text" name="nombre' + i + '" value="' + U.esc(r.nombre) + '" class="import-fila__nombre">' +
+        '<div class="import-fila__meta">' +
+        (r.lat !== null
+          ? '📍 ' + (zona ? U.esc(zona) : U.esc(U.recortar(r.encontrado, 60)))
+          : '<span class="etiqueta etiqueta--ambar">sin localizar</span>') +
+        (sug && sug.dia ? ' · <span class="apagado">' + U.esc(sug.motivo) + '</span>' : '') +
+        '</div></div>' +
+        selector('', 'dia' + i, (sug && sug.dia) || '', opcionesDia) +
+        '</div>';
+    });
+
+    html += '</div>' +
+      '<div class="campo__ayuda">Los que lleven día se añaden también al itinerario, ' +
+      'en «Para ver ese día».</div>' +
+      botones('Añadir todo');
+
+    montar(html, function (datos) {
+      var lugares = 0, planes = 0;
+      resultados.forEach(function (r, i) {
+        if (!datos['usar' + i]) return;
+        var nombre = datos['nombre' + i] || r.nombre;
+        var lugar = D.lugares.anadir({
+          nombre: nombre, ciudad: ciudad || '', categoria: categoria,
+          direccion: '', lat: r.lat, lon: r.lon, visitado: false,
+          notas: r.encontrado ? 'Encontrado como: ' + r.encontrado : ''
+        });
+        lugares++;
+        var dia = datos['dia' + i];
+        if (dia) {
+          D.actividades.anadir({
+            titulo: nombre, fecha: dia, hora: '', tipo: 'actividad',
+            lugar: ciudad || '', notas: '', idLugar: lugar.id
+          });
+          planes++;
+        }
+      });
+      U.cerrarModal();
+      U.aviso(U.plural(lugares, 'lugar', 'lugares') + ' añadido' + (lugares === 1 ? '' : 's') +
+        (planes ? ', ' + planes + ' al itinerario' : '') + '.', 'ok');
+      App.pintar();
+    }, 'ancha');
+  };
+
+  /** Reparte por días los lugares que ya tienes situados y sin planificar. */
+  F.repartirLugares = function () {
+    var viaje = D.activo();
+    var dias = D.diasViaje(viaje.id);
+    if (!dias.length) { U.aviso('El viaje no tiene fechas todavía.', 'error'); return; }
+
+    var yaEnItinerario = {};
+    viaje.actividades.forEach(function (a) { if (a.idLugar) yaEnItinerario[a.idLugar] = true; });
+
+    var pendientes = viaje.lugares.filter(function (l) {
+      return typeof l.lat === 'number' && !yaEnItinerario[l.id] && !l.visitado;
+    });
+
+    if (!pendientes.length) {
+      U.abrirModal('<h2>Nada que repartir</h2>' +
+        '<p class="apagado">Todos tus lugares situados en el mapa ya están en el itinerario, ' +
+        'o no tienen coordenadas. Los que falten por situar están en Mapa → Sin situar.</p>' +
+        '<div class="formulario__botones"><button class="btn" data-cerrar-modal>Cerrar</button></div>');
+      return;
+    }
+
+    var opcionesDia = [{ valor: '', texto: '— no añadir —' }].concat(dias.map(function (d, i) {
+      return { valor: d, texto: 'Día ' + (i + 1) + ' · ' + U.fechaCorta(d) };
+    }));
+
+    var conDia = 0;
+    var filas = pendientes.map(function (l) {
+      var sug = D.sugerirDia(l.lat, l.lon, viaje.id);
+      if (sug && sug.dia) conDia++;
+      return { lugar: l, sug: sug, zona: CAT.zonaDe(l.lat, l.lon) };
+    });
+
+    var html = '<h2>Repartir por días</h2>' +
+      '<div class="analisis">' +
+      '<span class="chip chip--' + (conDia ? 'verde' : 'ambar') + '">' +
+      conDia + ' de ' + filas.length + ' con día propuesto</span>' +
+      '<span class="apagado">Por la zona en la que caen y lo que ya hay planificado.</span>' +
+      '</div>' +
+      '<div class="lista-import">';
+
+    filas.forEach(function (f, i) {
+      html += '<div class="import-fila">' +
+        '<label class="import-fila__usar"><input type="checkbox" name="usar' + i + '"' +
+        (f.sug && f.sug.dia ? ' checked' : '') + '></label>' +
+        '<div class="crece">' +
+        '<div class="import-fila__nombre import-fila__nombre--fijo">' + U.esc(f.lugar.nombre) + '</div>' +
+        '<div class="import-fila__meta">' +
+        (f.zona ? '📍 ' + U.esc(f.zona) : '<span class="apagado">fuera de las zonas conocidas</span>') +
+        (f.sug ? ' · <span class="apagado">' + U.esc(f.sug.motivo) + '</span>' : '') +
+        '</div></div>' +
+        selector('', 'dia' + i, (f.sug && f.sug.dia) || '', opcionesDia) +
+        '</div>';
+    });
+
+    html += '</div>' + botones('Añadir al itinerario');
+
+    montar(html, function (datos) {
+      var n = 0;
+      filas.forEach(function (f, i) {
+        if (!datos['usar' + i]) return;
+        var dia = datos['dia' + i];
+        if (!dia) return;
+        D.actividades.anadir({
+          titulo: f.lugar.nombre, fecha: dia, hora: '', tipo: 'actividad',
+          lugar: f.lugar.ciudad || '', notas: f.lugar.notas || '', idLugar: f.lugar.id
+        });
+        n++;
+      });
+      U.cerrarModal();
+      U.aviso(n ? U.plural(n, 'lugar', 'lugares') + ' repartido' + (n === 1 ? '' : 's') + '.'
+        : 'No has marcado ninguno.', n ? 'ok' : 'error');
+      App.pintar();
+    }, 'ancha');
   };
 
   /* ══════════════════════════════════════════════════════════

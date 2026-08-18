@@ -255,6 +255,8 @@
     'nuevo-lugar': function () { F.lugar(); },
     'editar-lugar': function (el) { F.lugar(el.getAttribute('data-id')); },
     'sugerencias': function () { F.sugerencias(); },
+    'importar-lugares': function () { F.importarLugares(); },
+    'repartir-lugares': function () { F.repartirLugares(); },
     'lugar-al-itinerario': function (el) { F.lugarAlItinerario(el.getAttribute('data-id')); },
     'visitado': function (el) {
       var id = el.getAttribute('data-id');

@@ -194,6 +194,105 @@
     'narita express': 'Narita Express', nex: 'Narita Express'
   };
 
+  /* ---------- Zonas ----------
+     Para colocar un sitio en el día que toca hace falta saber en qué barrio
+     cae. Cada zona es un centro y un radio en kilómetros: no son los límites
+     administrativos, sino el trozo de ciudad que uno recorre andando de una
+     vez. Los alias son como se escriben en el itinerario.                   */
+  /* nombre: [lat, lon, radio km, alias…] */
+  var ZONAS = {
+    'Shinjuku':        [35.6896, 139.7006, 1.6, 'shinjuku', 'kabukicho', 'omoide yokocho', 'golden gai', 'busta'],
+    'Harajuku':        [35.6702, 139.7027, 1.1, 'harajuku', 'omotesando', 'takeshita', 'meiji', 'yoyogi', 'cat street'],
+    'Shibuya':         [35.6595, 139.7005, 1.3, 'shibuya', 'miyashita', 'dogenzaka'],
+    'Daikanyama':      [35.6486, 139.7030, 0.9, 'daikanyama'],
+    'Nakameguro':      [35.6440, 139.6990, 0.9, 'nakameguro', 'naka-meguro'],
+    'Ebisu':           [35.6467, 139.7100, 0.9, 'ebisu'],
+    'Ginza':           [35.6717, 139.7650, 1.1, 'ginza', 'itoya', 'ginza six'],
+    'Tsukiji':         [35.6654, 139.7707, 0.9, 'tsukiji', 'hamarikyu'],
+    'Nihonbashi':      [35.6833, 139.7745, 0.9, 'nihonbashi'],
+    'Estación de Tokio': [35.6812, 139.7671, 1.0, 'estacion de tokio', 'marunouchi', 'character street'],
+    'Asakusa':         [35.7148, 139.7967, 1.3, 'asakusa', 'sensoji', 'senso-ji', 'nakamise'],
+    'Skytree':         [35.7101, 139.8107, 1.1, 'skytree', 'solamachi', 'oshiage', 'sumida'],
+    'Akihabara':       [35.6984, 139.7731, 1.0, 'akihabara', 'akiba'],
+    'Ueno':            [35.7138, 139.7770, 1.3, 'ueno', 'ameyoko'],
+    'Yanaka':          [35.7276, 139.7657, 1.1, 'yanaka', 'nezu'],
+    'Ikebukuro':       [35.7295, 139.7109, 1.4, 'ikebukuro', 'sunshine', 'otome road', 'animate', 'nishiguchi'],
+    'Roppongi':        [35.6627, 139.7314, 1.8, 'roppongi', 'keyakizaka', 'midtown', 'azabu', 'torre de tokio', 'tokyo tower', 'shiba'],
+    'Odaiba':          [35.6297, 139.7756, 2.2, 'odaiba', 'divercity', 'gundam', 'rainbow bridge'],
+    'Toyosu':          [35.6548, 139.7967, 1.6, 'toyosu', 'teamlab', 'senkyaku'],
+    'Nakano':          [35.7057, 139.6659, 1.1, 'nakano', 'broadway'],
+    'Koenji':          [35.7053, 139.6497, 1.1, 'koenji', 'pal shotengai', 'barikote'],
+    'Shimokitazawa':   [35.6613, 139.6680, 1.0, 'shimokitazawa', 'shimokita'],
+    'Setagaya':        [35.6462, 139.6486, 1.2, 'gotokuji', 'gotoku-ji', 'miyanosaka', 'sangenjaya'],
+    'Shinagawa':       [35.6285, 139.7387, 1.3, 'shinagawa'],
+    'Kichijoji':       [35.7030, 139.5797, 1.4, 'kichijoji', 'inokashira'],
+    'Mitaka':          [35.6962, 139.5704, 1.6, 'mitaka', 'ghibli'],
+    'Meguro':          [35.6339, 139.7156, 1.1, 'meguro'],
+    'Jimbocho':        [35.6960, 139.7570, 0.9, 'jimbocho', 'ochanomizu'],
+    'Ryogoku':         [35.6960, 139.7930, 1.0, 'ryogoku'],
+    'Kagurazaka':      [35.7018, 139.7400, 0.9, 'kagurazaka'],
+    'Yokohama':        [35.4658, 139.6223, 4.5, 'yokohama', 'minato mirai', 'chinatown'],
+    'Kawagoe':         [35.9251, 139.4858, 3.5, 'kawagoe', 'kurazukuri', 'toki no kane', 'kitain', 'kashiya'],
+    'Nikko':           [36.7500, 139.6000, 12.0, 'nikko', 'toshogu', 'rinnoji', 'futarasan', 'shinkyo'],
+    'Chuzenji':        [36.7333, 139.4833, 5.0, 'chuzenji', 'kegon', 'irohazaka'],
+    'Gotemba':         [35.3086, 138.9350, 5.0, 'gotemba', 'toki no sumika'],
+    'Lagos del Fuji':  [35.5100, 138.7600, 13.0, 'kawaguchiko', 'chureito', 'oshino', 'shiraito', 'aokigahara', 'sengen'],
+    'Mishima':         [35.1264, 138.9110, 3.0, 'mishima', 'shin-fuji'],
+    'Hakone':          [35.2320, 139.1070, 8.0, 'hakone', 'ashi'],
+    'Kamakura':        [35.3190, 139.5500, 4.5, 'kamakura', 'enoshima'],
+    'Yamagata':        [38.2404, 140.3300, 3.0, 'yamagata'],
+    'Yamadera':        [38.3130, 140.4370, 2.0, 'yamadera', 'risshakuji', 'risshaku-ji', 'godaido'],
+    'Ginzan Onsen':    [38.5720, 140.5360, 2.5, 'ginzan', 'takimikan', 'shirogane', 'nobesawa'],
+    'Ōishida':         [38.6000, 140.3700, 2.5, 'oishida'],
+    'Narita':          [35.7647, 140.3864, 5.0, 'narita'],
+    'Haneda':          [35.5494, 139.7798, 4.0, 'haneda']
+  };
+
+  CAT.ZONAS = ZONAS;
+
+  function distanciaKm(latA, lonA, latB, lonB) {
+    var R = 6371;
+    var dLat = (latB - latA) * Math.PI / 180;
+    var dLon = (lonB - lonA) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(latA * Math.PI / 180) * Math.cos(latB * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+  CAT.distanciaKm = distanciaKm;
+
+  /** Zona en la que cae un punto, o null si no cae en ninguna conocida. */
+  CAT.zonaDe = function (lat, lon) {
+    if (typeof lat !== 'number' || typeof lon !== 'number') return null;
+    var mejor = null, mejorSobra = Infinity;
+    Object.keys(ZONAS).forEach(function (nombre) {
+      var z = ZONAS[nombre];
+      var d = distanciaKm(lat, lon, z[0], z[1]);
+      // Se elige la zona cuyo borde queda más lejos: entre dos que solapan,
+      // gana aquella en cuyo centro estás más metido.
+      var sobra = d - z[2];
+      if (d <= z[2] && sobra < mejorSobra) { mejor = nombre; mejorSobra = sobra; }
+    });
+    return mejor;
+  };
+
+  /** Zonas que menciona un texto del itinerario. */
+  CAT.zonasEnTexto = function (texto) {
+    var t = U.normalizar(texto);
+    var encontradas = [];
+    Object.keys(ZONAS).forEach(function (nombre) {
+      var alias = ZONAS[nombre].slice(3).concat([U.normalizar(nombre)]);
+      var hay = alias.some(function (a) {
+        var pos = t.indexOf(a);
+        if (pos === -1) return false;
+        var antes = t.charAt(pos - 1), despues = t.charAt(pos + a.length);
+        return !/[a-z0-9]/.test(antes) && !/[a-z0-9]/.test(despues);
+      });
+      if (hay) encontradas.push(nombre);
+    });
+    return encontradas;
+  };
+
   /* ---------- Sugerencias de lugares (catálogo de arranque) ---------- */
   /* Sitios muy conocidos, para poder llenar la lista de un par de clics
      en vez de teclear cada uno con sus coordenadas.                      */
