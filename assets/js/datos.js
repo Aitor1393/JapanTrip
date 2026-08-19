@@ -429,14 +429,30 @@
    * Las zonas salen del texto de lo planificado (el itinerario dice
    * «Harajuku», «Asakusa»…) y también de las coordenadas de las reservas.
    */
+  // Un barrio nombrado dentro de un desplazamiento es por donde se pasa, no
+  // a lo que se va: «Bus Busta Shinjuku → Gotemba» habla de Gotemba. Sin esto,
+  // Shinjuku gana todos los días por ser de donde salen los transportes.
+  var PESO_TRANSPORTE = 0.3;
+
   function perfilDelDia(dia, idViaje) {
     var v = D.viaje(idViaje);
     var textos = [];
     var puntos = [];
 
+    // El barrio que da nombre a un plan es a lo que se va; el que sale en las
+    // notas suele ser una referencia de paso («compradlo en Asakusa»).
+    // Un plan que no es un desplazamiento y lleva el barrio en el título es
+    // la señal fuerte: ese día se VA ahí, no se pasa por ahí.
+    function anadirTexto(titulo, resto, tipo) {
+      var esTramo = D.tipo(tipo).tramo;
+      var factor = esTramo ? PESO_TRANSPORTE : 1;
+      if (titulo) textos.push({ texto: titulo, peso: factor, destino: !esTramo });
+      if (resto) textos.push({ texto: resto, peso: factor * 0.4, destino: false });
+    }
+
     v.actividades.forEach(function (a) {
       if (a.fecha !== dia) return;
-      textos.push([a.titulo, a.lugar, a.notas].filter(Boolean).join(' '));
+      anadirTexto(a.titulo, [a.lugar, a.notas].filter(Boolean).join(' '), a.tipo);
     });
 
     v.reservas.forEach(function (r) {
@@ -446,22 +462,27 @@
       // El alojamiento dice dónde duermes, no lo que visitas ese día: cuenta
       // como punto para desempatar, pero no marca la zona del día.
       var esCama = D.tipo(r.tipo).estancia;
-      if (!esCama) textos.push([r.titulo, r.notas].filter(Boolean).join(' '));
+      if (!esCama) anadirTexto(r.titulo, r.notas, r.tipo);
       [r.desde, r.hasta].forEach(function (l) {
         if (l && typeof l.lat === 'number') puntos.push({ lat: l.lat, lon: l.lon, cama: esCama });
       });
     });
 
     var zonas = {};
+    var destino = {};
     var total = 0;
     textos.forEach(function (t) {
-      CAT.zonasEnTexto(t).forEach(function (z) {
-        zonas[z] = (zonas[z] || 0) + 1;
-        total++;
+      CAT.zonasEnTexto(t.texto).forEach(function (z) {
+        zonas[z] = (zonas[z] || 0) + t.peso;
+        if (t.destino) destino[z] = (destino[z] || 0) + t.peso;
+        total += t.peso;
       });
     });
 
-    return { zonas: zonas, menciones: total, puntos: puntos, planes: textos.length };
+    return {
+      zonas: zonas, destino: destino, menciones: total,
+      puntos: puntos, planes: textos.length
+    };
   }
 
   /**
@@ -485,15 +506,17 @@
     if (zona) {
       var candidatos = perfiles.filter(function (p) { return p.perfil.zonas[zona]; });
       if (candidatos.length) {
-        // No basta con cuántas veces se nombra la zona, sino cuánto pesa en
-        // ese día. El día de Nikko nombra Asakusa tres veces, pero solo para
-        // coger el tren: ese día va de Nikko. El día siguiente la nombra
-        // menos y no habla de otra cosa, y es el que toca.
+        // Manda que la zona dé nombre a un plan que no sea un traslado: el
+        // día de Nikko nombra Asakusa tres veces, pero siempre para coger el
+        // tren o comprar el pase. El día siguiente tiene un plan que se llama
+        // «Asakusa: Sensoji y Nakamise», y ese es el que toca.
+        function destino(p) { return p.perfil.destino[zona] || 0; }
         function peso(p) {
           return p.perfil.menciones ? p.perfil.zonas[zona] / p.perfil.menciones : 0;
         }
         candidatos.sort(function (a, b) {
-          return (peso(b) - peso(a)) ||
+          return (destino(b) - destino(a)) ||
+                 (peso(b) - peso(a)) ||
                  (b.perfil.zonas[zona] - a.perfil.zonas[zona]) ||
                  (a.perfil.planes - b.perfil.planes);
         });
@@ -501,7 +524,7 @@
         return {
           dia: elegido.dia,
           motivo: 'está en ' + zona + ', y ese día ya vas por ahí',
-          confianza: peso(elegido) >= 0.34 ? 'alta' : 'media'
+          confianza: destino(elegido) >= 1 ? 'alta' : peso(elegido) >= 0.3 ? 'media' : 'baja'
         };
       }
     }
