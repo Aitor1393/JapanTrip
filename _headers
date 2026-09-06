@@ -1,0 +1,13 @@
+# Cabeceras para Cloudflare Pages. Se copian a _sitio/ al preparar el sitio.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# El viaje se revalida siempre. Es lo que se acaba de publicar desde el
+# navegador, y llegar a verlo con retraso es justo lo que no puede pasar.
+/data/*
+  Cache-Control: no-cache
+
+/index.html
+  Cache-Control: no-cache
