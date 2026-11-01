@@ -499,7 +499,15 @@
    'shibuya shinjuku ikebukuro asakusa ginza akihabara ueno harajuku roppongi ' +
    'odaiba nakano koenji kichijoji shimokitazawa yokohama kamakura hakone kyoto ' +
    'osaka nara minato chiyoda taito sumida setagaya toshima bunkyo meguro ' +
-   'shinagawa nihonbashi marunouchi'
+   'shinagawa nihonbashi marunouchi ' +
+   // Las palabras de posición japonesas, que son parte de medio topónimo:
+   // «Koenji Kita» es «Koenji norte», y quedarse con «kita» llevaba a la
+   // foto del distrito Kita, que está al otro lado de la ciudad.
+   'kita minami higashi nishi naka shin kami shimo chuo ' +
+   'estatua statue monumento monument ' +
+   // Y las palabras de unión de los tres idiomas, para que «Hachiko Statue»
+   // y «Estatua de Hachikō» se vean como el mismo nombre.
+   'de del la el los las y o of the a an at in on no ni to wa'
   ).split(' ').forEach(function (p) { GENERICAS[p] = true; });
 
   // Quita acentos, paréntesis y puntuación: «Nikkō (Tochigi)» → «nikko».
@@ -551,6 +559,10 @@
     if (!q || !t) return 0;
     if (q === t) return 3;
 
+    // Pegando todo, que salva los espacios y los guiones: el fichero de la
+    // campana de Kawagoe se llama «Tokinokane» y el sitio «Toki no Kane».
+    if (q.replace(/ /g, '') === t.replace(/ /g, '')) return 3;
+
     var pq = propias(q), pt = propias(t);
     if (pq.length && pt.length && pq.join('') === pt.join('')) return 3;
 
@@ -586,19 +598,58 @@
    * cerca. Así «Barikote» no se queda con la foto de Barikot, Afganistán,
    * que está a 6.000 km.
    *
-   * @param coordsArt  { lat, lon } del artículo, o null si no tiene.
-   * @param coordsSitio { lat, lon } del sitio, o null si no lo sabemos.
+   * Y cuando no sabemos dónde está el sitio —17 de los 111 lugares no tienen
+   * coordenadas, por ser tiendas que no salen en el mapa— sirve la caja del
+   * viaje, porque «está en Japón» es demasiado ancho: dejó pasar el
+   * Izumo-taisha de Shimane, a 600 km, para un restaurante de Ikebukuro.
+   *
+   * @param coordsArt { lat, lon } del artículo, o null si no tiene.
+   * @param ref       { lat, lon } del sitio, o una caja
+   *                  { latMin, latMax, lonMin, lonMax }, o null.
    */
   D.JAPON = { latMin: 24, latMax: 46, lonMin: 122, lonMax: 154 };
   D.RADIO_FOTO_KM = 30;
 
-  D.fotoCerca = function (coordsArt, coordsSitio) {
+  function enCaja(c, caja) {
+    return c.lat >= caja.latMin && c.lat <= caja.latMax
+        && c.lon >= caja.lonMin && c.lon <= caja.lonMax;
+  }
+
+  /**
+   * La caja que abarca el viaje, sacada de los lugares que sí tienen
+   * coordenadas y ensanchada un poco.
+   *
+   * Se calcula del propio viaje a propósito: así vale igual para el
+   * siguiente, sin una lista de ciudades escrita a mano que se quede vieja.
+   */
+  D.MARGEN_CAJA = 0.6;      // grados, unos 60 km
+
+  D.cajaViaje = function (idViaje, margen) {
+    var v = D.viaje(idViaje);
+    if (!v) return null;
+    var pts = (v.lugares || []).filter(function (l) {
+      return l.lat != null && l.lon != null;
+    });
+    if (pts.length < 2) return null;       // con un punto no hay caja que valga
+    var m = margen == null ? D.MARGEN_CAJA : margen;
+    var lats = pts.map(function (p) { return p.lat; });
+    var lons = pts.map(function (p) { return p.lon; });
+    return {
+      latMin: Math.min.apply(null, lats) - m,
+      latMax: Math.max.apply(null, lats) + m,
+      lonMin: Math.min.apply(null, lons) - m,
+      lonMax: Math.max.apply(null, lons) + m
+    };
+  };
+
+  D.fotoCerca = function (coordsArt, ref) {
     if (!coordsArt || coordsArt.lat == null || coordsArt.lon == null) return false;
-    if (coordsSitio && coordsSitio.lat != null && coordsSitio.lon != null) {
+    if (ref && ref.lat != null && ref.lon != null) {
       return CAT.distanciaKm(coordsArt.lat, coordsArt.lon,
-                             coordsSitio.lat, coordsSitio.lon) <= D.RADIO_FOTO_KM;
+                             ref.lat, ref.lon) <= D.RADIO_FOTO_KM;
     }
-    // Sin referencia, al menos que esté en Japón.
+    if (ref && ref.latMin != null) return enCaja(coordsArt, ref);
+    // Sin nada, al menos que esté en Japón.
     var j = D.JAPON;
     return coordsArt.lat >= j.latMin && coordsArt.lat <= j.latMax
         && coordsArt.lon >= j.lonMin && coordsArt.lon <= j.lonMax;

@@ -1073,15 +1073,21 @@
    * Dónde está el sitio de un plan, para poder descartar fotos de otro
    * continente. Solo los lugares guardan coordenadas, así que un plan las
    * saca del lugar al que apunta.
+   *
+   * Si no las hay se devuelve la caja del viaje, que ya es bastante estrecha
+   * para descartar lo de otra provincia. Devolver null dejaría pasar
+   * cualquier cosa que esté en Japón, y así se colaba el Izumo-taisha de
+   * Shimane para un restaurante de Ikebukuro.
    */
   function coordsDeItem(clase, item, idViaje) {
-    if (!item) return null;
-    if (item.lat != null && item.lon != null) return { lat: item.lat, lon: item.lon };
-    if (item.idLugar) {
-      var l = D.lugares.uno(item.idLugar, idViaje);
-      if (l && l.lat != null && l.lon != null) return { lat: l.lat, lon: l.lon };
+    if (item) {
+      if (item.lat != null && item.lon != null) return { lat: item.lat, lon: item.lon };
+      if (item.idLugar) {
+        var l = D.lugares.uno(item.idLugar, idViaje);
+        if (l && l.lat != null && l.lon != null) return { lat: l.lat, lon: l.lon };
+      }
     }
-    return null;
+    return D.cajaViaje(idViaje);
   }
 
   /** Autor y licencia del fichero, que hay que enseñar por la licencia. */
