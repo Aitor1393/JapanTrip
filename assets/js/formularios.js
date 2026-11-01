@@ -1029,11 +1029,19 @@
    * Busca imágenes en Wikipedia. Se usa la imagen principal de cada
    * artículo, que suele ser la foto representativa del sitio, en vez de
    * rebuscar en Commons y sacar el plano de una estación.
+   *
+   * Cada resultado viene con un `pega`: si el artículo habla del sitio que
+   * se buscaba o el buscador se ha ido por las ramas. Se piden también las
+   * coordenadas, porque son lo único que separa la tienda «KING KONG» de la
+   * película. Los que pegan salen primero, y los demás salen marcados pero
+   * no se esconden: a mano a veces se busca justo algo raro.
+   *
+   * @param ref { lat, lon } del sitio, si se sabe, para descartar lo lejano.
    */
-  function buscarImagenes(consulta) {
+  function buscarImagenes(consulta, ref) {
     var url = 'https://es.wikipedia.org/w/api.php?action=query&format=json&origin=*' +
       '&generator=search&gsrsearch=' + encodeURIComponent(consulta) + '&gsrlimit=8' +
-      '&prop=pageimages&piprop=thumbnail|original|name&pithumbsize=320&redirects=1';
+      '&prop=pageimages|coordinates&piprop=thumbnail|original|name&pithumbsize=320&redirects=1';
     return fetch(url)
       .then(function (r) { return r.json(); })
       .then(function (j) {
@@ -1041,15 +1049,39 @@
         return Object.keys(paginas).map(function (k) { return paginas[k]; })
           .filter(function (p) { return p.thumbnail && p.original; })
           .map(function (p) {
+            var c = p.coordinates && p.coordinates[0];
+            var coords = c ? { lat: c.lat, lon: c.lon } : null;
+            var fuerza = D.fotoCerca(coords, ref || null)
+              ? D.fotoFuerza(consulta, p.title) : 0;
             return {
               titulo: p.title,
               miniatura: p.thumbnail.source,
               url: p.original.source,
               fichero: p.pageimage,
+              coords: coords,
+              fuerza: fuerza,
+              pega: fuerza > 0,
               fuente: 'https://es.wikipedia.org/wiki/' + encodeURIComponent(p.title)
             };
-          });
+          })
+          // El que más se parezca primero, para que el primero sea el bueno.
+          .sort(function (a, b) { return b.fuerza - a.fuerza; });
       });
+  }
+
+  /**
+   * Dónde está el sitio de un plan, para poder descartar fotos de otro
+   * continente. Solo los lugares guardan coordenadas, así que un plan las
+   * saca del lugar al que apunta.
+   */
+  function coordsDeItem(clase, item, idViaje) {
+    if (!item) return null;
+    if (item.lat != null && item.lon != null) return { lat: item.lat, lon: item.lon };
+    if (item.idLugar) {
+      var l = D.lugares.uno(item.idLugar, idViaje);
+      if (l && l.lat != null && l.lon != null) return { lat: l.lat, lon: l.lon };
+    }
+    return null;
   }
 
   /** Autor y licencia del fichero, que hay que enseñar por la licencia. */
@@ -1072,18 +1104,27 @@
       .catch(function () { return { autor: '', licencia: '' }; });
   }
 
-  F.fotoDia = function (dia) {
-    var viaje = D.activo();
-    var actual = D.imagenDia(dia, viaje.id) || {};
+  /**
+   * Editor de foto, el mismo para un día, un plan, una reserva o un lugar.
+   *
+   * @param {{titulo, subtitulo, sugerencia, leer, guardar}} obj
+   *        leer()        → la imagen actual o null
+   *        guardar(img)  → la guarda (img null = quitarla)
+   *        sugerencia    → con qué arrancar la búsqueda
+   */
+  F.foto = function (obj) {
+    var actual = obj.leer() || {};
 
-    var html = '<h2>Foto del día</h2>' +
-      '<p class="apagado">' + U.esc(U.mayus1(U.fechaDia(dia))) + '</p>' +
+    var html = '<h2>' + U.esc(obj.titulo) + '</h2>' +
+      (obj.subtitulo ? '<p class="apagado">' + U.esc(obj.subtitulo) + '</p>' : '') +
       '<div class="campo"><span>Buscar en Wikipedia</span>' +
       '<div class="campo__doble">' +
-      '<input type="search" id="buscarFoto" placeholder="Ginzan Onsen, Senso-ji, Kawagoe…">' +
+      '<input type="search" id="buscarFoto" placeholder="Ginzan Onsen, Senso-ji, Kawagoe…" value="' +
+      U.esc(obj.sugerencia || '') + '">' +
       '<button type="button" class="btn" id="btnBuscarFoto">Buscar</button>' +
       '</div>' +
-      '<div class="campo__ayuda">Se coge la foto principal del artículo, con su autor y su licencia.</div>' +
+      '<div class="campo__ayuda">Se coge la foto principal del artículo, con su autor y su licencia. ' +
+      'También puedes pegar abajo la dirección de cualquier imagen.</div>' +
       '</div>' +
       '<div id="resultadosFoto" class="resultados"></div>' +
       campo('Dirección de la imagen', 'url', actual.url, 'url', ' placeholder="https://…"') +
@@ -1099,9 +1140,9 @@
         ? '<button type="button" class="btn btn--peligro" data-quitar>Quitar la foto</button>' : '');
 
     var form = montar(html, function (datos) {
-      D.guardarImagenDia(dia, datos.url ? {
+      obj.guardar(datos.url ? {
         url: datos.url, autor: datos.autor, licencia: datos.licencia, fuente: datos.fuente
-      } : null, viaje.id);
+      } : null);
       U.cerrarModal();
       U.aviso(datos.url ? 'Foto guardada.' : 'Foto quitada.', 'ok');
       App.pintar();
@@ -1110,7 +1151,7 @@
     var quitar = U.$('[data-quitar]', form);
     if (quitar) {
       quitar.addEventListener('click', function () {
-        D.guardarImagenDia(dia, null, viaje.id);
+        obj.guardar(null);
         U.cerrarModal();
         U.aviso('Foto quitada.', 'ok');
         App.pintar();
@@ -1135,16 +1176,23 @@
       var q = caja.value.trim();
       if (!q) return;
       resultados.innerHTML = '<p class="apagado">Buscando…</p>';
-      buscarImagenes(q).then(function (lista) {
+      buscarImagenes(q, obj.coords).then(function (lista) {
         if (!lista.length) {
           resultados.innerHTML = '<p class="apagado">Sin resultados con foto. Prueba con otro nombre.</p>';
           return;
         }
-        resultados.innerHTML = lista.map(function (r, i) {
-          return '<button type="button" class="resultado" data-i="' + i + '">' +
-            '<img src="' + U.esc(r.miniatura) + '" alt="" loading="lazy">' +
-            '<span>' + U.esc(r.titulo) + '</span></button>';
-        }).join('');
+        var pegan = lista.filter(function (r) { return r.pega; }).length;
+        resultados.innerHTML =
+          (pegan ? '' : '<p class="apagado">Ninguno parece ser de este sitio. Míralos igual, ' +
+            'por si el artículo se llama de otra forma.</p>') +
+          lista.map(function (r, i) {
+            return '<button type="button" class="resultado' +
+              (r.pega ? '' : ' resultado--dudoso') + '" data-i="' + i + '"' +
+              (r.pega ? '' : ' title="El artículo no parece ser de este sitio"') + '>' +
+              '<img src="' + U.esc(r.miniatura) + '" alt="" loading="lazy">' +
+              '<span>' + U.esc(r.titulo) +
+              (r.pega ? '' : '<br><em class="apagado">¿seguro?</em>') + '</span></button>';
+          }).join('');
         U.$$('.resultado', resultados).forEach(function (b) {
           b.addEventListener('click', function () {
             ponerFoto(lista[Number(b.getAttribute('data-i'))]);
@@ -1161,6 +1209,173 @@
     caja.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); buscar(); }
     });
+    // Con un nombre ya puesto se busca solo: casi siempre es lo que se quiere.
+    if (obj.sugerencia) buscar();
+  };
+
+  /** Foto de un día del itinerario. */
+  F.fotoDia = function (dia) {
+    var viaje = D.activo();
+    F.foto({
+      titulo: 'Foto del día',
+      subtitulo: U.mayus1(U.fechaDia(dia)),
+      sugerencia: '',
+      leer: function () { return D.imagenDia(dia, viaje.id); },
+      guardar: function (img) { D.guardarImagenDia(dia, img, viaje.id); }
+    });
+  };
+
+  /** Foto de un plan, una reserva o un lugar. */
+  F.fotoItem = function (clase, id) {
+    var viaje = D.activo();
+    var coleccion = clase === 'reserva' ? D.reservas
+      : clase === 'lugar' ? D.lugares
+      : D.actividades;
+    var item = coleccion.uno(id, viaje.id);
+    if (!item) return;
+    var nombre = item.titulo || item.nombre || '';
+
+    F.foto({
+      titulo: 'Foto de ' + (clase === 'reserva' ? 'la reserva' : clase === 'lugar' ? 'el lugar' : 'el plan'),
+      subtitulo: nombre,
+      sugerencia: nombre,
+      coords: coordsDeItem(clase, item, viaje.id),
+      leer: function () { return D.imagenValida(item.imagen); },
+      guardar: function (img) { D.guardarImagen(clase, id, img, viaje.id); }
+    });
+  };
+
+  /**
+   * Busca de golpe las fotos que falten.
+   *
+   * Va de una en una y con pausa: Wikipedia corta el paso si se le pregunta
+   * en ráfaga. Antes de guardar nada se enseña lo encontrado, porque una
+   * búsqueda por nombre acierta casi siempre pero no siempre.
+   */
+  F.fotosQueFaltan = function () {
+    var viaje = D.activo();
+    var TOPE = 40;
+
+    // Primero los lugares: su foto vale para todos los planes que los usen.
+    var faltan = [];
+    viaje.lugares.forEach(function (l) {
+      if (!l.imagen || !l.imagen.url) {
+        faltan.push({ clase: 'lugar', id: l.id, nombre: l.nombre,
+          coords: coordsDeItem('lugar', l, viaje.id) });
+      }
+    });
+    viaje.actividades.forEach(function (a) {
+      if (a.imagen && a.imagen.url) return;
+      if (a.idLugar) return;                       // la hereda del lugar
+      if (D.tipo(a.tipo).tramo) return;            // un trayecto no es un sitio
+      faltan.push({ clase: 'actividad', id: a.id, nombre: a.titulo,
+        coords: coordsDeItem('actividad', a, viaje.id) });
+    });
+    viaje.reservas.forEach(function (r) {
+      if (r.imagen && r.imagen.url) return;
+      if (D.tipo(r.tipo).tramo) return;
+      faltan.push({ clase: 'reserva', id: r.id, nombre: r.titulo,
+        coords: coordsDeItem('reserva', r, viaje.id) });
+    });
+
+    if (!faltan.length) {
+      U.abrirModal('<h2>No falta ninguna</h2>' +
+        '<p class="apagado">Todos los planes y lugares que pueden tener foto ya la tienen. ' +
+        'Los trayectos no se buscan: un tren no es un sitio.</p>' +
+        '<div class="formulario__botones"><button class="btn" data-cerrar-modal>Cerrar</button></div>');
+      return;
+    }
+
+    var lote = faltan.slice(0, TOPE);
+    U.abrirModal('<h2>Buscando fotos</h2>' +
+      '<p class="apagado">' + U.plural(faltan.length, 'sitio') + ' sin foto' +
+      (faltan.length > TOPE ? ', se miran los ' + TOPE + ' primeros' : '') + '.</p>' +
+      '<div id="progresoFotos"><div class="barra"><div class="barra__relleno" style="width:0"></div></div>' +
+      '<p class="apagado" id="progresoTexto">…</p></div>', 'ancha');
+
+    var encontradas = [];
+    var descartadas = 0;      // salió algo pero no era de ese sitio
+    var i = 0;
+
+    function siguiente() {
+      var texto = document.getElementById('progresoTexto');
+      var barra = U.$('#progresoFotos .barra__relleno');
+      if (!texto) return;                          // se cerró el modal
+      if (i >= lote.length) { revisar(); return; }
+
+      var item = lote[i];
+      texto.textContent = (i + 1) + ' de ' + lote.length + ': ' + item.nombre;
+      barra.style.width = Math.round((i / lote.length) * 100) + '%';
+
+      // Solo lo que pasa el filtro: aquí no hay nadie mirando cada nombre,
+      // y la lista viene ordenada, así que el primero que pegue es el mejor.
+      buscarImagenes(item.nombre, item.coords).then(function (lista) {
+        var bueno = lista.filter(function (r) { return r.pega; })[0];
+        if (bueno) encontradas.push({ item: item, foto: bueno });
+        else if (lista.length) descartadas++;
+      }).catch(function () { /* se salta y sigue */ })
+        .then(function () { i++; setTimeout(siguiente, 1200); });
+    }
+
+    function revisar() {
+      // Lo que se descartó merece decirse: si no, parece que la búsqueda
+      // no encuentra nada, cuando lo que pasa es que encuentra cosas de otro
+      // sitio y se prefiere el hueco en blanco.
+      var nota = descartadas
+        ? ' De ' + U.plural(descartadas, 'sitio') + ' salió algo que no era de ese sitio, ' +
+          'así que se quedan sin foto: mejor el hueco que una foto de otra cosa.'
+        : '';
+
+      if (!encontradas.length) {
+        U.abrirModal('<h2>Sin resultados</h2>' +
+          '<p class="apagado">No se ha encontrado foto de ninguno. Suele pasar con tiendas y ' +
+          'restaurantes pequeños: esos hay que ponerlos a mano.' + nota + '</p>' +
+          '<div class="formulario__botones"><button class="btn" data-cerrar-modal>Cerrar</button></div>');
+        return;
+      }
+
+      var html = '<h2>Revisa las fotos encontradas</h2>' +
+        '<p class="apagado">' + U.plural(encontradas.length, 'foto') + ' de ' + lote.length +
+        ' buscadas. Desmarca las que no peguen.' + nota + '</p>' +
+        '<div class="resultados">';
+      encontradas.forEach(function (e, n) {
+        html += '<label class="resultado resultado--revisar">' +
+          '<input type="checkbox" name="usar' + n + '" checked>' +
+          '<img src="' + U.esc(e.foto.miniatura) + '" alt="" loading="lazy">' +
+          '<span><strong>' + U.esc(U.recortar(e.item.nombre, 34)) + '</strong><br>' +
+          U.esc(U.recortar(e.foto.titulo, 34)) + '</span></label>';
+      });
+      html += '</div>' + botones('Guardar las marcadas');
+
+      montar(html, function (datos) {
+        var puestas = 0;
+        var pendientes = [];
+        encontradas.forEach(function (e, n) {
+          if (!datos['usar' + n]) return;
+          pendientes.push(e);
+        });
+        // Los créditos se piden ahora, solo de las que se quedan.
+        function guardarSiguiente() {
+          if (!pendientes.length) {
+            U.cerrarModal();
+            U.aviso(U.plural(puestas, 'foto') + ' puesta' + (puestas === 1 ? '' : 's') + '.', 'ok');
+            App.pintar();
+            return;
+          }
+          var e = pendientes.shift();
+          creditosDe(e.foto.fichero).then(function (c) {
+            D.guardarImagen(e.item.clase, e.item.id, {
+              url: e.foto.url, autor: c.autor, licencia: c.licencia, fuente: e.foto.fuente
+            }, viaje.id);
+            puestas++;
+            setTimeout(guardarSiguiente, 600);
+          });
+        }
+        guardarSiguiente();
+      }, 'ancha');
+    }
+
+    siguiente();
   };
 
   /* ══════════════════════════════════════════════════════════

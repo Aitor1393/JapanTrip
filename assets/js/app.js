@@ -211,6 +211,9 @@
     'editar-actividad': function (el) { F.actividad(el.getAttribute('data-id')); },
     'nota-dia': function (el) { F.notaDia(el.getAttribute('data-dia')); },
     'foto-dia': function (el) { F.fotoDia(el.getAttribute('data-dia')); },
+    'foto-item': function (el) {
+      F.fotoItem(el.getAttribute('data-clase'), el.getAttribute('data-id'));
+    },
     'marcar-actividad': function (el) {
       D.actividades.actualizar(el.getAttribute('data-id'), { hecho: el.checked });
       // Sin repintar: se marca en el sitio y el día no se cierra ni salta.
@@ -230,6 +233,7 @@
       if (abierto) App.estado.abiertos[dia] = true;
       else delete App.estado.abiertos[dia];
     },
+    'fotos-que-faltan': function () { F.fotosQueFaltan(); },
     'desplegar-todo': function () { todosLosDias(true); },
     'plegar-todo': function () { todosLosDias(false); },
 

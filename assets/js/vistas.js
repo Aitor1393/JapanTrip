@@ -198,6 +198,24 @@
      Itinerario
      ══════════════════════════════════════════════════════════ */
 
+  /**
+   * Miniatura de un plan. Siempre se pinta algo: con foto, la foto; sin ella,
+   * un hueco con el icono del tipo que al pulsarlo abre el buscador. Así todo
+   * el itinerario tiene el mismo aspecto y se ve de un vistazo qué falta.
+   */
+  function miniaturaHtml(imagen, clase, id, icono) {
+    var boton = ' data-accion="foto-item" data-clase="' + clase + '" data-id="' + id + '"';
+    if (imagen && imagen.url) {
+      return '<button class="mini" title="Cambiar la foto"' + boton + '>' +
+        '<img src="' + U.esc(imagen.url) + '" alt="" loading="lazy" decoding="async">' +
+        '</button>';
+    }
+    return '<button class="mini mini--vacia" title="Poner una foto"' + boton + '>' +
+      '<span class="mini__icono">' + icono + '</span>' +
+      '<span class="mini__mas">+</span>' +
+      '</button>';
+  }
+
   function eventoHtml(evento, viaje) {
     var meta = D.tipo(evento.tipo);
     var esReserva = evento.clase === 'reserva';
@@ -232,6 +250,8 @@
     return '<li class="evento evento--' + meta.color + '">' +
       '<div class="evento__hora">' + (evento.hora ? U.esc(evento.hora) : '<span class="apagado">—</span>') + '</div>' +
       '<div class="evento__punto">' + meta.icono + '</div>' +
+      miniaturaHtml(D.imagenDeEvento(evento, viaje.id),
+        esReserva ? 'reserva' : 'actividad', id, meta.icono) +
       '<div class="evento__cuerpo">' +
       '<div class="evento__titulo">' + U.esc(evento.titulo) +
       (esReserva && evento.reserva.estado === 'pendiente'
@@ -268,6 +288,8 @@
         ? '<input type="checkbox" data-accion="marcar-actividad" data-id="' + fuente.id + '"' +
           (hecho ? ' checked' : '') + ' aria-label="Marcar como visto">'
         : '<span class="suelto__punto">' + meta.icono + '</span>') +
+      miniaturaHtml(D.imagenDeEvento(evento, viaje.id),
+        esActividad ? 'actividad' : 'reserva', fuente.id, meta.icono) +
       '<div class="crece">' +
       '<div class="suelto__titulo">' + (esActividad ? '' : meta.icono + ' ') + U.esc(evento.titulo) +
       (!esActividad && evento.reserva.estado === 'pendiente'
@@ -308,6 +330,7 @@
         '<p>' + (dias.length
           ? U.plural(dias.length, 'día') + ' · ' + U.esc(U.rangoTexto(dias[0], dias[dias.length - 1]))
           : 'Sin fechas todavía') + '</p></div>' +
+        boton('fotos-que-faltan', '🖼️ Fotos que falten', '') +
         boton('desplegar-todo', '⌄ Desplegar todo', '') +
         boton('plegar-todo', '⌃ Plegar todo', '') +
         boton('nueva-actividad', '+ Añadir plan', 'btn--primario') +
@@ -593,14 +616,15 @@
           var cat = D.CATEGORIAS_LUGAR[l.categoria] || D.CATEGORIAS_LUGAR.otro;
           html += '<article class="lugar' + (l.visitado ? ' lugar--visitado' : '') + '">' +
             '<div class="lugar__cabecera">' +
-            '<span class="lugar__icono">' + cat.icono + '</span>' +
+            miniaturaHtml(D.imagenValida(l.imagen), 'lugar', l.id, cat.icono) +
             '<h3 class="crece">' + U.esc(l.nombre) + '</h3>' +
             '<button class="btn btn--icono btn--pequeno" data-accion="visitado" data-id="' + l.id +
             '" title="' + (l.visitado ? 'Marcar como pendiente' : 'Marcar como visitado') + '">' +
             (l.visitado ? '✅' : '⬜') + '</button>' +
             '</div>' +
             '<div class="lugar__meta">' + U.esc(cat.etiqueta) +
-            (l.lat && l.lon ? ' · <span class="apagado">en el mapa</span>' : '') + '</div>' +
+            (l.lat && l.lon ? ' · <span class="apagado">en el mapa</span>' : '') +
+            (l.imagen && l.imagen.url ? '' : ' · <span class="apagado">sin foto</span>') + '</div>' +
             (l.notas ? '<p class="lugar__notas">' + U.esc(U.recortar(l.notas, 140)) + '</p>' : '') +
             '<div class="lugar__acciones">' +
             '<button class="btn btn--pequeno" data-accion="lugar-al-itinerario" data-id="' + l.id + '">Al itinerario</button>' +

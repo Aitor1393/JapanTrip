@@ -216,6 +216,31 @@ main { padding: 28px 0 60px; }
 .cinta-dias__fecha { display: block; font-size: .7rem; color: var(--texto-3); text-transform: capitalize; }
 .cinta-dias__puntos { display: block; font-size: .6rem; color: var(--acento); height: 10px; letter-spacing: 1px; }
 
+/* ── Miniatura de cada plan ── */
+.mini {
+  flex: 0 0 auto; width: 58px; height: 58px; padding: 0;
+  border: 1px solid var(--borde); border-radius: var(--radio-s);
+  background: var(--panel-2); cursor: pointer; overflow: hidden;
+  position: relative; transition: var(--transicion);
+}
+.mini:hover { border-color: var(--acento); }
+.mini img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mini--vacia {
+  display: flex; align-items: center; justify-content: center;
+  border-style: dashed;
+}
+.mini__icono { font-size: 1.1rem; opacity: .45; }
+/* La cruz solo aparece al pasar por encima: sin foto el hueco ya invita, y
+   con 160 planes una cruz fija en cada uno es ruido. */
+.mini__mas {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: center; font-size: 1.3rem; font-weight: 300;
+  color: var(--acento); background: var(--acento-suave);
+  opacity: 0; transition: var(--transicion);
+}
+.mini--vacia:hover .mini__mas { opacity: 1; }
+
+.suelto .mini { width: 46px; height: 46px; }
 /* ── El día, plegable ── */
 .dia {
   margin-bottom: 10px; scroll-margin-top: 80px;
@@ -317,7 +342,7 @@ main { padding: 28px 0 60px; }
 
 .linea-tiempo { list-style: none; margin: 0; padding: 0; }
 .evento {
-  display: grid; grid-template-columns: 58px 34px 1fr auto;
+  display: grid; grid-template-columns: 58px 34px 58px 1fr auto;
   align-items: start; gap: 10px; padding: 12px 0;
   border-bottom: 1px solid var(--borde);
 }
@@ -586,6 +611,11 @@ main { padding: 28px 0 60px; }
 }
 .resultado:hover { border-color: var(--texto-3); }
 .resultado--elegido { border-color: var(--acento); background: var(--acento-suave); }
+/* El artículo no parece ser de este sitio. No se esconde, porque a mano a
+   veces se busca justo algo que el filtro no reconoce; solo se apaga. */
+.resultado--dudoso { opacity: .5; }
+.resultado--dudoso:hover { opacity: 1; }
+.resultado--dudoso em { font-style: normal; }
 .resultado img { width: 100%; height: 92px; object-fit: cover; border-radius: 6px; }
 .resultado span { font-size: .76rem; color: var(--texto-2); line-height: 1.25; }
 
@@ -633,7 +663,8 @@ main { padding: 28px 0 60px; }
   .cabecera__acciones { margin-left: auto; }
   h1 { font-size: 1.4rem; }
   .campo__doble { grid-template-columns: 1fr; }
-  .evento { grid-template-columns: 48px 30px 1fr auto; gap: 8px; }
+  .evento { grid-template-columns: 46px 28px 48px 1fr auto; gap: 7px; }
+  .mini { width: 48px; height: 48px; }
   .evento__acciones { opacity: 1; }
   .ruta { flex-direction: column; align-items: stretch; gap: 8px; }
   .ruta__lado:last-child { text-align: left; }
@@ -644,3 +675,9 @@ main { padding: 28px 0 60px; }
   .notificaciones { left: 12px; right: 12px; bottom: 12px; }
   .nota { max-width: none; }
 }
+
+/* Revisión en lote de las fotos encontradas */
+.resultado--revisar { flex-direction: row; align-items: center; gap: 8px; cursor: pointer; }
+.resultado--revisar img { width: 62px; height: 62px; flex: 0 0 auto; }
+.resultado--revisar input { width: 16px; height: 16px; accent-color: var(--acento); flex: 0 0 auto; }
+.resultado--revisar span { font-size: .76rem; line-height: 1.3; }

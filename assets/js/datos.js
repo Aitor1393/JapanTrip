@@ -99,12 +99,17 @@
         r.desde = r.desde || null;
         r.hasta = r.hasta || null;
         r.detalles = r.detalles || {};
+        r.imagen = imagenValida(r.imagen);
       });
       v.lugares.forEach(function (l) {
         l.id = l.id || U.id();
         l.categoria = D.CATEGORIAS_LUGAR[l.categoria] ? l.categoria : 'otro';
+        l.imagen = imagenValida(l.imagen);
       });
-      v.actividades.forEach(function (a) { a.id = a.id || U.id(); });
+      v.actividades.forEach(function (a) {
+        a.id = a.id || U.id();
+        a.imagen = imagenValida(a.imagen);
+      });
       v.gastos.forEach(function (g) {
         g.id = g.id || U.id();
         g.categoria = D.CATEGORIAS_GASTO[g.categoria] ? g.categoria : 'otro';
@@ -125,18 +130,135 @@
   function clonar(obj) { return JSON.parse(JSON.stringify(obj)); }
 
   /**
-   * Carga el JSON del repositorio y, si hay cambios locales sin publicar,
-   * se queda con la versión local.
+   * Una imagen es {url, autor, licencia, fuente}. Sin url no hay imagen.
+   * El autor y la licencia se guardan porque hay que enseñarlos: casi todo
+   * lo que viene de Wikimedia lo exige.
+   */
+  function imagenValida(img) {
+    if (!img || typeof img !== 'object' || !img.url) return null;
+    return {
+      url: String(img.url),
+      autor: String(img.autor || ''),
+      licencia: String(img.licencia || ''),
+      fuente: String(img.fuente || '')
+    };
+  }
+  D.imagenValida = imagenValida;
+
+  /* ---------- Fusión a tres bandas ----------
+     Al cargar hay tres versiones en juego: la que se publicó la última vez
+     que este navegador miró (la base), la que tiene el navegador sin publicar
+     (local) y la que hay ahora en el repositorio (remota).
+
+     Quedarse con la local a secas, que es lo que se hacía antes, borra todo
+     lo que haya llegado al repositorio mientras tanto. Así se perdieron las
+     fotos de los días: estaban en el repositorio y no en el navegador, y al
+     publicar desde el móvil se fueron. Pasaría igual publicando desde el
+     portátil encima de lo que acabas de hacer en el móvil.
+
+     La regla es la de siempre en estas fusiones: si tú no has tocado un
+     campo, vale lo que diga el repositorio; si lo has tocado, vale lo tuyo. */
+
+  function igual(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+
+  function esObjeto(x) {
+    return x !== null && typeof x === 'object' && !Array.isArray(x);
+  }
+
+  /** Lista de objetos con id, que se puede casar elemento a elemento. */
+  function listaConId(x) {
+    return Array.isArray(x) && x.every(function (e) { return esObjeto(e) && e.id; });
+  }
+
+  function fundirListas(base, local, remota) {
+    var porId = function (lista) {
+      var m = {};
+      (lista || []).forEach(function (e) { m[e.id] = e; });
+      return m;
+    };
+    var bId = porId(base), lId = porId(local), rId = porId(remota);
+    var salida = [];
+
+    // Se respeta el orden local, que es el que ve el usuario.
+    (local || []).forEach(function (e) {
+      salida.push(rId[e.id] ? fundir(bId[e.id], e, rId[e.id]) : e);
+    });
+
+    // Lo que hay en el repositorio y no en local: es nuevo si tampoco estaba
+    // en la base. Si estaba, es que se borró aquí a propósito.
+    (remota || []).forEach(function (e) {
+      if (!lId[e.id] && !bId[e.id]) salida.push(e);
+    });
+
+    return salida;
+  }
+
+  /**
+   * @param {*} base    cómo estaba la última vez que este navegador miró
+   * @param {*} local   lo que tiene este navegador sin publicar
+   * @param {*} remota  lo que hay ahora en el repositorio
+   */
+  function fundir(base, local, remota) {
+    if (remota === undefined) return local;
+    if (local === undefined) return remota;
+    if (igual(local, remota)) return local;
+
+    // Si aquí no se ha tocado nada desde la base, manda el repositorio.
+    if (igual(local, base)) return remota;
+    // Y si el que no se ha movido es el repositorio, manda lo de aquí.
+    if (igual(remota, base)) return local;
+
+    if (listaConId(local) && listaConId(remota)) {
+      return fundirListas(listaConId(base) ? base : [], local, remota);
+    }
+
+    if (esObjeto(local) && esObjeto(remota)) {
+      var salida = {};
+      var claves = Object.keys(local);
+      Object.keys(remota).forEach(function (k) {
+        if (claves.indexOf(k) === -1) claves.push(k);
+      });
+      claves.forEach(function (k) {
+        salida[k] = fundir(esObjeto(base) ? base[k] : undefined, local[k], remota[k]);
+      });
+      return salida;
+    }
+
+    // Los dos han cambiado y no se pueden casar por dentro: gana lo de aquí,
+    // que es lo que el usuario tiene delante.
+    return local;
+  }
+
+  D.fundir = fundir;   // expuesto para poder probarlo sin navegador
+
+  /**
+   * Carga el JSON del repositorio y lo funde con lo que haya sin publicar.
    */
   D.cargar = function () {
+    // La base se lee ANTES de pisarla: es la referencia de la fusión.
+    var base = U.leerLocal(CLAVE_BASE, null);
+
     return fetch(D.RUTA_JSON + '?v=' + Date.now())
       .then(function (r) { return r.ok ? r.json() : documentoVacio(); })
       .catch(function () { return documentoVacio(); })
       .then(function (delRepo) {
         publicado = normalizar(delRepo);
-        U.guardarLocal(CLAVE_BASE, publicado);
         var local = U.leerLocal(CLAVE_LOCAL, null);
-        datos = local ? normalizar(local) : clonar(publicado);
+
+        if (!local) {
+          datos = clonar(publicado);
+        } else if (!base) {
+          // Sin base no hay fusión posible; se conserva lo de aquí, que es lo
+          // único que se sabe que el usuario quiso.
+          datos = normalizar(local);
+        } else {
+          datos = normalizar(fundir(normalizar(base), normalizar(local), publicado));
+        }
+
+        U.guardarLocal(CLAVE_BASE, publicado);
+        if (local && !igual(sinMarcaTiempo(datos), sinMarcaTiempo(local))) {
+          U.guardarLocal(CLAVE_LOCAL, datos);
+        }
         return datos;
       });
   };
@@ -329,6 +451,165 @@
     if (imagen && imagen.url) v.imagenesDia[dia] = imagen;
     else delete v.imagenesDia[dia];
     guardar();
+  };
+
+  /* ---------- Fotos de cada plan ---------- */
+
+  /**
+   * Foto que le toca a un plan del itinerario.
+   *
+   * Manda la suya; si no tiene y viene de un lugar guardado, la de ese lugar.
+   * Así poner la foto del Senso-ji una vez sirve para todos los planes que
+   * apunten a él, y cambiarla en un plan concreto no toca el resto.
+   */
+  D.imagenDeEvento = function (evento, idViaje) {
+    if (!evento) return null;
+    if (evento.clase === 'reserva') return imagenValida(evento.reserva.imagen);
+
+    var a = evento.actividad;
+    if (a.imagen && a.imagen.url) return imagenValida(a.imagen);
+    if (a.idLugar) {
+      var l = D.lugares.uno(a.idLugar, idViaje);
+      if (l && l.imagen && l.imagen.url) return imagenValida(l.imagen);
+    }
+    return null;
+  };
+
+  /* ---------- ¿Esta foto es del sitio que buscábamos? ----------
+
+     El buscador de Wikipedia devuelve el mejor parecido TEXTUAL aunque no
+     tenga ninguna relación. En la primera tanda automática, de 21 fotos
+     aceptadas solo 6 eran del sitio correcto: «Fuji Heiwa Park» trajo el
+     anime «AnoHana», «Barikote» un pueblo de Afganistán, «Tokyo Station»
+     una cadena de televisión y «SQUARE ENIX GARDEN» la ficha de la empresa.
+
+     Una foto equivocada es peor que el hueco vacío: el hueco se ve y se
+     rellena con un clic, y la equivocada se queda ahí pareciendo correcta.
+     Así que para rellenar en bloque solo vale lo que pasa por aquí.        */
+
+  // Palabras que comparte media Tokio: que coincidan no dice nada.
+  var GENERICAS = {};
+  ('tokyo tokio japan japon japonesa japones shrine jinja santuario templo temple ' +
+   'museo museum parque park jardin garden gardens station estacion centro center ' +
+   'ciudad city calle street market mercado tienda store shop cafe restaurante hotel ' +
+   'plaza tower torre lake lago monte mount rio river bridge puente main flagship ' +
+   'nacional national gran great casa house barrio district distrito area zona ' +
+   // Y los nombres de barrio y de ciudad: «Shibuya» lo llevan cuarenta sitios,
+   // así que compartirlo no distingue el Shibuya Sky del Shibuya Scramble.
+   'shibuya shinjuku ikebukuro asakusa ginza akihabara ueno harajuku roppongi ' +
+   'odaiba nakano koenji kichijoji shimokitazawa yokohama kamakura hakone kyoto ' +
+   'osaka nara minato chiyoda taito sumida setagaya toshima bunkyo meguro ' +
+   'shinagawa nihonbashi marunouchi'
+  ).split(' ').forEach(function (p) { GENERICAS[p] = true; });
+
+  // Quita acentos, paréntesis y puntuación: «Nikkō (Tochigi)» → «nikko».
+  function aplanar(s) {
+    return String(s == null ? '' : s).normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .toLowerCase().replace(/\(.*?\)/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  function palabras(s) {
+    return aplanar(s).split(' ').filter(function (p) { return p; });
+  }
+
+  function propias(s) {
+    return palabras(s).filter(function (p) { return !GENERICAS[p]; });
+  }
+
+  /**
+   * El nombre propio pelado: «Jardín Kiyosumi» → «Kiyosumi».
+   *
+   * Sirve para reintentar la búsqueda cuando el artículo está en inglés y
+   * se llama de otra forma: buscando «Kiyosumi» sí aparece «Kiyosumi
+   * Gardens», que buscando «Jardín Kiyosumi» no sale.
+   */
+  D.fotoNombrePropio = function (consulta) {
+    return propias(consulta).join(' ');
+  };
+
+  /**
+   * ¿Cuánto se parece el artículo `titulo` al sitio `consulta`?
+   *
+   * Devuelve una fuerza de 0 a 3, no un sí o un no, porque muchas veces
+   * salen varios candidatos que pasan y hay que quedarse con el mejor: al
+   * buscar «Jardín Kiyosumi» aparecen «Kiyosumi Gardens» y la estación
+   * «Kiyosumi-shirakawa», y la foto buena es la del jardín.
+   *
+   *   3 · el nombre aplanado es el mismo («Nikko» = «Nikkō (Tochigi)»), o
+   *       las palabras propias pegadas coinciden, que salva los guiones y
+   *       los «Templo» de delante («Templo Senso-ji» = «Sensō-ji»);
+   *   2 · un nombre aparece entero dentro del otro y el largo añade una
+   *       palabra como mucho («teamLab Planets» ⊂ «teamLab Planets TOKYO»);
+   *       el tope de una palabra es lo que frena «Don Quijote» →
+   *       «Don Quijote de la Mancha»;
+   *   1 · comparten una palabra propia y larga y tienen un tamaño parecido
+   *       («Hachiko Statue» y «Estatua de Hachikō» comparten «hachiko»);
+   *   0 · no se parecen.
+   */
+  D.fotoFuerza = function (consulta, titulo) {
+    var q = aplanar(consulta), t = aplanar(titulo);
+    if (!q || !t) return 0;
+    if (q === t) return 3;
+
+    var pq = propias(q), pt = propias(t);
+    if (pq.length && pt.length && pq.join('') === pt.join('')) return 3;
+
+    var wq = palabras(q), wt = palabras(t);
+    var dentro = function (a, b) {
+      if (a.length < 2 || a.length > b.length || b.length - a.length > 1) return false;
+      return (' ' + b.join(' ') + ' ').indexOf(' ' + a.join(' ') + ' ') >= 0;
+    };
+    if (dentro(wq, wt) || dentro(wt, wq)) return 2;
+
+    if (Math.abs(wq.length - wt.length) > 2) return 0;
+    var comparten = pq.some(function (p) {
+      return p.length >= 5 && wt.indexOf(p) >= 0;
+    });
+    return comparten ? 1 : 0;
+  };
+
+  /** ¿Pega lo bastante para rellenar en bloque sin que lo mire nadie? */
+  D.fotoPega = function (consulta, titulo) {
+    return D.fotoFuerza(consulta, titulo) > 0;
+  };
+
+  /**
+   * Segunda comprobación, la que el nombre no puede hacer.
+   *
+   * Hay nombres que coinciden de verdad y aun así el artículo es de otra
+   * cosa: la tienda «KING KONG» se llama igual que la película, y «Cafe
+   * Reissue» igual que la palabra. Por nombre no hay forma de separarlos.
+   *
+   * Lo que sí los separa: un sitio de verdad tiene coordenadas en Wikipedia,
+   * y una película no. Y si además sabemos dónde está el sitio —91 de los 107
+   * lugares traen lat/lon del geocodificado—, el artículo tiene que caer
+   * cerca. Así «Barikote» no se queda con la foto de Barikot, Afganistán,
+   * que está a 6.000 km.
+   *
+   * @param coordsArt  { lat, lon } del artículo, o null si no tiene.
+   * @param coordsSitio { lat, lon } del sitio, o null si no lo sabemos.
+   */
+  D.JAPON = { latMin: 24, latMax: 46, lonMin: 122, lonMax: 154 };
+  D.RADIO_FOTO_KM = 30;
+
+  D.fotoCerca = function (coordsArt, coordsSitio) {
+    if (!coordsArt || coordsArt.lat == null || coordsArt.lon == null) return false;
+    if (coordsSitio && coordsSitio.lat != null && coordsSitio.lon != null) {
+      return CAT.distanciaKm(coordsArt.lat, coordsArt.lon,
+                             coordsSitio.lat, coordsSitio.lon) <= D.RADIO_FOTO_KM;
+    }
+    // Sin referencia, al menos que esté en Japón.
+    var j = D.JAPON;
+    return coordsArt.lat >= j.latMin && coordsArt.lat <= j.latMax
+        && coordsArt.lon >= j.lonMin && coordsArt.lon <= j.lonMax;
+  };
+
+  /** Guarda la foto de un plan, una reserva o un lugar. */
+  D.guardarImagen = function (clase, id, imagen, idViaje) {
+    var coleccion = clase === 'reserva' ? D.reservas
+      : clase === 'lugar' ? D.lugares
+      : D.actividades;
+    return coleccion.actualizar(id, { imagen: imagenValida(imagen) }, idViaje);
   };
 
   /* ---------- Itinerario ----------
