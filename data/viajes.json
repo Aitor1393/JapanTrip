@@ -287,7 +287,13 @@
           "titulo": "Shibuya Sky",
           "inicio": "2026-12-06T15:40",
           "fin": "",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Shibuya_Sky_%2849287081607%29.jpg/1280px-Shibuya_Sky_%2849287081607%29.jpg",
+            "autor": "Wei-Te Wong from Taipei City, Taiwan, Republic of China",
+            "licencia": "CC BY-SA 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Shibuya_Sky_(49287081607).jpg"
+          }
         },
         {
           "id": "r-101",
@@ -506,7 +512,13 @@
           "lat": null,
           "lon": null,
           "visitado": false,
-          "notas": "A 30 min desde Shibuya."
+          "notas": "A 30 min desde Shibuya.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Minato_Mirai_21_Far_View.JPG/1280px-Minato_Mirai_21_Far_View.JPG",
+            "autor": "Antomattei",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Minato_Mirai_21"
+          }
         },
         {
           "id": "l-128",
@@ -517,7 +529,13 @@
           "lat": 35.7101,
           "lon": 139.8107,
           "visitado": false,
-          "notas": "Fáciles de encadenar con el día de Asakusa."
+          "notas": "Fáciles de encadenar con el día de Asakusa.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Tokyo_Skytree_2023_2.jpg/1280px-Tokyo_Skytree_2023_2.jpg",
+            "autor": "Akonnchiroll",
+            "licencia": "CC0",
+            "fuente": "https://es.wikipedia.org/wiki/Tokyo_Skytree"
+          }
         },
         {
           "nombre": "Kawagoe",
@@ -529,7 +547,13 @@
           "visitado": false,
           "notas": "",
           "id": "2d0f021a-bd66-4bd8-aa79-6b8e39e1d8a5",
-          "creado": "2026-08-17T13:12:02.822Z"
+          "creado": "2026-08-17T13:12:02.822Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Kurazukuri_Street_in_Little_Edo.jpg/1280px-Kurazukuri_Street_in_Little_Edo.jpg",
+            "autor": "Dandy1022",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://es.wikipedia.org/wiki/Kawagoe_(Saitama)"
+          }
         },
         {
           "nombre": "Nikko",
@@ -541,7 +565,13 @@
           "visitado": false,
           "notas": "",
           "id": "02e076eb-317f-435a-804d-061d7c604e0a",
-          "creado": "2026-08-17T13:13:17.942Z"
+          "creado": "2026-08-17T13:13:17.942Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Kegon_Taki.jpg/1280px-Kegon_Taki.jpg",
+            "autor": "Jordy Meow",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Nikk%C5%8D_(Tochigi)"
+          }
         },
         {
           "nombre": "Yakiniku Kappo no Oto",
@@ -565,7 +595,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "755086ec-f52e-40dc-b8d5-91acafb6f6a1",
-          "creado": "2026-08-19T11:03:03.246Z"
+          "creado": "2026-08-19T11:03:03.246Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Square_Enix_HQ_%28Shinjuku_Eastside_Square%29.jpg/1280px-Square_Enix_HQ_%28Shinjuku_Eastside_Square%29.jpg",
+            "autor": "Wirtz",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Square_Enix"
+          }
         },
         {
           "nombre": "JapaneseKokeshiDolls.com",
@@ -589,7 +625,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "a0a5a1bc-f878-4535-b0de-f5aeadfe4238",
-          "creado": "2026-08-19T11:03:03.247Z"
+          "creado": "2026-08-19T11:03:03.247Z",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/T%C5%8Dg%C5%8D-jinja_%28%E6%9D%B1%E9%83%B7%E7%A5%9E%E7%A4%BE%29.jpg",
+            "autor": "Matsujima",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:T%C5%8Dg%C5%8D-jinja_(%E6%9D%B1%E9%83%B7%E7%A5%9E%E7%A4%BE).jpg"
+          }
         },
         {
           "nombre": "Santuario Takagi",
@@ -613,7 +655,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "1701e84b-3290-4486-8307-5b7391ffb2fd",
-          "creado": "2026-08-19T11:03:03.247Z"
+          "creado": "2026-08-19T11:03:03.247Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Juban_inari_jinjya_2018a.jpg/1280px-Juban_inari_jinjya_2018a.jpg",
+            "autor": "江戸村のとくぞう",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Juban_inari_jinjya_2018a.jpg"
+          }
         },
         {
           "nombre": "KING KONG",
@@ -637,7 +685,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "8bd9586f-4cfa-4801-b9ff-3878700ebbb4",
-          "creado": "2026-08-19T11:03:03.248Z"
+          "creado": "2026-08-19T11:03:03.248Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Sangenjaya%2C_Setagaya_City_-_panoramio.jpg/1280px-Sangenjaya%2C_Setagaya_City_-_panoramio.jpg",
+            "autor": "Nagono",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Sangenjaya"
+          }
         },
         {
           "nombre": "Templo Jindai-ji",
@@ -649,7 +703,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "5c619f5e-163b-4012-9cc0-9133090520d5",
-          "creado": "2026-08-19T11:03:03.248Z"
+          "creado": "2026-08-19T11:03:03.248Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Jindaiji-4.jpg/1280px-Jindaiji-4.jpg",
+            "autor": "江戸村のとくぞう",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://en.wikipedia.org/wiki/Jindai-ji_(Tokyo)"
+          }
         },
         {
           "nombre": "Uonami Fish Bar",
@@ -709,7 +769,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "8ddfbb86-8ee5-4818-8d24-31677a03b451",
-          "creado": "2026-08-19T11:03:03.251Z"
+          "creado": "2026-08-19T11:03:03.251Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Memorial_for_Tokiwa-so_apartment_house.jpg/1280px-Memorial_for_Tokiwa-so_apartment_house.jpg",
+            "autor": "heiwa4126",
+            "licencia": "CC BY 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Memorial_for_Tokiwa-so_apartment_house.jpg"
+          }
         },
         {
           "nombre": "Izumo Ikebukuro",
@@ -733,7 +799,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "41703f48-d2d7-439b-bcbf-5f885dcda24b",
-          "creado": "2026-08-19T11:03:03.252Z"
+          "creado": "2026-08-19T11:03:03.252Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Kiyosumi-1.JPG/1280px-Kiyosumi-1.JPG",
+            "autor": "Irina Gelbukh",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Kiyosumi_Garden"
+          }
         },
         {
           "nombre": "Tokyu Plaza Harajuku Harakado",
@@ -793,7 +865,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "1887ae83-c586-442d-bbf7-53238d9ff265",
-          "creado": "2026-08-19T11:03:03.253Z"
+          "creado": "2026-08-19T11:03:03.253Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Araisan-Baishoin-Yakuo-ji_Temple%28Mt._Arai_Ume-illuminate-temple_Medicene-king_Temple%29_-_%E6%96%B0%E4%BA%95%E5%B1%B1%E6%A2%85%E7%85%A7%E9%99%A2%E8%96%AC%E7%8E%8B%E5%AF%BA_-_panoramio_%281%29.jpg/1280px-Araisan-Baishoin-Yakuo-ji_Temple%28Mt._Arai_Ume-illuminate-temple_Medicene-king_Temple%29_-_%E6%96%B0%E4%BA%95%E5%B1%B1%E6%A2%85%E7%85%A7%E9%99%A2%E8%96%AC%E7%8E%8B%E5%AF%BA_-_panoramio_%281%29.jpg",
+            "autor": "Carbonium",
+            "licencia": "CC BY 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Araisan-Baishoin-Yakuo-ji_Temple(Mt._Arai_Ume-illuminate-temple_Medicene-king_Temple)_-_%E6%96%B0%E4%BA%95%E5%B1%B1%E6%A2%85%E7%85%A7%E9%99%A2%E8%96%AC%E7%8E%8B%E5%AF%BA_-_panoramio_(1).jpg"
+          }
         },
         {
           "nombre": "Nakano Central Park",
@@ -805,7 +883,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "85883930-2792-4608-89b9-cf0ced61aa96",
-          "creado": "2026-08-19T11:03:03.254Z"
+          "creado": "2026-08-19T11:03:03.254Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Nakano_Central_Park_East.jpg/1280px-Nakano_Central_Park_East.jpg",
+            "autor": "掬茶",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Nakano_Central_Park_East.jpg"
+          }
         },
         {
           "nombre": "Barikote",
@@ -829,7 +913,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "a8bcb7a1-fb03-49f7-a886-2f537034dc77",
-          "creado": "2026-08-19T11:03:03.256Z"
+          "creado": "2026-08-19T11:03:03.256Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nakano_broadway_entrance.JPG/1280px-Nakano_broadway_entrance.JPG",
+            "autor": "User:Kentin",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Nakano_Broadway"
+          }
         },
         {
           "nombre": "Tokyo Station",
@@ -841,7 +931,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "d1e17ffc-62c7-46a8-bca9-f30a4d2cd690",
-          "creado": "2026-08-19T11:03:03.256Z"
+          "creado": "2026-08-19T11:03:03.256Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Tokyo-STA_Marunouchi-Entrance_2023.jpg/1280px-Tokyo-STA_Marunouchi-Entrance_2023.jpg",
+            "autor": "MaedaAkihiko",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://en.wikipedia.org/wiki/Tokyo_Station"
+          }
         },
         {
           "nombre": "Hachiko Statue",
@@ -853,7 +949,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "9b8c9e93-4797-4c4e-a729-c12a5042c77b",
-          "creado": "2026-08-19T11:03:03.256Z"
+          "creado": "2026-08-19T11:03:03.256Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Measuring_Hachik%C5%8D_%289412144400%29.jpg/1280px-Measuring_Hachik%C5%8D_%289412144400%29.jpg",
+            "autor": "Maarten Heerlien from Voorschoten, The Netherlands",
+            "licencia": "CC BY 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Measuring_Hachik%C5%8D_(9412144400).jpg"
+          }
         },
         {
           "nombre": "AniBirth Ikebukuro PARCO",
@@ -865,7 +967,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "ef9fb01f-b295-44bf-b1de-c9d253ad99aa",
-          "creado": "2026-08-19T11:03:03.257Z"
+          "creado": "2026-08-19T11:03:03.257Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/PARCO_Ike_21%2C3.jpg/1280px-PARCO_Ike_21%2C3.jpg",
+            "autor": "Rebirth10",
+            "licencia": "CC BY 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:PARCO_Ike_21,3.jpg"
+          }
         },
         {
           "nombre": "Fuji Heiwa Park",
@@ -913,7 +1021,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "f0632ab0-ff08-47bc-96e1-a6458d1cffe8",
-          "creado": "2026-08-19T11:03:03.258Z"
+          "creado": "2026-08-19T11:03:03.258Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Miyashita_park_construction_410pm_Feb_10_2019_various.jpeg/1280px-Miyashita_park_construction_410pm_Feb_10_2019_various.jpeg",
+            "autor": "Nesnad",
+            "licencia": "CC BY 4.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Miyashita_park_construction_410pm_Feb_10_2019_various.jpeg"
+          }
         },
         {
           "nombre": "Museo Tobu",
@@ -937,7 +1051,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "8993d89d-6ac5-4896-a905-3f8e455469d8",
-          "creado": "2026-08-19T11:03:03.259Z"
+          "creado": "2026-08-19T11:03:03.259Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Keisei_Yotsugi_sta_001.jpg/1280px-Keisei_Yotsugi_sta_001.jpg",
+            "autor": "東京特許許可局",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Yotsugi_Station"
+          }
         },
         {
           "nombre": "Gotemba Premium Outlets",
@@ -949,7 +1069,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "a961f1e5-8d22-445d-8115-472336599ac5",
-          "creado": "2026-08-19T11:03:03.259Z"
+          "creado": "2026-08-19T11:03:03.259Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Gotemba_premium_outlets1.jpg/1280px-Gotemba_premium_outlets1.jpg",
+            "autor": "myself",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Gotemba_Premium_Outlets"
+          }
         },
         {
           "nombre": "Pokemon Store Gotemba",
@@ -973,7 +1099,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "e1350256-755a-4bbb-8dbc-87bb44ca4ff8",
-          "creado": "2026-08-19T11:03:03.260Z"
+          "creado": "2026-08-19T11:03:03.260Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Lake_chuzenji_and_kegon_waterfall.jpg/1280px-Lake_chuzenji_and_kegon_waterfall.jpg",
+            "autor": "Uraomote yamaneko",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Parque_nacional_de_Nikk%C5%8D"
+          }
         },
         {
           "nombre": "Kurazukuri Hompo Kawagoe",
@@ -1021,7 +1153,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "8c394112-f66c-4f3d-8a98-0f3df0d37497",
-          "creado": "2026-08-19T11:03:03.262Z"
+          "creado": "2026-08-19T11:03:03.262Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Kawagoe_Kitain_Tahoto_202011.jpg/1280px-Kawagoe_Kitain_Tahoto_202011.jpg",
+            "autor": "tak1701d",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Kita-in"
+          }
         },
         {
           "nombre": "Kawagoe Hikawa Shrine",
@@ -1033,7 +1171,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "a101f2d0-63b2-43ca-8e48-3330356e4a77",
-          "creado": "2026-08-19T11:03:03.262Z"
+          "creado": "2026-08-19T11:03:03.262Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Kawagoe_Koedo_%28203545621%29.jpeg/1280px-Kawagoe_Koedo_%28203545621%29.jpeg",
+            "autor": "Takuya Matsuyama",
+            "licencia": "CC BY 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Kawagoe_Koedo_(203545621).jpeg"
+          }
         },
         {
           "nombre": "Kashiya Yokocho",
@@ -1045,7 +1189,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "9930523d-ab7d-407c-93a4-af4defb8d344",
-          "creado": "2026-08-19T11:03:03.263Z"
+          "creado": "2026-08-19T11:03:03.263Z",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Kashiya_yokocho.jpg",
+            "autor": "dailytransit",
+            "licencia": "CC BY-SA 2.0",
+            "fuente": "https://en.wikipedia.org/wiki/Kashiya_Yokocho"
+          }
         },
         {
           "nombre": "Toki no Kane",
@@ -1057,7 +1207,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "bc47d3b9-4079-4466-a905-0c73b8e35fe1",
-          "creado": "2026-08-19T11:03:03.264Z"
+          "creado": "2026-08-19T11:03:03.264Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Tokinokane-2006-03-20_1.jpg/1280px-Tokinokane-2006-03-20_1.jpg",
+            "autor": "Syohei Arai",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Tokinokane-2006-03-20_1.jpg"
+          }
         },
         {
           "nombre": "Nikko Toshogu Homotsukan Museum",
@@ -1069,7 +1225,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "a5103cbd-7210-4a1e-8132-bc886f3155a5",
-          "creado": "2026-08-19T11:03:03.264Z"
+          "creado": "2026-08-19T11:03:03.264Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Stele_of_Nikko_Tosho_Shrine.JPG/1280px-Stele_of_Nikko_Tosho_Shrine.JPG",
+            "autor": "そらみみ",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Stele_of_Nikko_Tosho_Shrine.JPG"
+          }
         },
         {
           "nombre": "Rinnoji Treasure Hall",
@@ -1093,7 +1255,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "914875c2-1a34-47f8-abb6-aba72dc7933e",
-          "creado": "2026-08-19T11:03:03.265Z"
+          "creado": "2026-08-19T11:03:03.265Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/PagodaNikkoJapan.JPG/1280px-PagodaNikkoJapan.JPG",
+            "autor": "No machine-readable author provided. Sergio~commonswiki assumed (based on copyright claims",
+            "licencia": "CC BY 2.5",
+            "fuente": "https://es.wikipedia.org/wiki/Nikk%C5%8D_T%C5%8Dsh%C5%8D-g%C5%AB"
+          }
         },
         {
           "nombre": "Lago Chuzenji",
@@ -1105,7 +1273,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "640f5e78-291f-429f-94d0-2dae987f3d13",
-          "creado": "2026-08-19T11:03:03.265Z"
+          "creado": "2026-08-19T11:03:03.265Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Mount_nantai_and_lake_chuzenji.jpg/1280px-Mount_nantai_and_lake_chuzenji.jpg",
+            "autor": "Uraomote yamaneko",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Lago_Chuzenji"
+          }
         },
         {
           "nombre": "Kegon Shrine",
@@ -1117,7 +1291,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "9565ce42-5ae2-4d36-989a-aba270737c01",
-          "creado": "2026-08-19T11:03:03.266Z"
+          "creado": "2026-08-19T11:03:03.266Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Kegon_Taki.jpg/1280px-Kegon_Taki.jpg",
+            "autor": "Jordy Meow",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Kegon_Taki.jpg"
+          }
         },
         {
           "nombre": "Nikko Futarasan Shrine",
@@ -1129,7 +1309,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "d407d2f5-6aab-4840-8feb-88a73c3de24c",
-          "creado": "2026-08-19T11:03:03.266Z"
+          "creado": "2026-08-19T11:03:03.266Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Kegon_Taki.jpg/1280px-Kegon_Taki.jpg",
+            "autor": "Jordy Meow",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Nikk%C5%8D_(Tochigi)"
+          }
         },
         {
           "nombre": "Puente Shinkyo",
@@ -1141,7 +1327,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "1c418df7-fcad-4dcb-ac51-edbbf8a47b70",
-          "creado": "2026-08-19T11:03:03.267Z"
+          "creado": "2026-08-19T11:03:03.267Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Shinkyo_Bridge_20140307.JPG/1280px-Shinkyo_Bridge_20140307.JPG",
+            "autor": "そらみみ",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Shinkyo_Bridge_20140307.JPG"
+          }
         },
         {
           "nombre": "Mishima Station",
@@ -1153,7 +1345,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "9794abfa-56c4-408a-bf83-58652168d8de",
-          "creado": "2026-08-19T11:03:03.267Z"
+          "creado": "2026-08-19T11:03:03.267Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Mishima_Station_south_exit_-_2024_April_14_various_14_53_50_968000.jpeg/1280px-Mishima_Station_south_exit_-_2024_April_14_various_14_53_50_968000.jpeg",
+            "autor": "Nesnad",
+            "licencia": "CC BY 4.0",
+            "fuente": "https://en.wikipedia.org/wiki/Mishima_Station"
+          }
         },
         {
           "nombre": "Shin-Fuji Station",
@@ -1165,7 +1363,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "29a2228e-0bc9-4ba5-9b81-4c0648b2c360",
-          "creado": "2026-08-19T11:03:03.268Z"
+          "creado": "2026-08-19T11:03:03.268Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Shinfuji-Sta-N_20140806.jpg/1280px-Shinfuji-Sta-N_20140806.jpg",
+            "autor": "Rsa",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Shin-Fuji_Station_(Shizuoka)"
+          }
         },
         {
           "nombre": "Lago Motosu",
@@ -1177,7 +1381,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "e3becf2a-afcc-4cb1-bfe6-553d1f37c6e9",
-          "creado": "2026-08-19T11:03:03.268Z"
+          "creado": "2026-08-19T11:03:03.268Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Lake_Motosu03.jpg/1280px-Lake_Motosu03.jpg",
+            "autor": "Captain76:Nikon D90+TAMRON SP10-24mm",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Lago_Motosu"
+          }
         },
         {
           "nombre": "Lago Saiko",
@@ -1189,7 +1399,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "348851e7-ee35-45c3-85e4-031759d336d5",
-          "creado": "2026-08-19T11:03:03.269Z"
+          "creado": "2026-08-19T11:03:03.269Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Saiko_-_Saiko6828.jpg/1280px-Saiko_-_Saiko6828.jpg",
+            "autor": "lumoplank",
+            "licencia": "CC0",
+            "fuente": "https://en.wikipedia.org/wiki/Saiko_Lake"
+          }
         },
         {
           "nombre": "Lago Kawaguchi",
@@ -1213,7 +1429,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "0bfeb99d-9f98-451e-acaa-ddf0ad7a9b23",
-          "creado": "2026-08-19T11:03:03.271Z"
+          "creado": "2026-08-19T11:03:03.271Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Shizuoka_g%C3%A9olocalisation_relief.svg/1280px-Shizuoka_g%C3%A9olocalisation_relief.svg.png",
+            "autor": "Flappiefh",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://es.wikipedia.org/wiki/Catarata_Shiraito"
+          }
         },
         {
           "nombre": "Lago Yamanaka",
@@ -1225,7 +1447,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "e032ae85-a6b7-492a-b558-023a5f1f4f49",
-          "creado": "2026-08-19T11:03:03.272Z"
+          "creado": "2026-08-19T11:03:03.272Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Yamanashi_g%C3%A9olocalisation_relief.svg/1280px-Yamanashi_g%C3%A9olocalisation_relief.svg.png",
+            "autor": "Flappiefh",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://es.wikipedia.org/wiki/Lago_Yamanaka"
+          }
         },
         {
           "nombre": "Aokigahara",
@@ -1237,7 +1465,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "ae0cdac7-26bd-42ce-99a9-399b9fc964dd",
-          "creado": "2026-08-19T11:03:03.273Z"
+          "creado": "2026-08-19T11:03:03.273Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/SaiKo.jpg/1280px-SaiKo.jpg",
+            "autor": "BehBeh at Japanese Wikipedia",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Aokigahara"
+          }
         },
         {
           "nombre": "Santuario Kitaguchi Hongu Fuji Sengen",
@@ -1249,7 +1483,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "eece26c2-35d3-4473-8afc-d52599665718",
-          "creado": "2026-08-19T11:03:03.273Z"
+          "creado": "2026-08-19T11:03:03.273Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Kitaguchi_Hongu_Fuji_Sengen_Shrine_waterway_precinct.JPG/1280px-Kitaguchi_Hongu_Fuji_Sengen_Shrine_waterway_precinct.JPG",
+            "autor": "Sakaori (talk)",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Kitaguchi_Hongu_Fuji_Sengen_Shrine_waterway_precinct.JPG"
+          }
         },
         {
           "nombre": "Oshino Hakkai",
@@ -1261,7 +1501,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "1250432b-8caf-4d6c-a54c-bbef8b8bc3b8",
-          "creado": "2026-08-19T11:03:03.274Z"
+          "creado": "2026-08-19T11:03:03.274Z",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Oshino_Village_Office.jpg",
+            "autor": "Miyuki Meinaka",
+            "licencia": "Public domain",
+            "fuente": "https://en.wikipedia.org/wiki/Oshino%2C_Yamanashi"
+          }
         },
         {
           "nombre": "Chureito Pagoda",
@@ -1273,7 +1519,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "b243335e-488d-4302-8489-4eac9137fd61",
-          "creado": "2026-08-19T11:03:03.275Z"
+          "creado": "2026-08-19T11:03:03.275Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Chureito_Pagoda%2C_Fujiyoshida_%2834125997301%29.jpg/1280px-Chureito_Pagoda%2C_Fujiyoshida_%2834125997301%29.jpg",
+            "autor": "Olivier Bruchez from Lausanne, Switzerland",
+            "licencia": "CC BY-SA 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Chureito_Pagoda,_Fujiyoshida_(34125997301).jpg"
+          }
         },
         {
           "nombre": "ICHIRAN Shibuya",
@@ -1309,7 +1561,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "442cd513-ec7f-4a4a-acf6-336ae26ef14e",
-          "creado": "2026-08-19T11:03:03.278Z"
+          "creado": "2026-08-19T11:03:03.278Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Sensoji_2023.jpg/1280px-Sensoji_2023.jpg",
+            "autor": "Akonnchiroll",
+            "licencia": "CC0",
+            "fuente": "https://en.wikipedia.org/wiki/Sens%C5%8D-ji"
+          }
         },
         {
           "nombre": "Musashi Mitake Shrine",
@@ -1321,7 +1579,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "0afd5e7d-f1cc-49fb-bee0-28f1d26f498a",
-          "creado": "2026-08-19T11:03:03.279Z"
+          "creado": "2026-08-19T11:03:03.279Z",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mitake-san_shrine.jpg",
+            "autor": "",
+            "licencia": "CC BY 2.0",
+            "fuente": "https://en.wikipedia.org/wiki/Mount_Mitake_(Tokyo)"
+          }
         },
         {
           "nombre": "Namiyoke Shrine",
@@ -1333,7 +1597,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "22c37bbd-57af-4865-8f61-cb7a9051e2cf",
-          "creado": "2026-08-19T11:03:03.279Z"
+          "creado": "2026-08-19T11:03:03.279Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Namiyoke_Inari_Shrine_-_nov_14_2021_various_15_24_17_150000.jpeg/1280px-Namiyoke_Inari_Shrine_-_nov_14_2021_various_15_24_17_150000.jpeg",
+            "autor": "Nesnad",
+            "licencia": "CC BY 4.0",
+            "fuente": "https://en.wikipedia.org/wiki/Namiyoke_Inari_Shrine"
+          }
         },
         {
           "nombre": "Hatonomori Hachiman Shrine",
@@ -1345,7 +1615,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "498ed157-0422-4bf4-8b41-c85f6792a7d9",
-          "creado": "2026-08-19T11:03:03.280Z"
+          "creado": "2026-08-19T11:03:03.280Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Hatonomori_Hachiman_Jinja.jpg/1280px-Hatonomori_Hachiman_Jinja.jpg",
+            "autor": "Syced",
+            "licencia": "CC0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Hatonomori_Hachiman_Jinja.jpg"
+          }
         },
         {
           "nombre": "Hatonomori restaurante",
@@ -1357,7 +1633,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "57c20bbd-392e-4e93-8b20-ddc4821c9237",
-          "creado": "2026-08-19T11:03:03.281Z"
+          "creado": "2026-08-19T11:03:03.281Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Hatonomori_Hachiman_Shrine_01.jpg/1280px-Hatonomori_Hachiman_Shrine_01.jpg",
+            "autor": "110kuwahara",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Hatonomori_Hachiman_Shrine_01.jpg"
+          }
         },
         {
           "nombre": "Ushi-Tenjin Kitano Jinja",
@@ -1369,7 +1651,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "20824c39-ae3f-4458-aa76-66d74c485b0e",
-          "creado": "2026-08-19T11:03:03.282Z"
+          "creado": "2026-08-19T11:03:03.282Z",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Ota_shirine_Ushi-tenjin_20091115.jpg",
+            "autor": "Tobosha (逃亡者)",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Ota_shirine_Ushi-tenjin_20091115.jpg"
+          }
         },
         {
           "nombre": "Santuario Toyokawa Inari",
@@ -1381,7 +1669,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "f63f6bbe-7e82-47e5-8b42-7948d79e5103",
-          "creado": "2026-08-19T11:03:03.283Z"
+          "creado": "2026-08-19T11:03:03.283Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Toyokawa_Inari_Shrine_-_panoramio.jpg/1280px-Toyokawa_Inari_Shrine_-_panoramio.jpg",
+            "autor": "kamiosaki",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Toyokawa_Inari_Shrine_-_panoramio.jpg"
+          }
         },
         {
           "nombre": "Templo Gotokuji",
@@ -1393,7 +1687,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Ya está en el viaje como plan del 7 dic 2026.",
           "id": "a69ed60f-3381-47c7-8301-f727a2381a7d",
-          "creado": "2026-08-19T11:03:03.284Z"
+          "creado": "2026-08-19T11:03:03.284Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Gotokuji_Temple_%2851924763002%29.jpg/1280px-Gotokuji_Temple_%2851924763002%29.jpg",
+            "autor": "Raita Futo from Tokyo, Japan",
+            "licencia": "CC BY 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Gotokuji_Temple_(51924763002).jpg"
+          }
         },
         {
           "nombre": "Ginza Kagari",
@@ -1417,7 +1717,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "7f6678f5-0092-4cb8-9c3a-dbb73ea41dce",
-          "creado": "2026-08-19T11:03:03.286Z"
+          "creado": "2026-08-19T11:03:03.286Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cat_Street%2C_Ura_Harajuku_1.jpg/1280px-Cat_Street%2C_Ura_Harajuku_1.jpg",
+            "autor": "Aw1805",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Cat_Street%2C_Tokyo"
+          }
         },
         {
           "nombre": "Tokyu Plaza Omotesando Omokado",
@@ -1429,7 +1735,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "21a01439-7602-4e72-8156-e0ccab0adee2",
-          "creado": "2026-08-19T11:03:03.287Z"
+          "creado": "2026-08-19T11:03:03.287Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Tokyu_Plaza_Omotesando_Harajuku_-_panoramio.jpg/1280px-Tokyu_Plaza_Omotesando_Harajuku_-_panoramio.jpg",
+            "autor": "Kaz Ish",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Tokyu_Plaza_Omotesando_Harajuku_-_panoramio.jpg"
+          }
         },
         {
           "nombre": "Omote-sando Station",
@@ -1441,7 +1753,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "ebffc482-7ba0-4148-b9fe-0e7e62164811",
-          "creado": "2026-08-19T11:03:03.288Z"
+          "creado": "2026-08-19T11:03:03.288Z",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Tokyo-Metro-Omotesando-Station-04.jpg",
+            "autor": "Rs1421",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Omote-sand%C5%8D_Station"
+          }
         },
         {
           "nombre": "Parque Yoyogi",
@@ -1453,7 +1771,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "09186b2d-d7a7-453b-b9d8-29a60f150feb",
-          "creado": "2026-08-19T11:03:03.289Z"
+          "creado": "2026-08-19T11:03:03.289Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Mainstreet_Yoyogipark.JPG/1280px-Mainstreet_Yoyogipark.JPG",
+            "autor": "Shinjiro",
+            "licencia": "CC BY 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Parque_Yoyogi"
+          }
         },
         {
           "nombre": "Calle Takeshita",
@@ -1465,7 +1789,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "7e0ae1d1-98f3-4c7a-ae1e-0ea56e26d239",
-          "creado": "2026-08-19T11:03:03.290Z"
+          "creado": "2026-08-19T11:03:03.290Z",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Takeshita_Dori.jpg",
+            "autor": "Jordy Meow",
+            "licencia": "CC BY 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Calle_Takeshita"
+          }
         },
         {
           "nombre": "Gashapon Ikebukuro Main Store",
@@ -1489,7 +1819,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "3312c310-c7bc-47ca-8562-ecec2cbe1859",
-          "creado": "2026-08-19T11:03:03.292Z"
+          "creado": "2026-08-19T11:03:03.292Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Courtyard_of_Meiji_Shrine_20190717.jpg/1280px-Courtyard_of_Meiji_Shrine_20190717.jpg",
+            "autor": "Tokuzo in Edomura",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://es.wikipedia.org/wiki/Santuario_Meiji"
+          }
         },
         {
           "nombre": "Sunshine Aquarium",
@@ -1501,7 +1837,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "7b4884f4-e8af-41c4-8e34-cc27e2bd231c",
-          "creado": "2026-08-19T11:03:03.294Z"
+          "creado": "2026-08-19T11:03:03.294Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Sunshine_City_2012.JPG/1280px-Sunshine_City_2012.JPG",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Sunshine_City%2C_Tokyo"
+          }
         },
         {
           "nombre": "animate Ikebukuro Flagship Store",
@@ -1549,7 +1891,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "b1994f57-aa15-4756-b558-824ff0d20ea0",
-          "creado": "2026-08-19T11:03:03.297Z"
+          "creado": "2026-08-19T11:03:03.297Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Sunshine_60.JPG/1280px-Sunshine_60.JPG",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Sunshine_60"
+          }
         },
         {
           "nombre": "Jardin Nacional Shinjuku Gyoen",
@@ -1561,7 +1909,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "de57ff78-60e5-44f4-afcf-c4e705b0076b",
-          "creado": "2026-08-19T11:03:03.298Z"
+          "creado": "2026-08-19T11:03:03.298Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Shinjuku_Gyoen_National_Garden_-_sakura_3.JPG/1280px-Shinjuku_Gyoen_National_Garden_-_sakura_3.JPG",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Jard%C3%ADn_Nacional_Shinjuku_Gyoen"
+          }
         },
         {
           "nombre": "Ayuntamiento de Tokio",
@@ -1573,7 +1927,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "5b67678b-bce8-471c-abbc-11ed1a283de3",
-          "creado": "2026-08-19T11:03:03.300Z"
+          "creado": "2026-08-19T11:03:03.300Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Tokyo_Metropolitan_Government_Building_No2_2024-03-31.jpg/1280px-Tokyo_Metropolitan_Government_Building_No2_2024-03-31.jpg",
+            "autor": "Asanagi",
+            "licencia": "CC0",
+            "fuente": "https://es.wikipedia.org/wiki/Ayuntamiento_de_Tokio"
+          }
         },
         {
           "nombre": "Omoide Yokocho",
@@ -1585,7 +1945,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "3abd2c53-0b2b-49c1-af0b-e61aafc52fe6",
-          "creado": "2026-08-19T11:03:03.301Z"
+          "creado": "2026-08-19T11:03:03.301Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Omoide_Yokocho%2C_Shinjuku_%2829255435527%29.jpg/1280px-Omoide_Yokocho%2C_Shinjuku_%2829255435527%29.jpg",
+            "autor": "Fabio Achilli from Milano, Italy",
+            "licencia": "CC BY 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Omoide_Yokocho,_Shinjuku_(29255435527).jpg"
+          }
         },
         {
           "nombre": "Kabukicho",
@@ -1597,7 +1963,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "686a4961-1365-4dcb-8942-3ccbd44553f0",
-          "creado": "2026-08-19T11:03:03.302Z"
+          "creado": "2026-08-19T11:03:03.302Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Kabukicho-Sinjyuku-Tokyo.JPG/1280px-Kabukicho-Sinjyuku-Tokyo.JPG",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Kabukich%C5%8D"
+          }
         },
         {
           "nombre": "Miyashita Park",
@@ -1621,7 +1993,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "38a6bde3-b4a6-4e1c-9e4a-73841d697c70",
-          "creado": "2026-08-19T11:03:03.304Z"
+          "creado": "2026-08-19T11:03:03.304Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Nintendo_Tokyo_%28PXL_20231220_022539971%29.jpg/1280px-Nintendo_Tokyo_%28PXL_20231220_022539971%29.jpg",
+            "autor": "IagoQnsi",
+            "licencia": "CC BY 4.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Nintendo_Tokyo_(PXL_20231220_022539971).jpg"
+          }
         },
         {
           "nombre": "Shibuya Sky",
@@ -1633,7 +2011,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Ya está en el viaje como reserva.",
           "id": "1e16e530-e7b2-4fc1-8893-6e057b45a5f4",
-          "creado": "2026-08-19T11:03:03.305Z"
+          "creado": "2026-08-19T11:03:03.305Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Shibuya_Sky_%2849287081607%29.jpg/1280px-Shibuya_Sky_%2849287081607%29.jpg",
+            "autor": "Wei-Te Wong from Taipei City, Taiwan, Republic of China",
+            "licencia": "CC BY-SA 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Shibuya_Sky_(49287081607).jpg"
+          }
         },
         {
           "nombre": "Kumachan Onsen",
@@ -1657,7 +2041,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "6821de7d-74cc-4d53-b587-961477a3b7a2",
-          "creado": "2026-08-19T11:03:03.306Z"
+          "creado": "2026-08-19T11:03:03.306Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Rainbow_Bridge_And_Statue_Of_Liberty_%2851942076%29.jpeg/1280px-Rainbow_Bridge_And_Statue_Of_Liberty_%2851942076%29.jpeg",
+            "autor": "Benoit Larochelle",
+            "licencia": "CC BY 3.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Rainbow_Bridge_And_Statue_Of_Liberty_(51942076).jpeg"
+          }
         },
         {
           "nombre": "Fuji TV Shop Fujisan Tokyo Station",
@@ -1717,7 +2107,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "841d3731-5012-40bf-ace7-e30338823d17",
-          "creado": "2026-08-19T11:03:03.312Z"
+          "creado": "2026-08-19T11:03:03.312Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/20030727_27_July_2003_Tokyo_International_Exhibition_Center_Big_Sight_Odaiba_Tokyo_Japan.jpg/1280px-20030727_27_July_2003_Tokyo_International_Exhibition_Center_Big_Sight_Odaiba_Tokyo_Japan.jpg",
+            "autor": "Morio",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Tokyo_Big_Sight"
+          }
         },
         {
           "nombre": "Sanrio Cafe Ikebukuro",
@@ -1729,7 +2125,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "76ebf706-04a9-4bca-8cb3-c39eacf748bf",
-          "creado": "2026-08-19T11:03:03.314Z"
+          "creado": "2026-08-19T11:03:03.314Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sanriopuroland-outside-summer2007.jpg/1280px-Sanriopuroland-outside-summer2007.jpg",
+            "autor": "Nesnad",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Sanrio_Puroland"
+          }
         },
         {
           "nombre": "Shiro-Hige's Cream Puff Factory",
@@ -1753,7 +2155,13 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "bb2a5774-6c98-43b8-b2ae-7faaa75d3c24",
-          "creado": "2026-08-19T11:03:03.316Z"
+          "creado": "2026-08-19T11:03:03.316Z",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Azabudai_Hills%2C_opening_day.jpg/1280px-Azabudai_Hills%2C_opening_day.jpg",
+            "autor": "Syced",
+            "licencia": "CC0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Azabudai_Hills,_opening_day.jpg"
+          }
         },
         {
           "nombre": "teamLab Planets",
@@ -2097,7 +2505,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Por la mañana. En domingo suele haber bodas sintoístas."
+          "notas": "Por la mañana. En domingo suele haber bodas sintoístas.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Courtyard_of_Meiji_Shrine_20190717.jpg/1280px-Courtyard_of_Meiji_Shrine_20190717.jpg",
+            "autor": "Tokuzo in Edomura",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://es.wikipedia.org/wiki/Santuario_Meiji"
+          }
         },
         {
           "id": "a-029",
@@ -2107,7 +2521,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Calle Takeshita, Tokyu Plaza Harajuku, avenida Omotesando."
+          "notas": "Calle Takeshita, Tokyu Plaza Harajuku, avenida Omotesando.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/JRE-Harajuku-Station-07.jpg/1280px-JRE-Harajuku-Station-07.jpg",
+            "autor": "Rs1421",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Harajuku"
+          }
         },
         {
           "id": "a-030",
@@ -2147,7 +2567,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Cruce, Miyashita Park, Nintendo Tokyo (en Parco), Adidas —camisetas— y tiendas de deporte."
+          "notas": "Cruce, Miyashita Park, Nintendo Tokyo (en Parco), Adidas —camisetas— y tiendas de deporte.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg/1280px-Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg",
+            "autor": "Benh LIEU SONG (Flickr)",
+            "licencia": "CC BY-SA 2.0",
+            "fuente": "https://es.wikipedia.org/wiki/Shibuya_(Tokio)"
+          }
         },
         {
           "id": "a-034",
@@ -2157,7 +2583,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Anochece a las 16:30 y con el aire seco de diciembre se ve el Fuji. Se agota: comprar online."
+          "notas": "Anochece a las 16:30 y con el aire seco de diciembre se ve el Fuji. Se agota: comprar online.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Shibuya_Sky_%2849287081607%29.jpg/1280px-Shibuya_Sky_%2849287081607%29.jpg",
+            "autor": "Wei-Te Wong from Taipei City, Taiwan, Republic of China",
+            "licencia": "CC BY-SA 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Shibuya_Sky_(49287081607).jpg"
+          }
         },
         {
           "id": "a-035",
@@ -2177,7 +2609,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "A 15 min andando."
+          "notas": "A 15 min andando.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Tokyu_Daikan-yama_sta_001.jpg/1280px-Tokyu_Daikan-yama_sta_001.jpg",
+            "autor": "東京特許許可局",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://en.wikipedia.org/wiki/Daikan-yama_Station"
+          }
         },
         {
           "id": "a-037",
@@ -2187,7 +2625,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Primera hora. Odakyu desde Shinjuku, o línea Setagaya hasta Miyanosaka. Los maneki-neko con la luz de la mañana."
+          "notas": "Primera hora. Odakyu desde Shinjuku, o línea Setagaya hasta Miyanosaka. Los maneki-neko con la luz de la mañana.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Gotokuji_Temple_%2851924763002%29.jpg/1280px-Gotokuji_Temple_%2851924763002%29.jpg",
+            "autor": "Raita Futo from Tokyo, Japan",
+            "licencia": "CC BY 2.0",
+            "fuente": "https://commons.wikimedia.org/wiki/File:Gotokuji_Temple_(51924763002).jpg"
+          }
         },
         {
           "id": "a-038",
@@ -2197,7 +2641,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "A 10 min: vintage, cafés y tiendas de discos."
+          "notas": "A 10 min: vintage, cafés y tiendas de discos.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Shimokitazawa_Street_2015.jpg/1280px-Shimokitazawa_Street_2015.jpg",
+            "autor": "Aw1805",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://en.wikipedia.org/wiki/Shimokitazawa"
+          }
         },
         {
           "id": "a-039",
@@ -2207,7 +2657,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Nakano Broadway, Nakano Central Park y templo Arai Yakushi Baishoin."
+          "notas": "Nakano Broadway, Nakano Central Park y templo Arai Yakushi Baishoin.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Nakano_Oka1.jpg/1280px-Nakano_Oka1.jpg",
+            "autor": "Okajun",
+            "licencia": "CC BY 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Nakano_(Tokio)"
+          }
         },
         {
           "id": "a-040",
@@ -2217,7 +2673,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Pal Shotengai, santuario Koenji Hikawa y el mural de Yohei Takahashi."
+          "notas": "Pal Shotengai, santuario Koenji Hikawa y el mural de Yohei Takahashi.",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Koenji_pal.JPG",
+            "autor": "Tyoron2",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/K%C5%8Denji"
+          }
         },
         {
           "id": "a-041",
@@ -2307,7 +2769,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Salida con calma."
+          "notas": "Salida con calma.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Sensoji_2023.jpg/1280px-Sensoji_2023.jpg",
+            "autor": "Akonnchiroll",
+            "licencia": "CC0",
+            "fuente": "https://en.wikipedia.org/wiki/Sens%C5%8D-ji"
+          }
         },
         {
           "id": "a-050",
@@ -2317,7 +2785,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Hasta Asakusa (~35 min), si preferís llegar por el agua."
+          "notas": "Hasta Asakusa (~35 min), si preferís llegar por el agua.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Hamarikyu_Garden_as_seen_from_Shiodome.jpg/1280px-Hamarikyu_Garden_as_seen_from_Shiodome.jpg",
+            "autor": "",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Hama-riky%C5%AB_Gardens"
+          }
         },
         {
           "id": "a-051",
@@ -2327,7 +2801,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "A 25 min: tiendas, retro y arcades."
+          "notas": "A 25 min: tiendas, retro y arcades.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Akiba_denkigai.jpg/1280px-Akiba_denkigai.jpg",
+            "autor": "Jmho",
+            "licencia": "CC0",
+            "fuente": "https://es.wikipedia.org/wiki/Akihabara"
+          }
         },
         {
           "id": "a-052",
@@ -2337,7 +2817,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Si queda energía; quedan de camino."
+          "notas": "Si queda energía; quedan de camino.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Tokyo_Skytree_2023_2.jpg/1280px-Tokyo_Skytree_2023_2.jpg",
+            "autor": "Akonnchiroll",
+            "licencia": "CC0",
+            "fuente": "https://es.wikipedia.org/wiki/Tokyo_Skytree"
+          }
         },
         {
           "id": "a-053",
@@ -2407,7 +2893,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "En la salida oeste, junto al Teatro Metropolitano. Cinco minutos para ubicarse antes de meterse en los centros comerciales."
+          "notas": "En la salida oeste, junto al Teatro Metropolitano. Cinco minutos para ubicarse antes de meterse en los centros comerciales.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Global_Ring_Theater_2023-03-02.jpg/1280px-Global_Ring_Theater_2023-03-02.jpg",
+            "autor": "Asanagi",
+            "licencia": "CC0",
+            "fuente": "https://en.wikipedia.org/wiki/Ikebukuro_Nishiguchi_Park"
+          }
         },
         {
           "id": "a-060",
@@ -2437,7 +2929,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Justo detrás de Animate: manga, doujinshi y tiendas de segunda mano. Es la calle friki de referencia de Ikebukuro."
+          "notas": "Justo detrás de Animate: manga, doujinshi y tiendas de segunda mano. Es la calle friki de referencia de Ikebukuro.",
+          "imagen": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Ikebukuro-honten.jpg",
+            "autor": "Akosygin at English Wikipedia",
+            "licencia": "Public domain",
+            "fuente": "https://en.wikipedia.org/wiki/Otome_Road"
+          }
         },
         {
           "id": "a-063",
@@ -2447,7 +2945,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "A 8 min andando de la salida este. Es un complejo enorme: entrad con una idea clara de qué queréis ver o se os va la tarde."
+          "notas": "A 8 min andando de la salida este. Es un complejo enorme: entrad con una idea clara de qué queréis ver o se os va la tarde.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Sunshine_60.JPG/1280px-Sunshine_60.JPG",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://es.wikipedia.org/wiki/Sunshine_60"
+          }
         },
         {
           "id": "a-064",
@@ -2467,7 +2971,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "En el mismo edificio."
+          "notas": "En el mismo edificio.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sanriopuroland-outside-summer2007.jpg/1280px-Sanriopuroland-outside-summer2007.jpg",
+            "autor": "Nesnad",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Sanrio_Puroland"
+          }
         },
         {
           "id": "a-066",
@@ -2547,7 +3057,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "A 8 min andando: el Starlight Garden del jardín exterior es la otra instalación grande de la zona."
+          "notas": "A 8 min andando: el Starlight Garden del jardín exterior es la otra instalación grande de la zona.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Tokyo_Midtown.2.JPG/1280px-Tokyo_Midtown.2.JPG",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Tokyo_Midtown"
+          }
         },
         {
           "id": "a-074",
@@ -2637,7 +3153,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "DiverCity, el Gundam y el paseo de la playa con el puente Rainbow al anochecer."
+          "notas": "DiverCity, el Gundam y el paseo de la playa con el puente Rainbow al anochecer.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/2018_FCG_Headquarters_Building_2.jpg/1280px-2018_FCG_Headquarters_Building_2.jpg",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://es.wikipedia.org/wiki/Odaiba"
+          }
         },
         {
           "id": "a-083",
@@ -2657,7 +3179,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "De 7:30 a 9:30. En lunes está todo abierto, al contrario que en domingo. Salid del hotel sin hacer check-out todavía."
+          "notas": "De 7:30 a 9:30. En lunes está todo abierto, al contrario que en domingo. Salid del hotel sin hacer check-out todavía.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/2018_Tsukiji_fish_market.jpg/1280px-2018_Tsukiji_fish_market.jpg",
+            "autor": "Kakidai",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://en.wikipedia.org/wiki/Tsukiji_fish_market"
+          }
         },
         {
           "id": "a-085",
@@ -2677,7 +3205,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Justo al lado de Tsukiji, si el tiempo acompaña."
+          "notas": "Justo al lado de Tsukiji, si el tiempo acompaña.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Hamarikyu_Garden_as_seen_from_Shiodome.jpg/1280px-Hamarikyu_Garden_as_seen_from_Shiodome.jpg",
+            "autor": "",
+            "licencia": "CC BY-SA 3.0",
+            "fuente": "https://en.wikipedia.org/wiki/Hama-riky%C5%AB_Gardens"
+          }
         },
         {
           "id": "a-087",
@@ -2697,7 +3231,13 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Itoya (papelería), Uniqlo y GU flagship, Muji flagship, Ginza Six y cafés."
+          "notas": "Itoya (papelería), Uniqlo y GU flagship, Muji flagship, Ginza Six y cafés.",
+          "imagen": {
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/170312_Ginza_Tokyo_Japan01s3.jpg/1280px-170312_Ginza_Tokyo_Japan01s3.jpg",
+            "autor": "663highland",
+            "licencia": "CC BY-SA 4.0",
+            "fuente": "https://es.wikipedia.org/wiki/Ginza"
+          }
         },
         {
           "id": "a-089",
