@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "actualizado": "2026-08-19",
+  "actualizado": "2026-11-01",
   "viajeActivo": "tokio-2026",
   "viajes": [
     {
@@ -1890,16 +1890,6 @@
           "notas": "Patio central del outlet o Gotemba Kogen Beer, cervecería con restaurante y lanzadera propia."
         },
         {
-          "id": "a-007",
-          "titulo": "Iluminación de Gotemba Kogen Toki no Sumika",
-          "fecha": "2026-12-02",
-          "hora": "16:30",
-          "tipo": "actividad",
-          "duracion": "",
-          "lugar": "",
-          "notas": "Una de las iluminaciones más grandes de la zona, y a las 16:30 ya es de noche."
-        },
-        {
           "id": "a-008",
           "titulo": "Vuelta a Shinjuku en bus",
           "fecha": "2026-12-02",
@@ -2923,17 +2913,6 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "ef9fb01f-b295-44bf-b1de-c9d253ad99aa",
           "id": "11216ce5-d0e7-4e83-9413-4518b3021aae",
-          "creado": "2026-08-19T11:03:03.257Z"
-        },
-        {
-          "titulo": "Fuji Heiwa Park",
-          "fecha": "2026-12-02",
-          "hora": "",
-          "tipo": "actividad",
-          "lugar": "Gotemba",
-          "notas": "De tu lista de Google Maps · está en Gotemba, y ese día ya vas por ahí",
-          "idLugar": "9631aca1-1d48-42b7-8133-2b8b06365d4c",
-          "id": "c9b7fe86-6166-4da6-a0f3-eec46448da66",
           "creado": "2026-08-19T11:03:03.257Z"
         },
         {
