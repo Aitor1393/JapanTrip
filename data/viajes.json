@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "actualizado": "2026-11-01",
+  "actualizado": "2026-11-09",
   "viajeActivo": "tokio-2026",
   "viajes": [
     {
@@ -61,7 +61,8 @@
           "titulo": "Iberia · Madrid → Tokio Narita",
           "inicio": "2026-11-30T20:20",
           "fin": "2026-12-01T18:30",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-094",
@@ -98,7 +99,8 @@
           "titulo": "Iberia · Tokio Narita → Madrid",
           "inicio": "2026-12-14T22:10",
           "fin": "2026-12-15T05:45",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-095",
@@ -130,7 +132,8 @@
           "titulo": "Hotel Gracery Shinjuku",
           "inicio": "2026-12-01T15:00",
           "fin": "2026-12-03T11:00",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-096",
@@ -162,7 +165,8 @@
           "titulo": "Daiwa Roynet Hotel Yamagata Ekimae",
           "inicio": "2026-12-03T15:00",
           "fin": "2026-12-04T11:00",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-097",
@@ -194,7 +198,8 @@
           "titulo": "Takimikan, Ginzan Onsen",
           "inicio": "2026-12-04T15:00",
           "fin": "2026-12-05T10:00",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-098",
@@ -226,7 +231,8 @@
           "titulo": "Hotel Gracery Shinjuku",
           "inicio": "2026-12-05T15:00",
           "fin": "2026-12-14T11:00",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-099",
@@ -258,7 +264,8 @@
           "titulo": "Tour del Fuji en español",
           "inicio": "2026-12-10T08:20",
           "fin": "2026-12-10T17:20",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-100",
@@ -322,7 +329,8 @@
           "titulo": "TeamLab Planets",
           "inicio": "2026-12-13",
           "fin": "",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "id": "r-102",
@@ -359,7 +367,8 @@
           "titulo": "Bus Shinjuku → Gotemba (ida y vuelta)",
           "inicio": "2026-12-02T07:30",
           "fin": "",
-          "excluirGasto": false
+          "excluirGasto": false,
+          "imagen": null
         },
         {
           "tipo": "tren",
@@ -392,9 +401,10 @@
             "personas": 0,
             "direccion": ""
           },
-          "notas": "POR RESERVAR",
+          "notas": "POR RESERVAR - 2h 47min",
           "id": "6fbd17e9-c051-4753-bf88-1a43fec0a4e0",
-          "creado": "2026-08-17T11:56:52.788Z"
+          "creado": "2026-08-17T11:56:52.788Z",
+          "imagen": null
         },
         {
           "tipo": "tren",
@@ -429,7 +439,8 @@
           },
           "notas": "PENDIENTE RESERVAR",
           "id": "ab55338b-f869-4023-98d0-3fa141f6b5d4",
-          "creado": "2026-08-17T11:58:22.390Z"
+          "creado": "2026-08-17T11:58:22.390Z",
+          "imagen": null
         },
         {
           "tipo": "tren",
@@ -464,7 +475,8 @@
           },
           "notas": "",
           "id": "5cb0fae1-24f5-4828-81c9-46eb365623b7",
-          "creado": "2026-08-17T11:59:53.959Z"
+          "creado": "2026-08-17T11:59:53.959Z",
+          "imagen": null
         },
         {
           "tipo": "tren",
@@ -499,7 +511,8 @@
           },
           "notas": "",
           "id": "ec0c7f30-6091-48a1-9522-3fcc9dd4eea9",
-          "creado": "2026-08-17T12:02:56.787Z"
+          "creado": "2026-08-17T12:02:56.787Z",
+          "imagen": null
         }
       ],
       "lugares": [
@@ -583,7 +596,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "5dc7c59b-cda3-4616-87a1-5e64d505d58d",
-          "creado": "2026-08-19T11:03:03.240Z"
+          "creado": "2026-08-19T11:03:03.240Z",
+          "imagen": null
         },
         {
           "nombre": "SQUARE ENIX GARDEN",
@@ -613,7 +627,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "68f6f87e-0515-46f5-b460-294f958ae765",
-          "creado": "2026-08-19T11:03:03.246Z"
+          "creado": "2026-08-19T11:03:03.246Z",
+          "imagen": null
         },
         {
           "nombre": "Santuario Togo",
@@ -643,7 +658,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "0db3e132-f45a-40fe-b08e-87c5c457623c",
-          "creado": "2026-08-19T11:03:03.247Z"
+          "creado": "2026-08-19T11:03:03.247Z",
+          "imagen": null
         },
         {
           "nombre": "Juban Inari Jinja",
@@ -673,7 +689,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "10d8e8d5-99a7-4e25-ad6c-0c4206af0a2a",
-          "creado": "2026-08-19T11:03:03.248Z"
+          "creado": "2026-08-19T11:03:03.248Z",
+          "imagen": null
         },
         {
           "nombre": "Sangenjaya",
@@ -721,7 +738,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "adb666e0-4290-4942-8e7a-94a9f72370f5",
-          "creado": "2026-08-19T11:03:03.249Z"
+          "creado": "2026-08-19T11:03:03.249Z",
+          "imagen": null
         },
         {
           "nombre": "Asahi Inari Shrine",
@@ -733,7 +751,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "9effd6b4-f4d9-402e-a3e7-6a0452306204",
-          "creado": "2026-08-19T11:03:03.249Z"
+          "creado": "2026-08-19T11:03:03.249Z",
+          "imagen": null
         },
         {
           "nombre": "Nihonbashi Tonkatsu Hajime HANARE",
@@ -745,7 +764,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "4be0e3cc-31d1-4978-84e1-518f9cdd4de2",
-          "creado": "2026-08-19T11:03:03.250Z"
+          "creado": "2026-08-19T11:03:03.250Z",
+          "imagen": null
         },
         {
           "nombre": "Koenji Kita",
@@ -757,7 +777,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "115cafda-b5c1-463f-9289-2f9d2ad070e0",
-          "creado": "2026-08-19T11:03:03.250Z"
+          "creado": "2026-08-19T11:03:03.250Z",
+          "imagen": null
         },
         {
           "nombre": "Museo del manga Tokiwa-so",
@@ -787,7 +808,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "b6ec8dbe-4b64-49e3-ba67-40dc4a959134",
-          "creado": "2026-08-19T11:03:03.252Z"
+          "creado": "2026-08-19T11:03:03.252Z",
+          "imagen": null
         },
         {
           "nombre": "Jardin Kiyosumi",
@@ -817,7 +839,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "91bfa2f1-17ba-4b39-a1a7-21456c9d6e8b",
-          "creado": "2026-08-19T11:03:03.252Z"
+          "creado": "2026-08-19T11:03:03.252Z",
+          "imagen": null
         },
         {
           "nombre": "Henry's Burger Harajuku",
@@ -829,7 +852,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "8685ada1-408c-4cb8-b816-8c78128a5003",
-          "creado": "2026-08-19T11:03:03.252Z"
+          "creado": "2026-08-19T11:03:03.252Z",
+          "imagen": null
         },
         {
           "nombre": "AMAM DACOTAN",
@@ -841,7 +865,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "c2f476a2-8f19-48d5-812b-98d66e79c44d",
-          "creado": "2026-08-19T11:03:03.253Z"
+          "creado": "2026-08-19T11:03:03.253Z",
+          "imagen": null
         },
         {
           "nombre": "Donguri Kyowakoku",
@@ -853,7 +878,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "708a7386-2b62-4488-ad88-d3e235fdce9a",
-          "creado": "2026-08-19T11:03:03.253Z"
+          "creado": "2026-08-19T11:03:03.253Z",
+          "imagen": null
         },
         {
           "nombre": "Templo Arai Yakushi Baishoin",
@@ -901,7 +927,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "2a64db47-96d6-4350-acaa-060e01efb7b1",
-          "creado": "2026-08-19T11:03:03.254Z"
+          "creado": "2026-08-19T11:03:03.254Z",
+          "imagen": null
         },
         {
           "nombre": "Nakano Broadway",
@@ -985,7 +1012,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "9631aca1-1d48-42b7-8133-2b8b06365d4c",
-          "creado": "2026-08-19T11:03:03.257Z"
+          "creado": "2026-08-19T11:03:03.257Z",
+          "imagen": null
         },
         {
           "nombre": "SOCCER SHOP KAMO Harajuku",
@@ -997,7 +1025,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "54cce526-f50f-456c-9a8e-5b5096be2cde",
-          "creado": "2026-08-19T11:03:03.257Z"
+          "creado": "2026-08-19T11:03:03.257Z",
+          "imagen": null
         },
         {
           "nombre": "Sports shop Gallery 2 Shibuya",
@@ -1009,7 +1038,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "4b186d70-4058-42b1-94b7-ad7d84d68c29",
-          "creado": "2026-08-19T11:03:03.258Z"
+          "creado": "2026-08-19T11:03:03.258Z",
+          "imagen": null
         },
         {
           "nombre": "adidas Brand Center RAYARD MIYASHITA PARK",
@@ -1039,7 +1069,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "e93357dd-b627-48d3-a583-768fbeeaac10",
-          "creado": "2026-08-19T11:03:03.259Z"
+          "creado": "2026-08-19T11:03:03.259Z",
+          "imagen": null
         },
         {
           "nombre": "Yotsugi Station",
@@ -1087,7 +1118,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "2e96d78a-b8ca-477f-851d-7684fb7d9e84",
-          "creado": "2026-08-19T11:03:03.260Z"
+          "creado": "2026-08-19T11:03:03.260Z",
+          "imagen": null
         },
         {
           "nombre": "Parque nacional de Nikko",
@@ -1117,7 +1149,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "6da6ce22-e409-4124-96a7-d076e11f98aa",
-          "creado": "2026-08-19T11:03:03.260Z"
+          "creado": "2026-08-19T11:03:03.260Z",
+          "imagen": null
         },
         {
           "nombre": "Kurozuka Tumulus Museum",
@@ -1129,7 +1162,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "c8fdd827-87b5-4d63-9f44-14fcd290bd70",
-          "creado": "2026-08-19T11:03:03.261Z"
+          "creado": "2026-08-19T11:03:03.261Z",
+          "imagen": null
         },
         {
           "nombre": "Taisho Roman Yume-dori",
@@ -1141,7 +1175,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "f104a878-e52b-4a44-bc61-931eae011fde",
-          "creado": "2026-08-19T11:03:03.261Z"
+          "creado": "2026-08-19T11:03:03.261Z",
+          "imagen": null
         },
         {
           "nombre": "Kita-in",
@@ -1243,7 +1278,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "74aaccd7-d242-4807-9506-16aa0d72e1a5",
-          "creado": "2026-08-19T11:03:03.265Z"
+          "creado": "2026-08-19T11:03:03.265Z",
+          "imagen": null
         },
         {
           "nombre": "Nikko Toshogu",
@@ -1417,7 +1453,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "1b7be847-935d-46a8-8037-660379ceac86",
-          "creado": "2026-08-19T11:03:03.270Z"
+          "creado": "2026-08-19T11:03:03.270Z",
+          "imagen": null
         },
         {
           "nombre": "Catarata Shiraito",
@@ -1537,7 +1574,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "c43af754-1f6c-4a37-8ced-133e9d3f2ea4",
-          "creado": "2026-08-19T11:03:03.276Z"
+          "creado": "2026-08-19T11:03:03.276Z",
+          "imagen": null
         },
         {
           "nombre": "Rahmen Eddie",
@@ -1549,7 +1587,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "5c453081-0598-454a-a964-9b8e13d70bff",
-          "creado": "2026-08-19T11:03:03.277Z"
+          "creado": "2026-08-19T11:03:03.277Z",
+          "imagen": null
         },
         {
           "nombre": "Senso-ji",
@@ -1705,7 +1744,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "33e633eb-955d-4189-a3bf-ef7f92e85af6",
-          "creado": "2026-08-19T11:03:03.285Z"
+          "creado": "2026-08-19T11:03:03.285Z",
+          "imagen": null
         },
         {
           "nombre": "Cat Street Harajuku",
@@ -1807,7 +1847,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "8ee540f2-74ac-4c21-a24a-c8a66c6cded2",
-          "creado": "2026-08-19T11:03:03.291Z"
+          "creado": "2026-08-19T11:03:03.291Z",
+          "imagen": null
         },
         {
           "nombre": "Santuario Meiji",
@@ -1855,7 +1896,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Ya está en el viaje como plan del 11 dic 2026.",
           "id": "a057e8cc-fa5b-4f2b-b8e4-cc2cfa0b95fc",
-          "creado": "2026-08-19T11:03:03.295Z"
+          "creado": "2026-08-19T11:03:03.295Z",
+          "imagen": null
         },
         {
           "nombre": "NAMJATOWN",
@@ -1867,7 +1909,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Ya está en el viaje como plan del 11 dic 2026.",
           "id": "c8eada83-200d-479e-962c-6a7ef699fdd6",
-          "creado": "2026-08-19T11:03:03.295Z"
+          "creado": "2026-08-19T11:03:03.295Z",
+          "imagen": null
         },
         {
           "nombre": "Pokemon Center Mega Tokyo",
@@ -1879,7 +1922,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "07fb084b-a509-4967-9a42-7d61ad3a634f",
-          "creado": "2026-08-19T11:03:03.296Z"
+          "creado": "2026-08-19T11:03:03.296Z",
+          "imagen": null
         },
         {
           "nombre": "Sunshine 60",
@@ -1981,7 +2025,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "e72b1e99-2bd0-4f76-9c89-9d6f1be2941b",
-          "creado": "2026-08-19T11:03:03.303Z"
+          "creado": "2026-08-19T11:03:03.303Z",
+          "imagen": null
         },
         {
           "nombre": "Nintendo TOKYO",
@@ -2029,7 +2074,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "d2416734-d708-48db-aa04-8534b77caac5",
-          "creado": "2026-08-19T11:03:03.306Z"
+          "creado": "2026-08-19T11:03:03.306Z",
+          "imagen": null
         },
         {
           "nombre": "Statue of Liberty Odaiba",
@@ -2059,7 +2105,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "dd5d97d9-c2f3-4c8a-aadf-7b2f55ebfdf6",
-          "creado": "2026-08-19T11:03:03.307Z"
+          "creado": "2026-08-19T11:03:03.307Z",
+          "imagen": null
         },
         {
           "nombre": "Odaiba Seaside Park",
@@ -2071,7 +2118,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "2d86b8ef-46ff-4cea-ba0e-9903d575e564",
-          "creado": "2026-08-19T11:03:03.309Z"
+          "creado": "2026-08-19T11:03:03.309Z",
+          "imagen": null
         },
         {
           "nombre": "Saw Sawing sculpture",
@@ -2083,7 +2131,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "02e279e0-adae-4b5c-9fc6-ce16f6485eff",
-          "creado": "2026-08-19T11:03:03.310Z"
+          "creado": "2026-08-19T11:03:03.310Z",
+          "imagen": null
         },
         {
           "nombre": "Sesame Street Market Ikebukuro",
@@ -2095,7 +2144,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "5fef3618-c08d-489d-b031-098c24f64524",
-          "creado": "2026-08-19T11:03:03.311Z"
+          "creado": "2026-08-19T11:03:03.311Z",
+          "imagen": null
         },
         {
           "nombre": "Tokyo Big Sight",
@@ -2143,7 +2193,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "0c3608db-31ac-42d6-aafc-cb4c776bf14c",
-          "creado": "2026-08-19T11:03:03.315Z"
+          "creado": "2026-08-19T11:03:03.315Z",
+          "imagen": null
         },
         {
           "nombre": "teamLab Borderless Azabudai",
@@ -2173,7 +2224,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Ya está en el viaje como reserva.",
           "id": "3744a557-05b1-4d07-930e-cb507e1f3e7a",
-          "creado": "2026-08-19T11:03:03.318Z"
+          "creado": "2026-08-19T11:03:03.318Z",
+          "imagen": null
         },
         {
           "nombre": "Pikachu Sweets Cafe",
@@ -2185,7 +2237,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "dd9b8007-aa71-48d9-8b03-044a3ae90b78",
-          "creado": "2026-08-19T11:03:03.318Z"
+          "creado": "2026-08-19T11:03:03.318Z",
+          "imagen": null
         },
         {
           "nombre": "Chiikawa Bakery",
@@ -2197,7 +2250,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Ya está en el viaje como plan del 6 dic 2026. Sin coordenadas: no se ha encontrado en OpenStreetMap.",
           "id": "7e675327-a505-45e7-886d-d38516f31b03",
-          "creado": "2026-08-19T11:03:03.319Z"
+          "creado": "2026-08-19T11:03:03.319Z",
+          "imagen": null
         },
         {
           "nombre": "Kirby Cafe",
@@ -2209,7 +2263,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "62e6f039-7d8d-49ec-b824-0c55caff5bc8",
-          "creado": "2026-08-19T11:03:03.320Z"
+          "creado": "2026-08-19T11:03:03.320Z",
+          "imagen": null
         },
         {
           "nombre": "Cruce de Shibuya",
@@ -2221,7 +2276,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps.",
           "id": "82192426-4092-45ce-b794-b64bec0b9568",
-          "creado": "2026-08-19T11:03:03.321Z"
+          "creado": "2026-08-19T11:03:03.321Z",
+          "imagen": null
         },
         {
           "nombre": "Hotel Gracery Shinjuku",
@@ -2233,7 +2289,8 @@
           "visitado": false,
           "notas": "De tu lista de Google Maps. Ya está en el viaje como reserva.",
           "id": "004822eb-de0d-4c21-b183-8979a748f03a",
-          "creado": "2026-08-19T11:03:03.323Z"
+          "creado": "2026-08-19T11:03:03.323Z",
+          "imagen": null
         }
       ],
       "actividades": [
@@ -2245,7 +2302,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Contad 60-75 minutos."
+          "notas": "Contad 60-75 minutos.",
+          "imagen": null
         },
         {
           "id": "a-002",
@@ -2255,7 +2313,8 @@
           "tipo": "traslado",
           "duracion": "",
           "lugar": "",
-          "notas": "Narita Express (~80 min, el último sale sobre las 21:40) o Keisei Skyliner hasta Nippori + JR (~75 min)."
+          "notas": "Narita Express (~80 min, el último sale sobre las 21:40) o Keisei Skyliner hasta Nippori + JR (~75 min).",
+          "imagen": null
         },
         {
           "id": "a-003",
@@ -2265,7 +2324,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": "No forcéis, al día siguiente se madruga."
+          "notas": "No forcéis, al día siguiente se madruga.",
+          "imagen": null
         },
         {
           "id": "a-004",
@@ -2275,7 +2335,8 @@
           "tipo": "autobus",
           "duracion": "",
           "lugar": "",
-          "notas": "Busta Shinjuku está en la 4ª planta de la estación. Unos 1h40 y ~1.800 ¥ por trayecto. Reservar en highwaybus.com. Salida hacia las 7:30-8:00; el outlet abre a las 10:00."
+          "notas": "Busta Shinjuku está en la 4ª planta de la estación. Unos 1h40 y ~1.800 ¥ por trayecto. Reservar en highwaybus.com. Salida hacia las 7:30-8:00; el outlet abre a las 10:00.",
+          "imagen": null
         },
         {
           "id": "a-005",
@@ -2285,7 +2346,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "A partir del mediodía suele nublarse la cumbre."
+          "notas": "A partir del mediodía suele nublarse la cumbre.",
+          "imagen": null
         },
         {
           "id": "a-006",
@@ -2295,7 +2357,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": "Patio central del outlet o Gotemba Kogen Beer, cervecería con restaurante y lanzadera propia."
+          "notas": "Patio central del outlet o Gotemba Kogen Beer, cervecería con restaurante y lanzadera propia.",
+          "imagen": null
         },
         {
           "id": "a-008",
@@ -2305,7 +2368,8 @@
           "tipo": "autobus",
           "duracion": "",
           "lugar": "",
-          "notas": "Preparad la mochila de tres días: las maletas grandes se quedan en el Gracery."
+          "notas": "Preparad la mochila de tres días: las maletas grandes se quedan en el Gracery.",
+          "imagen": null
         },
         {
           "id": "a-009",
@@ -2315,7 +2379,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Al mantener la misma reserva las guardan sin coste y os ahorráis el takkyubin."
+          "notas": "Al mantener la misma reserva las guardan sin coste y os ahorráis el takkyubin.",
+          "imagen": null
         },
         {
           "id": "a-010",
@@ -2325,7 +2390,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Chuo Rapid, 15 min."
+          "notas": "Chuo Rapid, 15 min.",
+          "imagen": null
         },
         {
           "id": "a-011",
@@ -2335,7 +2401,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Yamagata Shinkansen, ~2h45. El Tsubasa va acoplado a un Yamabiko y se separa en Fukushima: hay que ir en el vagón correcto desde el principio."
+          "notas": "Yamagata Shinkansen, ~2h45. El Tsubasa va acoplado a un Yamabiko y se separa en Fukushima: hay que ir en el vagón correcto desde el principio.",
+          "imagen": null
         },
         {
           "id": "a-012",
@@ -2345,7 +2412,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "El hotel está a dos minutos de la estación. Salid ligeros: las taquillas de Yamadera son pocas."
+          "notas": "El hotel está a dos minutos de la estación. Salid ligeros: las taquillas de Yamadera son pocas.",
+          "imagen": null
         },
         {
           "id": "a-013",
@@ -2355,7 +2423,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Línea JR Senzan, 20 min, ~240 ¥. Pasa aproximadamente cada hora, con algún hueco mayor a media mañana. Apuntad el horario de vuelta ANTES de empezar a subir."
+          "notas": "Línea JR Senzan, 20 min, ~240 ¥. Pasa aproximadamente cada hora, con algún hueco mayor a media mañana. Apuntad el horario de vuelta ANTES de empezar a subir.",
+          "imagen": null
         },
         {
           "id": "a-014",
@@ -2365,7 +2434,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "1.015 escalones hasta el mirador de Godaido. Entrada 300 ¥. Entre subir y bajar, hora y media o dos."
+          "notas": "1.015 escalones hasta el mirador de Godaido. Entrada 300 ¥. Entre subir y bajar, hora y media o dos.",
+          "imagen": null
         },
         {
           "id": "a-015",
@@ -2375,7 +2445,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "En invierno la última subida es sobre las 15:00 y los peldaños se hielan. Nada de suela lisa."
+          "notas": "En invierno la última subida es sobre las 15:00 y los peldaños se hielan. Nada de suela lisa.",
+          "imagen": null
         },
         {
           "id": "a-016",
@@ -2385,7 +2456,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": "Check-in en el Daiwa Roynet y cena por la zona de la estación."
+          "notas": "Check-in en el Daiwa Roynet y cena por la zona de la estación.",
+          "imagen": null
         },
         {
           "id": "a-017",
@@ -2395,7 +2467,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "La lanzadera de Takimikan marca la hora: cuadrad el tren con ella."
+          "notas": "La lanzadera de Takimikan marca la hora: cuadrad el tren con ella.",
+          "imagen": null
         },
         {
           "id": "a-018",
@@ -2405,7 +2478,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "~30 min. AVISO: solo la mitad de los Tsubasa continúan más allá de Yamagata hacia Shinjo, que son los que paran en Ōishida. En la práctica hay uno cada hora y media o dos horas. Alternativa: línea local Ōu, ~50 min."
+          "notas": "~30 min. AVISO: solo la mitad de los Tsubasa continúan más allá de Yamagata hacia Shinjo, que son los que paran en Ōishida. En la práctica hay uno cada hora y media o dos horas. Alternativa: línea local Ōu, ~50 min.",
+          "imagen": null
         },
         {
           "id": "a-019",
@@ -2415,7 +2489,8 @@
           "tipo": "traslado",
           "duracion": "",
           "lugar": "",
-          "notas": "Reservada por correo. Plan B: bus de Yamagata Kotsu, 40 min, 1.000 ¥ POR PERSONA Y EN EFECTIVO, no aceptan tarjeta ni IC. Solo hay cinco o seis idas y vueltas al día."
+          "notas": "Reservada por correo. Plan B: bus de Yamagata Kotsu, 40 min, 1.000 ¥ POR PERSONA Y EN EFECTIVO, no aceptan tarjeta ni IC. Solo hay cinco o seis idas y vueltas al día.",
+          "imagen": null
         },
         {
           "id": "a-020",
@@ -2425,7 +2500,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Se recorre en media hora. Cascada Shirogane a 10 min andando y galería de la mina de Nobesawa."
+          "notas": "Se recorre en media hora. Cascada Shirogane a 10 min andando y galería de la mina de Nobesawa.",
+          "imagen": null
         },
         {
           "id": "a-021",
@@ -2435,7 +2511,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "El más alto del pueblo: tejados nevados y nada que tape el horizonte."
+          "notas": "El más alto del pueblo: tejados nevados y nada que tape el horizonte.",
+          "imagen": null
         },
         {
           "id": "a-022",
@@ -2445,7 +2522,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Como huéspedes podéis estar en la calle cuando los visitantes de día ya se han ido, que es el momento bueno."
+          "notas": "Como huéspedes podéis estar en la calle cuando los visitantes de día ya se han ido, que es el momento bueno.",
+          "imagen": null
         },
         {
           "id": "a-023",
@@ -2455,7 +2533,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "El check-out es a las 10:00, más temprano de lo habitual."
+          "notas": "El check-out es a las 10:00, más temprano de lo habitual.",
+          "imagen": null
         },
         {
           "id": "a-024",
@@ -2465,7 +2544,8 @@
           "tipo": "traslado",
           "duracion": "",
           "lugar": "",
-          "notas": ""
+          "notas": "",
+          "imagen": null
         },
         {
           "id": "a-025",
@@ -2475,7 +2555,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "~3h20, unos 13.780 ¥."
+          "notas": "~3h20, unos 13.780 ¥.",
+          "imagen": null
         },
         {
           "id": "a-026",
@@ -2485,7 +2566,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Sobre las 15:00-16:00. Vuelta al Gracery y recoger las maletas de recepción."
+          "notas": "Sobre las 15:00-16:00. Vuelta al Gracery y recoger las maletas de recepción.",
+          "imagen": null
         },
         {
           "id": "a-027",
@@ -2495,7 +2577,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Omoide Yokocho, Golden Gai, Kabukicho."
+          "notas": "Omoide Yokocho, Golden Gai, Kabukicho.",
+          "imagen": null
         },
         {
           "id": "a-028",
@@ -2537,7 +2620,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": "Desayuno o merienda."
+          "notas": "Desayuno o merienda.",
+          "imagen": null
         },
         {
           "id": "a-031",
@@ -2547,7 +2631,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": ""
+          "notas": "",
+          "imagen": null
         },
         {
           "id": "a-032",
@@ -2557,7 +2642,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Unos 20 min andando."
+          "notas": "Unos 20 min andando.",
+          "imagen": null
         },
         {
           "id": "a-033",
@@ -2599,7 +2685,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": ""
+          "notas": "",
+          "imagen": null
         },
         {
           "id": "a-036",
@@ -2689,7 +2776,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": "En Koenji."
+          "notas": "En Koenji.",
+          "imagen": null
         },
         {
           "id": "a-042",
@@ -2699,7 +2787,8 @@
           "tipo": "traslado",
           "duracion": "",
           "lugar": "",
-          "notas": ""
+          "notas": "",
+          "imagen": null
         },
         {
           "id": "a-043",
@@ -2709,7 +2798,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Spacia X o Revaty Kegon, ~1h50. Alternativa: el JR-Tobu Nikko-go sale directo desde Shinjuku, ~2h, pero solo hay 3 o 4 al día."
+          "notas": "Spacia X o Revaty Kegon, ~1h50. Alternativa: el JR-Tobu Nikko-go sale directo desde Shinjuku, ~2h, pero solo hay 3 o 4 al día.",
+          "imagen": null
         },
         {
           "id": "a-044",
@@ -2719,7 +2809,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Compradlo el domingo 6 o el lunes 7 en Asakusa, no la misma mañana."
+          "notas": "Compradlo el domingo 6 o el lunes 7 en Asakusa, no la misma mañana.",
+          "imagen": null
         },
         {
           "id": "a-045",
@@ -2729,7 +2820,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Por la mañana."
+          "notas": "Por la mañana.",
+          "imagen": null
         },
         {
           "id": "a-046",
@@ -2739,7 +2831,8 @@
           "tipo": "autobus",
           "duracion": "",
           "lugar": "",
-          "notas": "50 min. Cascada Kegon y lago."
+          "notas": "50 min. Cascada Kegon y lago.",
+          "imagen": null
         },
         {
           "id": "a-047",
@@ -2749,7 +2842,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "En martes las dos cosas caben, pero van justas: anochece a las 16:30 y la Irohazaka puede ir lenta con hielo. Si por la mañana vais mal de tiempo, sacrificad el lago sin dudarlo."
+          "notas": "En martes las dos cosas caben, pero van justas: anochece a las 16:30 y la Irohazaka puede ir lenta con hielo. Si por la mañana vais mal de tiempo, sacrificad el lago sin dudarlo.",
+          "imagen": null
         },
         {
           "id": "a-048",
@@ -2759,7 +2853,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Los últimos trenes cómodos salen sobre las 19:00."
+          "notas": "Los últimos trenes cómodos salen sobre las 19:00.",
+          "imagen": null
         },
         {
           "id": "a-049",
@@ -2833,7 +2928,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Chuo Rapid hasta Tokio y Kodama hasta Mishima (~55 min). Billetes comprados el día antes."
+          "notas": "Chuo Rapid hasta Tokio y Kodama hasta Mishima (~55 min). Billetes comprados el día antes.",
+          "imagen": null
         },
         {
           "id": "a-054",
@@ -2843,7 +2939,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Pagoda Chureito · Aokigahara · santuario Kitaguchi Hongu Fuji Sengen · aldea Oshino · cataratas Shiraito · lagos Yamanaka, Kawaguchi, Sai y Motosu."
+          "notas": "Pagoda Chureito · Aokigahara · santuario Kitaguchi Hongu Fuji Sengen · aldea Oshino · cataratas Shiraito · lagos Yamanaka, Kawaguchi, Sai y Motosu.",
+          "imagen": null
         },
         {
           "id": "a-055",
@@ -2853,7 +2950,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": ""
+          "notas": "",
+          "imagen": null
         },
         {
           "id": "a-056",
@@ -2863,7 +2961,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "A 60 min de Tokio en Shinkansen. Llegaréis reventados: cena cerca del hotel."
+          "notas": "A 60 min de Tokio en Shinkansen. Llegaréis reventados: cena cerca del hotel.",
+          "imagen": null
         },
         {
           "id": "a-057",
@@ -2873,7 +2972,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Sobre las 10:30-11:00."
+          "notas": "Sobre las 10:30-11:00.",
+          "imagen": null
         },
         {
           "id": "a-058",
@@ -2883,7 +2983,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Línea Yamanote o Fukutoshin, 5-8 min."
+          "notas": "Línea Yamanote o Fukutoshin, 5-8 min.",
+          "imagen": null
         },
         {
           "id": "a-059",
@@ -2909,7 +3010,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": "Si vais con hambre, el Ramen Junk de la zona este también funciona."
+          "notas": "Si vais con hambre, el Ramen Junk de la zona este también funciona.",
+          "imagen": null
         },
         {
           "id": "a-061",
@@ -2919,7 +3021,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "La tienda insignia, nueve plantas. Está en la salida este, a 5 min de la estación."
+          "notas": "La tienda insignia, nueve plantas. Está en la salida este, a 5 min de la estación.",
+          "imagen": null
         },
         {
           "id": "a-062",
@@ -2961,7 +3064,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Planta 2 del edificio Alpa."
+          "notas": "Planta 2 del edificio Alpa.",
+          "imagen": null
         },
         {
           "id": "a-065",
@@ -2987,7 +3091,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "En la azotea, con la zona exterior de pingüinos y leones marinos. Entrada aparte."
+          "notas": "En la azotea, con la zona exterior de pingüinos y leones marinos. Entrada aparte.",
+          "imagen": null
         },
         {
           "id": "a-067",
@@ -2997,7 +3102,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Sesiones con hora, se llenan los viernes: mirad disponibilidad al llegar."
+          "notas": "Sesiones con hora, se llenan los viernes: mirad disponibilidad al llegar.",
+          "imagen": null
         },
         {
           "id": "a-068",
@@ -3007,7 +3113,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Planta 60. Es una terraza tipo césped, no un mirador clásico. Anochece a las 16:30, así que subid sobre las 16:00 si queréis luz y luces a la vez."
+          "notas": "Planta 60. Es una terraza tipo césped, no un mirador clásico. Anochece a las 16:30, así que subid sobre las 16:00 si queréis luz y luces a la vez.",
+          "imagen": null
         },
         {
           "id": "a-069",
@@ -3017,7 +3124,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Si os apetece algo tonto: parque temático de interior con la zona de gyoza y de postres."
+          "notas": "Si os apetece algo tonto: parque temático de interior con la zona de gyoza y de postres.",
+          "imagen": null
         },
         {
           "id": "a-070",
@@ -3027,7 +3135,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Varias sucursales alrededor de la estación."
+          "notas": "Varias sucursales alrededor de la estación.",
+          "imagen": null
         },
         {
           "id": "a-071",
@@ -3037,7 +3146,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Metro: Marunouchi hasta Kasumigaseki y transbordo a Hibiya hasta Roppongi. Unos 25-30 min."
+          "notas": "Metro: Marunouchi hasta Kasumigaseki y transbordo a Hibiya hasta Roppongi. Unos 25-30 min.",
+          "imagen": null
         },
         {
           "id": "a-072",
@@ -3047,7 +3157,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Los árboles iluminados en azul y blanco con la Torre de Tokio al fondo. Es LA foto de las iluminaciones de Tokio."
+          "notas": "Los árboles iluminados en azul y blanco con la Torre de Tokio al fondo. Es LA foto de las iluminaciones de Tokio.",
+          "imagen": null
         },
         {
           "id": "a-073",
@@ -3073,7 +3184,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "En Roppongi Hills, abierto hasta tarde. Si ya habéis subido a Shibuya Sky y a Tenbo Park, quizá sobra."
+          "notas": "En Roppongi Hills, abierto hasta tarde. Si ya habéis subido a Shibuya Sky y a Tenbo Park, quizá sobra.",
+          "imagen": null
         },
         {
           "id": "a-075",
@@ -3083,7 +3195,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": "Es viernes por la noche y se llena: si queréis algo concreto, reservad. Alternativa: cenar antes en Ikebukuro y bajar solo a ver las luces."
+          "notas": "Es viernes por la noche y se llena: si queréis algo concreto, reservad. Alternativa: cenar antes en Ikebukuro y bajar solo a ver las luces.",
+          "imagen": null
         },
         {
           "id": "a-076",
@@ -3093,7 +3206,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Roppongi → Shinjuku en Toei Oedo, directo, 10 min."
+          "notas": "Roppongi → Shinjuku en Toei Oedo, directo, 10 min.",
+          "imagen": null
         },
         {
           "id": "a-077",
@@ -3103,7 +3217,8 @@
           "tipo": "tren",
           "duracion": "",
           "lugar": "",
-          "notas": "Koedo Limited Express, ~45 min. Ojo: Seibu-Shinjuku NO es la estación de JR, son 10 min andando. Alternativa: línea Tobu Tojo desde Ikebukuro, ~30 min en express."
+          "notas": "Koedo Limited Express, ~45 min. Ojo: Seibu-Shinjuku NO es la estación de JR, son 10 min andando. Alternativa: línea Tobu Tojo desde Ikebukuro, ~30 min en express.",
+          "imagen": null
         },
         {
           "id": "a-078",
@@ -3113,7 +3228,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "Kawagoe",
-          "notas": "Sobre todo Kurazukuri. En sábado hay más gente: id pronto si queréis las fotos despejadas."
+          "notas": "Sobre todo Kurazukuri. En sábado hay más gente: id pronto si queréis las fotos despejadas.",
+          "imagen": null
         },
         {
           "id": "a-079",
@@ -3123,7 +3239,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Kashiya Yokocho es la calle de dulces tradicionales."
+          "notas": "Kashiya Yokocho es la calle de dulces tradicionales.",
+          "imagen": null
         },
         {
           "id": "a-080",
@@ -3133,7 +3250,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Es media jornada larga. Dejad la noche libre en Shinjuku."
+          "notas": "Es media jornada larga. Dejad la noche libre en Shinjuku.",
+          "imagen": null
         },
         {
           "id": "a-081",
@@ -3143,7 +3261,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "Al lado de TeamLab: baños con vistas y zona de comida."
+          "notas": "Al lado de TeamLab: baños con vistas y zona de comida.",
+          "imagen": null
         },
         {
           "id": "a-082",
@@ -3169,7 +3288,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": ""
+          "notas": "",
+          "imagen": null
         },
         {
           "id": "a-084",
@@ -3195,7 +3315,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "A media mañana. Decidid qué hacer con las maletas: dejarlas en recepción, o llevarlas a las taquillas de la estación de Tokio. Si las lleváis allí ganáis casi media hora al final, porque el N’EX desde la estación de Tokio a Narita son 55 min frente a los 80 desde Shinjuku. Pega: las taquillas grandes de esa estación vuelan."
+          "notas": "A media mañana. Decidid qué hacer con las maletas: dejarlas en recepción, o llevarlas a las taquillas de la estación de Tokio. Si las lleváis allí ganáis casi media hora al final, porque el N’EX desde la estación de Tokio a Narita son 55 min frente a los 80 desde Shinjuku. Pega: las taquillas grandes de esa estación vuelan.",
+          "imagen": null
         },
         {
           "id": "a-086",
@@ -3221,7 +3342,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "15 minutos."
+          "notas": "15 minutos.",
+          "imagen": null
         },
         {
           "id": "a-088",
@@ -3247,7 +3369,8 @@
           "tipo": "actividad",
           "duracion": "",
           "lugar": "",
-          "notas": "En el sótano de la estación de Tokio."
+          "notas": "En el sótano de la estación de Tokio.",
+          "imagen": null
         },
         {
           "id": "a-090",
@@ -3257,7 +3380,8 @@
           "tipo": "otro",
           "duracion": "",
           "lugar": "",
-          "notas": "Museos y varios jardines cierran, y el Palacio Imperial también. Nada de planes de ese tipo para hoy."
+          "notas": "Museos y varios jardines cierran, y el Palacio Imperial también. Nada de planes de ese tipo para hoy.",
+          "imagen": null
         },
         {
           "id": "a-091",
@@ -3267,7 +3391,8 @@
           "tipo": "restaurante",
           "duracion": "",
           "lugar": "",
-          "notas": ""
+          "notas": "",
+          "imagen": null
         },
         {
           "id": "a-092",
@@ -3277,7 +3402,8 @@
           "tipo": "traslado",
           "duracion": "",
           "lugar": "",
-          "notas": "Estar en Narita a las 19:30."
+          "notas": "Estar en Narita a las 19:30.",
+          "imagen": null
         },
         {
           "titulo": "SQUARE ENIX GARDEN",
@@ -3288,7 +3414,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "755086ec-f52e-40dc-b8d5-91acafb6f6a1",
           "id": "6cd9b153-64c6-4865-889d-d830d67090f2",
-          "creado": "2026-08-19T11:03:03.246Z"
+          "creado": "2026-08-19T11:03:03.246Z",
+          "imagen": null
         },
         {
           "titulo": "Santuario Togo",
@@ -3299,7 +3426,8 @@
           "notas": "De tu lista de Google Maps · está en Harajuku, y ese día ya vas por ahí",
           "idLugar": "a0a5a1bc-f878-4535-b0de-f5aeadfe4238",
           "id": "33019ed6-806b-4f7c-9bcc-6d1e9386cdfa",
-          "creado": "2026-08-19T11:03:03.247Z"
+          "creado": "2026-08-19T11:03:03.247Z",
+          "imagen": null
         },
         {
           "titulo": "Juban Inari Jinja",
@@ -3310,7 +3438,8 @@
           "notas": "De tu lista de Google Maps · está en Roppongi, y ese día ya vas por ahí",
           "idLugar": "1701e84b-3290-4486-8307-5b7391ffb2fd",
           "id": "b6d94066-bd76-4796-b50a-e335e2ec9f44",
-          "creado": "2026-08-19T11:03:03.247Z"
+          "creado": "2026-08-19T11:03:03.247Z",
+          "imagen": null
         },
         {
           "titulo": "KING KONG",
@@ -3321,7 +3450,8 @@
           "notas": "De tu lista de Google Maps · está en Shinjuku, y ese día ya vas por ahí",
           "idLugar": "10d8e8d5-99a7-4e25-ad6c-0c4206af0a2a",
           "id": "0a4c5c8d-2b5c-4b07-bdb8-417aa5815fa0",
-          "creado": "2026-08-19T11:03:03.248Z"
+          "creado": "2026-08-19T11:03:03.248Z",
+          "imagen": null
         },
         {
           "titulo": "Asahi Inari Shrine",
@@ -3332,7 +3462,8 @@
           "notas": "De tu lista de Google Maps · está en Ginza, y ese día ya vas por ahí",
           "idLugar": "9effd6b4-f4d9-402e-a3e7-6a0452306204",
           "id": "b1f81c35-f74a-414f-99e4-c5b28ea86d9d",
-          "creado": "2026-08-19T11:03:03.249Z"
+          "creado": "2026-08-19T11:03:03.249Z",
+          "imagen": null
         },
         {
           "titulo": "Koenji Kita",
@@ -3343,7 +3474,8 @@
           "notas": "De tu lista de Google Maps · está en Koenji, y ese día ya vas por ahí",
           "idLugar": "115cafda-b5c1-463f-9289-2f9d2ad070e0",
           "id": "d8103ce2-5dce-4299-bff2-c7f3a0321eeb",
-          "creado": "2026-08-19T11:03:03.250Z"
+          "creado": "2026-08-19T11:03:03.250Z",
+          "imagen": null
         },
         {
           "titulo": "Jardin Kiyosumi",
@@ -3354,7 +3486,8 @@
           "notas": "De tu lista de Google Maps · a 4 km de algo que ya tienes ese día (encaje flojo, compruébalo)",
           "idLugar": "41703f48-d2d7-439b-bcbf-5f885dcda24b",
           "id": "6dfa00ca-092f-4ace-96d4-cf7059cf1627",
-          "creado": "2026-08-19T11:03:03.252Z"
+          "creado": "2026-08-19T11:03:03.252Z",
+          "imagen": null
         },
         {
           "titulo": "Henry's Burger Harajuku",
@@ -3365,7 +3498,8 @@
           "notas": "De tu lista de Google Maps · está en Harajuku, y ese día ya vas por ahí",
           "idLugar": "8685ada1-408c-4cb8-b816-8c78128a5003",
           "id": "60a1e361-27da-4a8f-bb21-cc3a3e5cd036",
-          "creado": "2026-08-19T11:03:03.252Z"
+          "creado": "2026-08-19T11:03:03.252Z",
+          "imagen": null
         },
         {
           "titulo": "AMAM DACOTAN",
@@ -3376,7 +3510,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "c2f476a2-8f19-48d5-812b-98d66e79c44d",
           "id": "d23b590d-0387-4007-ae3a-47e2fc7abee2",
-          "creado": "2026-08-19T11:03:03.253Z"
+          "creado": "2026-08-19T11:03:03.253Z",
+          "imagen": null
         },
         {
           "titulo": "Donguri Kyowakoku",
@@ -3387,7 +3522,8 @@
           "notas": "De tu lista de Google Maps · está en Odaiba, y ese día ya vas por ahí",
           "idLugar": "708a7386-2b62-4488-ad88-d3e235fdce9a",
           "id": "3f06abce-51b0-4a82-a851-cdcd669e268b",
-          "creado": "2026-08-19T11:03:03.253Z"
+          "creado": "2026-08-19T11:03:03.253Z",
+          "imagen": null
         },
         {
           "titulo": "Templo Arai Yakushi Baishoin",
@@ -3398,7 +3534,8 @@
           "notas": "De tu lista de Google Maps · está en Nakano, y ese día ya vas por ahí",
           "idLugar": "1887ae83-c586-442d-bbf7-53238d9ff265",
           "id": "404c2f90-05ff-4e2c-b671-be8c06f6cbac",
-          "creado": "2026-08-19T11:03:03.254Z"
+          "creado": "2026-08-19T11:03:03.254Z",
+          "imagen": null
         },
         {
           "titulo": "Nakano Central Park",
@@ -3409,7 +3546,8 @@
           "notas": "De tu lista de Google Maps · está en Nakano, y ese día ya vas por ahí",
           "idLugar": "85883930-2792-4608-89b9-cf0ced61aa96",
           "id": "11c90606-e175-4919-88ea-0ee765632a49",
-          "creado": "2026-08-19T11:03:03.254Z"
+          "creado": "2026-08-19T11:03:03.254Z",
+          "imagen": null
         },
         {
           "titulo": "Nakano Broadway",
@@ -3420,7 +3558,8 @@
           "notas": "De tu lista de Google Maps · está en Nakano, y ese día ya vas por ahí",
           "idLugar": "a8bcb7a1-fb03-49f7-a886-2f537034dc77",
           "id": "9591734e-3df2-4eac-999b-da8afb0e78d0",
-          "creado": "2026-08-19T11:03:03.256Z"
+          "creado": "2026-08-19T11:03:03.256Z",
+          "imagen": null
         },
         {
           "titulo": "Tokyo Station",
@@ -3431,7 +3570,8 @@
           "notas": "De tu lista de Google Maps · está en Estación de Tokio, y ese día ya vas por ahí",
           "idLugar": "d1e17ffc-62c7-46a8-bca9-f30a4d2cd690",
           "id": "0eea6e2f-d521-49b1-a94c-e44ffb93ca9b",
-          "creado": "2026-08-19T11:03:03.256Z"
+          "creado": "2026-08-19T11:03:03.256Z",
+          "imagen": null
         },
         {
           "titulo": "Hachiko Statue",
@@ -3442,7 +3582,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "9b8c9e93-4797-4c4e-a729-c12a5042c77b",
           "id": "2ccb2f99-a24d-4552-9f2c-eb57db94306e",
-          "creado": "2026-08-19T11:03:03.257Z"
+          "creado": "2026-08-19T11:03:03.257Z",
+          "imagen": null
         },
         {
           "titulo": "AniBirth Ikebukuro PARCO",
@@ -3453,7 +3594,8 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "ef9fb01f-b295-44bf-b1de-c9d253ad99aa",
           "id": "11216ce5-d0e7-4e83-9413-4518b3021aae",
-          "creado": "2026-08-19T11:03:03.257Z"
+          "creado": "2026-08-19T11:03:03.257Z",
+          "imagen": null
         },
         {
           "titulo": "adidas Brand Center RAYARD MIYASHITA PARK",
@@ -3464,7 +3606,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "f0632ab0-ff08-47bc-96e1-a6458d1cffe8",
           "id": "a371a749-8c49-4341-b7b6-27c4bf2ba02c",
-          "creado": "2026-08-19T11:03:03.258Z"
+          "creado": "2026-08-19T11:03:03.258Z",
+          "imagen": null
         },
         {
           "titulo": "Gotemba Premium Outlets",
@@ -3475,7 +3618,8 @@
           "notas": "De tu lista de Google Maps · está en Gotemba, y ese día ya vas por ahí",
           "idLugar": "a961f1e5-8d22-445d-8115-472336599ac5",
           "id": "ebc68057-3168-4802-8a51-12e603bd5f1d",
-          "creado": "2026-08-19T11:03:03.259Z"
+          "creado": "2026-08-19T11:03:03.259Z",
+          "imagen": null
         },
         {
           "titulo": "Pokemon Store Gotemba",
@@ -3486,7 +3630,8 @@
           "notas": "De tu lista de Google Maps · está en Gotemba, y ese día ya vas por ahí",
           "idLugar": "2e96d78a-b8ca-477f-851d-7684fb7d9e84",
           "id": "005d093b-bed0-4de2-845f-00e87d792efa",
-          "creado": "2026-08-19T11:03:03.260Z"
+          "creado": "2026-08-19T11:03:03.260Z",
+          "imagen": null
         },
         {
           "titulo": "Kurazukuri Hompo Kawagoe",
@@ -3497,7 +3642,8 @@
           "notas": "De tu lista de Google Maps · está en Kawagoe, y ese día ya vas por ahí",
           "idLugar": "6da6ce22-e409-4124-96a7-d076e11f98aa",
           "id": "4f2fa261-fe8b-48b0-83bd-d4376aa1345e",
-          "creado": "2026-08-19T11:03:03.261Z"
+          "creado": "2026-08-19T11:03:03.261Z",
+          "imagen": null
         },
         {
           "titulo": "Taisho Roman Yume-dori",
@@ -3508,7 +3654,8 @@
           "notas": "De tu lista de Google Maps · está en Kawagoe, y ese día ya vas por ahí",
           "idLugar": "f104a878-e52b-4a44-bc61-931eae011fde",
           "id": "6649cdba-8087-40a7-8c05-f7ea93b15053",
-          "creado": "2026-08-19T11:03:03.262Z"
+          "creado": "2026-08-19T11:03:03.262Z",
+          "imagen": null
         },
         {
           "titulo": "Kita-in",
@@ -3519,7 +3666,8 @@
           "notas": "De tu lista de Google Maps · está en Kawagoe, y ese día ya vas por ahí",
           "idLugar": "8c394112-f66c-4f3d-8a98-0f3df0d37497",
           "id": "a234ab9e-2c05-4b6c-b6b1-998e975fa849",
-          "creado": "2026-08-19T11:03:03.262Z"
+          "creado": "2026-08-19T11:03:03.262Z",
+          "imagen": null
         },
         {
           "titulo": "Kawagoe Hikawa Shrine",
@@ -3530,7 +3678,8 @@
           "notas": "De tu lista de Google Maps · está en Kawagoe, y ese día ya vas por ahí",
           "idLugar": "a101f2d0-63b2-43ca-8e48-3330356e4a77",
           "id": "1bceba79-2d93-444b-bf47-94aa95596b37",
-          "creado": "2026-08-19T11:03:03.263Z"
+          "creado": "2026-08-19T11:03:03.263Z",
+          "imagen": null
         },
         {
           "titulo": "Kashiya Yokocho",
@@ -3541,7 +3690,8 @@
           "notas": "De tu lista de Google Maps · está en Kawagoe, y ese día ya vas por ahí",
           "idLugar": "9930523d-ab7d-407c-93a4-af4defb8d344",
           "id": "d9f196b6-c4be-47b1-af96-be220bf8300a",
-          "creado": "2026-08-19T11:03:03.263Z"
+          "creado": "2026-08-19T11:03:03.263Z",
+          "imagen": null
         },
         {
           "titulo": "Toki no Kane",
@@ -3552,7 +3702,8 @@
           "notas": "De tu lista de Google Maps · está en Kawagoe, y ese día ya vas por ahí",
           "idLugar": "bc47d3b9-4079-4466-a905-0c73b8e35fe1",
           "id": "7bb3b14e-9976-43e4-af83-5539130a3c91",
-          "creado": "2026-08-19T11:03:03.264Z"
+          "creado": "2026-08-19T11:03:03.264Z",
+          "imagen": null
         },
         {
           "titulo": "Nikko Toshogu Homotsukan Museum",
@@ -3563,7 +3714,8 @@
           "notas": "De tu lista de Google Maps · está en Nikko, y ese día ya vas por ahí",
           "idLugar": "a5103cbd-7210-4a1e-8132-bc886f3155a5",
           "id": "286fa1fd-495c-4706-aa6c-4fc5fa476d36",
-          "creado": "2026-08-19T11:03:03.265Z"
+          "creado": "2026-08-19T11:03:03.265Z",
+          "imagen": null
         },
         {
           "titulo": "Nikko Toshogu",
@@ -3574,7 +3726,8 @@
           "notas": "De tu lista de Google Maps · está en Nikko, y ese día ya vas por ahí",
           "idLugar": "914875c2-1a34-47f8-abb6-aba72dc7933e",
           "id": "16d5ac36-9532-4a56-ace1-10dea49b5e83",
-          "creado": "2026-08-19T11:03:03.265Z"
+          "creado": "2026-08-19T11:03:03.265Z",
+          "imagen": null
         },
         {
           "titulo": "Lago Chuzenji",
@@ -3585,7 +3738,8 @@
           "notas": "De tu lista de Google Maps · está en Chuzenji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "640f5e78-291f-429f-94d0-2dae987f3d13",
           "id": "249bb564-c3de-4179-b1fc-1737f7adb43b",
-          "creado": "2026-08-19T11:03:03.266Z"
+          "creado": "2026-08-19T11:03:03.266Z",
+          "imagen": null
         },
         {
           "titulo": "Kegon Shrine",
@@ -3596,7 +3750,8 @@
           "notas": "De tu lista de Google Maps · está en Chuzenji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "9565ce42-5ae2-4d36-989a-aba270737c01",
           "id": "75698183-bae8-45b7-acd8-5b3050a95fbc",
-          "creado": "2026-08-19T11:03:03.266Z"
+          "creado": "2026-08-19T11:03:03.266Z",
+          "imagen": null
         },
         {
           "titulo": "Nikko Futarasan Shrine",
@@ -3607,7 +3762,8 @@
           "notas": "De tu lista de Google Maps · está en Nikko, y ese día ya vas por ahí",
           "idLugar": "d407d2f5-6aab-4840-8feb-88a73c3de24c",
           "id": "5f9efd5a-6916-4b17-b3fb-d58884347885",
-          "creado": "2026-08-19T11:03:03.266Z"
+          "creado": "2026-08-19T11:03:03.266Z",
+          "imagen": null
         },
         {
           "titulo": "Puente Shinkyo",
@@ -3618,7 +3774,8 @@
           "notas": "De tu lista de Google Maps · está en Nikko, y ese día ya vas por ahí",
           "idLugar": "1c418df7-fcad-4dcb-ac51-edbbf8a47b70",
           "id": "3cf9caf1-c262-49dc-88da-1f01adf290c4",
-          "creado": "2026-08-19T11:03:03.267Z"
+          "creado": "2026-08-19T11:03:03.267Z",
+          "imagen": null
         },
         {
           "titulo": "Mishima Station",
@@ -3629,7 +3786,8 @@
           "notas": "De tu lista de Google Maps · está en Mishima, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "9794abfa-56c4-408a-bf83-58652168d8de",
           "id": "a36c330c-ac69-45db-b0a9-9c70cefc9362",
-          "creado": "2026-08-19T11:03:03.267Z"
+          "creado": "2026-08-19T11:03:03.267Z",
+          "imagen": null
         },
         {
           "titulo": "Shin-Fuji Station",
@@ -3640,7 +3798,8 @@
           "notas": "De tu lista de Google Maps · está en Shin-Fuji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "29a2228e-0bc9-4ba5-9b81-4c0648b2c360",
           "id": "2b29ac74-9314-4b08-9fbd-ce92511c8a5b",
-          "creado": "2026-08-19T11:03:03.268Z"
+          "creado": "2026-08-19T11:03:03.268Z",
+          "imagen": null
         },
         {
           "titulo": "Lago Motosu",
@@ -3651,7 +3810,8 @@
           "notas": "De tu lista de Google Maps · está en Lago Motosu, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "e3becf2a-afcc-4cb1-bfe6-553d1f37c6e9",
           "id": "0bc650aa-906c-4911-90fe-1ed283b4ea76",
-          "creado": "2026-08-19T11:03:03.269Z"
+          "creado": "2026-08-19T11:03:03.269Z",
+          "imagen": null
         },
         {
           "titulo": "Lago Saiko",
@@ -3662,7 +3822,8 @@
           "notas": "De tu lista de Google Maps · está en Lagos del Fuji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "348851e7-ee35-45c3-85e4-031759d336d5",
           "id": "90b5e4f1-0d7f-4dd6-b211-33a2451a6fe1",
-          "creado": "2026-08-19T11:03:03.269Z"
+          "creado": "2026-08-19T11:03:03.269Z",
+          "imagen": null
         },
         {
           "titulo": "Lago Kawaguchi",
@@ -3673,7 +3834,8 @@
           "notas": "De tu lista de Google Maps · está en Lagos del Fuji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "1b7be847-935d-46a8-8037-660379ceac86",
           "id": "9dc20e8f-21ad-4e95-a43d-3ac850a5b8a7",
-          "creado": "2026-08-19T11:03:03.270Z"
+          "creado": "2026-08-19T11:03:03.270Z",
+          "imagen": null
         },
         {
           "titulo": "Catarata Shiraito",
@@ -3684,7 +3846,8 @@
           "notas": "De tu lista de Google Maps · está en Shiraito, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "0bfeb99d-9f98-451e-acaa-ddf0ad7a9b23",
           "id": "4efa8138-e912-48cf-b9f7-da8bab7f3d99",
-          "creado": "2026-08-19T11:03:03.271Z"
+          "creado": "2026-08-19T11:03:03.271Z",
+          "imagen": null
         },
         {
           "titulo": "Lago Yamanaka",
@@ -3695,7 +3858,8 @@
           "notas": "De tu lista de Google Maps · está en Lago Yamanaka, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "e032ae85-a6b7-492a-b558-023a5f1f4f49",
           "id": "c9590d80-24d4-4c20-9a04-782c6894a6c0",
-          "creado": "2026-08-19T11:03:03.272Z"
+          "creado": "2026-08-19T11:03:03.272Z",
+          "imagen": null
         },
         {
           "titulo": "Aokigahara",
@@ -3706,7 +3870,8 @@
           "notas": "De tu lista de Google Maps · está en Lagos del Fuji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "ae0cdac7-26bd-42ce-99a9-399b9fc964dd",
           "id": "5cf832d8-d2cb-4b23-9ff0-11eaae45ac82",
-          "creado": "2026-08-19T11:03:03.273Z"
+          "creado": "2026-08-19T11:03:03.273Z",
+          "imagen": null
         },
         {
           "titulo": "Santuario Kitaguchi Hongu Fuji Sengen",
@@ -3717,7 +3882,8 @@
           "notas": "De tu lista de Google Maps · está en Lagos del Fuji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "eece26c2-35d3-4473-8afc-d52599665718",
           "id": "f6c5d81d-d87e-4315-a5ba-c783bcbd1941",
-          "creado": "2026-08-19T11:03:03.274Z"
+          "creado": "2026-08-19T11:03:03.274Z",
+          "imagen": null
         },
         {
           "titulo": "Oshino Hakkai",
@@ -3728,7 +3894,8 @@
           "notas": "De tu lista de Google Maps · está en Lagos del Fuji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "1250432b-8caf-4d6c-a54c-bbef8b8bc3b8",
           "id": "ac6ad687-a167-43e6-9e51-fd554d654860",
-          "creado": "2026-08-19T11:03:03.275Z"
+          "creado": "2026-08-19T11:03:03.275Z",
+          "imagen": null
         },
         {
           "titulo": "Chureito Pagoda",
@@ -3739,7 +3906,8 @@
           "notas": "De tu lista de Google Maps · está en Lagos del Fuji, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "b243335e-488d-4302-8489-4eac9137fd61",
           "id": "a3da5ae4-c89d-4633-9886-8de21df40e80",
-          "creado": "2026-08-19T11:03:03.276Z"
+          "creado": "2026-08-19T11:03:03.276Z",
+          "imagen": null
         },
         {
           "titulo": "ICHIRAN Shibuya",
@@ -3750,7 +3918,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "c43af754-1f6c-4a37-8ced-133e9d3f2ea4",
           "id": "c2d51871-1862-4165-a79d-4cafd9e57a8e",
-          "creado": "2026-08-19T11:03:03.277Z"
+          "creado": "2026-08-19T11:03:03.277Z",
+          "imagen": null
         },
         {
           "titulo": "Senso-ji",
@@ -3761,7 +3930,8 @@
           "notas": "De tu lista de Google Maps · está en Asakusa, y ese día ya vas por ahí",
           "idLugar": "442cd513-ec7f-4a4a-acf6-336ae26ef14e",
           "id": "778867ad-b330-4c04-8611-626f8673c413",
-          "creado": "2026-08-19T11:03:03.278Z"
+          "creado": "2026-08-19T11:03:03.278Z",
+          "imagen": null
         },
         {
           "titulo": "Namiyoke Shrine",
@@ -3772,7 +3942,8 @@
           "notas": "De tu lista de Google Maps · está en Tsukiji, y ese día ya vas por ahí",
           "idLugar": "22c37bbd-57af-4865-8f61-cb7a9051e2cf",
           "id": "6c886068-4cd7-4714-b7d5-8f82116853ae",
-          "creado": "2026-08-19T11:03:03.280Z"
+          "creado": "2026-08-19T11:03:03.280Z",
+          "imagen": null
         },
         {
           "titulo": "Hatonomori Hachiman Shrine",
@@ -3783,7 +3954,8 @@
           "notas": "De tu lista de Google Maps · está en Shinjuku, y ese día ya vas por ahí",
           "idLugar": "498ed157-0422-4bf4-8b41-c85f6792a7d9",
           "id": "84e65c5d-3918-4af3-8d72-4c6bdb2561b9",
-          "creado": "2026-08-19T11:03:03.281Z"
+          "creado": "2026-08-19T11:03:03.281Z",
+          "imagen": null
         },
         {
           "titulo": "Hatonomori restaurante",
@@ -3794,7 +3966,8 @@
           "notas": "De tu lista de Google Maps · está en Shinjuku, y ese día ya vas por ahí",
           "idLugar": "57c20bbd-392e-4e93-8b20-ddc4821c9237",
           "id": "2d7599f3-1cc1-4931-9d10-0cd70cc710c9",
-          "creado": "2026-08-19T11:03:03.282Z"
+          "creado": "2026-08-19T11:03:03.282Z",
+          "imagen": null
         },
         {
           "titulo": "Ginza Kagari",
@@ -3805,7 +3978,8 @@
           "notas": "De tu lista de Google Maps · está en Ginza, y ese día ya vas por ahí",
           "idLugar": "33e633eb-955d-4189-a3bf-ef7f92e85af6",
           "id": "67f74058-5421-48a8-9fa0-033d1ffa30cf",
-          "creado": "2026-08-19T11:03:03.285Z"
+          "creado": "2026-08-19T11:03:03.285Z",
+          "imagen": null
         },
         {
           "titulo": "Cat Street Harajuku",
@@ -3816,7 +3990,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "7f6678f5-0092-4cb8-9c3a-dbb73ea41dce",
           "id": "9cc3b52b-a060-46de-a9f2-a61c6894c23f",
-          "creado": "2026-08-19T11:03:03.286Z"
+          "creado": "2026-08-19T11:03:03.286Z",
+          "imagen": null
         },
         {
           "titulo": "Tokyu Plaza Omotesando Omokado",
@@ -3827,7 +4002,8 @@
           "notas": "De tu lista de Google Maps · está en Harajuku, y ese día ya vas por ahí",
           "idLugar": "21a01439-7602-4e72-8156-e0ccab0adee2",
           "id": "4b13368a-da63-46bb-96a6-455975706143",
-          "creado": "2026-08-19T11:03:03.287Z"
+          "creado": "2026-08-19T11:03:03.287Z",
+          "imagen": null
         },
         {
           "titulo": "Omote-sando Station",
@@ -3838,7 +4014,8 @@
           "notas": "De tu lista de Google Maps · está en Harajuku, y ese día ya vas por ahí",
           "idLugar": "ebffc482-7ba0-4148-b9fe-0e7e62164811",
           "id": "80b4d28f-4c48-4cdb-97c6-f3ac8d36ffc3",
-          "creado": "2026-08-19T11:03:03.288Z"
+          "creado": "2026-08-19T11:03:03.288Z",
+          "imagen": null
         },
         {
           "titulo": "Parque Yoyogi",
@@ -3849,7 +4026,8 @@
           "notas": "De tu lista de Google Maps · está en Harajuku, y ese día ya vas por ahí",
           "idLugar": "09186b2d-d7a7-453b-b9d8-29a60f150feb",
           "id": "1a9b480b-d818-48a1-ac24-da23b1c2b862",
-          "creado": "2026-08-19T11:03:03.290Z"
+          "creado": "2026-08-19T11:03:03.290Z",
+          "imagen": null
         },
         {
           "titulo": "Calle Takeshita",
@@ -3860,7 +4038,8 @@
           "notas": "De tu lista de Google Maps · está en Harajuku, y ese día ya vas por ahí",
           "idLugar": "7e0ae1d1-98f3-4c7a-ae1e-0ea56e26d239",
           "id": "e70fc68b-eb86-44f6-8639-f0781bc325c7",
-          "creado": "2026-08-19T11:03:03.291Z"
+          "creado": "2026-08-19T11:03:03.291Z",
+          "imagen": null
         },
         {
           "titulo": "Gashapon Ikebukuro Main Store",
@@ -3871,7 +4050,8 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "8ee540f2-74ac-4c21-a24a-c8a66c6cded2",
           "id": "c305cf75-095a-45a8-8fd1-2185da8e6c78",
-          "creado": "2026-08-19T11:03:03.292Z"
+          "creado": "2026-08-19T11:03:03.292Z",
+          "imagen": null
         },
         {
           "titulo": "Santuario Meiji",
@@ -3882,7 +4062,8 @@
           "notas": "De tu lista de Google Maps · está en Harajuku, y ese día ya vas por ahí",
           "idLugar": "3312c310-c7bc-47ca-8562-ecec2cbe1859",
           "id": "6e7ede92-8632-4a26-9b29-de9869b39888",
-          "creado": "2026-08-19T11:03:03.293Z"
+          "creado": "2026-08-19T11:03:03.293Z",
+          "imagen": null
         },
         {
           "titulo": "Sunshine Aquarium",
@@ -3893,7 +4074,8 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "7b4884f4-e8af-41c4-8e34-cc27e2bd231c",
           "id": "8e10ab30-3924-412d-8cfa-735e63ebfb7c",
-          "creado": "2026-08-19T11:03:03.294Z"
+          "creado": "2026-08-19T11:03:03.294Z",
+          "imagen": null
         },
         {
           "titulo": "Pokemon Center Mega Tokyo",
@@ -3904,7 +4086,8 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "07fb084b-a509-4967-9a42-7d61ad3a634f",
           "id": "d6735b21-087c-4af5-99ea-3d9d14ed076d",
-          "creado": "2026-08-19T11:03:03.296Z"
+          "creado": "2026-08-19T11:03:03.296Z",
+          "imagen": null
         },
         {
           "titulo": "Sunshine 60",
@@ -3915,7 +4098,8 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "b1994f57-aa15-4756-b558-824ff0d20ea0",
           "id": "79ce8065-2bba-4470-99d1-6a0e64104c17",
-          "creado": "2026-08-19T11:03:03.297Z"
+          "creado": "2026-08-19T11:03:03.297Z",
+          "imagen": null
         },
         {
           "titulo": "Jardin Nacional Shinjuku Gyoen",
@@ -3926,7 +4110,8 @@
           "notas": "De tu lista de Google Maps · está en Shinjuku, y ese día ya vas por ahí",
           "idLugar": "de57ff78-60e5-44f4-afcf-c4e705b0076b",
           "id": "632a8f63-c695-4f1e-98fd-d5f89aea2d41",
-          "creado": "2026-08-19T11:03:03.299Z"
+          "creado": "2026-08-19T11:03:03.299Z",
+          "imagen": null
         },
         {
           "titulo": "Ayuntamiento de Tokio",
@@ -3937,7 +4122,8 @@
           "notas": "De tu lista de Google Maps · está en Shinjuku, y ese día ya vas por ahí",
           "idLugar": "5b67678b-bce8-471c-abbc-11ed1a283de3",
           "id": "c1a79ed4-9770-4dd3-9e4f-c4633eb54fbb",
-          "creado": "2026-08-19T11:03:03.300Z"
+          "creado": "2026-08-19T11:03:03.300Z",
+          "imagen": null
         },
         {
           "titulo": "Omoide Yokocho",
@@ -3948,7 +4134,8 @@
           "notas": "De tu lista de Google Maps · está en Shinjuku, y ese día ya vas por ahí",
           "idLugar": "3abd2c53-0b2b-49c1-af0b-e61aafc52fe6",
           "id": "e37924f0-68f2-4d51-ae36-c4109267dbfd",
-          "creado": "2026-08-19T11:03:03.301Z"
+          "creado": "2026-08-19T11:03:03.301Z",
+          "imagen": null
         },
         {
           "titulo": "Kabukicho",
@@ -3959,7 +4146,8 @@
           "notas": "De tu lista de Google Maps · está en Shinjuku, y ese día ya vas por ahí",
           "idLugar": "686a4961-1365-4dcb-8942-3ccbd44553f0",
           "id": "29d26b57-50cf-4df2-b4e9-6b8adf824181",
-          "creado": "2026-08-19T11:03:03.302Z"
+          "creado": "2026-08-19T11:03:03.302Z",
+          "imagen": null
         },
         {
           "titulo": "Miyashita Park",
@@ -3970,7 +4158,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "e72b1e99-2bd0-4f76-9c89-9d6f1be2941b",
           "id": "85217134-afd9-48c4-ab17-900ab330a543",
-          "creado": "2026-08-19T11:03:03.304Z"
+          "creado": "2026-08-19T11:03:03.304Z",
+          "imagen": null
         },
         {
           "titulo": "Nintendo TOKYO",
@@ -3981,7 +4170,8 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "38a6bde3-b4a6-4e1c-9e4a-73841d697c70",
           "id": "9831fa7a-f2dc-4192-be1d-0d046fee7419",
-          "creado": "2026-08-19T11:03:03.305Z"
+          "creado": "2026-08-19T11:03:03.305Z",
+          "imagen": null
         },
         {
           "titulo": "Statue of Liberty Odaiba",
@@ -3992,7 +4182,8 @@
           "notas": "De tu lista de Google Maps · está en Odaiba, y ese día ya vas por ahí",
           "idLugar": "6821de7d-74cc-4d53-b587-961477a3b7a2",
           "id": "a42e40b0-694b-460b-b4b4-d5a1364839ae",
-          "creado": "2026-08-19T11:03:03.307Z"
+          "creado": "2026-08-19T11:03:03.307Z",
+          "imagen": null
         },
         {
           "titulo": "Fuji TV Shop Fujisan Tokyo Station",
@@ -4003,7 +4194,8 @@
           "notas": "De tu lista de Google Maps · está en Estación de Tokio, y ese día ya vas por ahí",
           "idLugar": "dd5d97d9-c2f3-4c8a-aadf-7b2f55ebfdf6",
           "id": "41ed97b3-ee2d-422b-9626-5283a4406495",
-          "creado": "2026-08-19T11:03:03.308Z"
+          "creado": "2026-08-19T11:03:03.308Z",
+          "imagen": null
         },
         {
           "titulo": "Odaiba Seaside Park",
@@ -4014,7 +4206,8 @@
           "notas": "De tu lista de Google Maps · está en Odaiba, y ese día ya vas por ahí",
           "idLugar": "2d86b8ef-46ff-4cea-ba0e-9903d575e564",
           "id": "b9682d56-24d9-482f-8844-a727731b5a79",
-          "creado": "2026-08-19T11:03:03.309Z"
+          "creado": "2026-08-19T11:03:03.309Z",
+          "imagen": null
         },
         {
           "titulo": "Saw Sawing sculpture",
@@ -4025,7 +4218,8 @@
           "notas": "De tu lista de Google Maps · está en Odaiba, y ese día ya vas por ahí",
           "idLugar": "02e279e0-adae-4b5c-9fc6-ce16f6485eff",
           "id": "1488ab48-ca56-4202-9028-b06d3000a092",
-          "creado": "2026-08-19T11:03:03.310Z"
+          "creado": "2026-08-19T11:03:03.310Z",
+          "imagen": null
         },
         {
           "titulo": "Sesame Street Market Ikebukuro",
@@ -4036,7 +4230,8 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "5fef3618-c08d-489d-b031-098c24f64524",
           "id": "14c8a45e-5073-4c38-878e-5495d46dbc78",
-          "creado": "2026-08-19T11:03:03.312Z"
+          "creado": "2026-08-19T11:03:03.312Z",
+          "imagen": null
         },
         {
           "titulo": "Tokyo Big Sight",
@@ -4047,7 +4242,8 @@
           "notas": "De tu lista de Google Maps · está en Odaiba, y ese día ya vas por ahí",
           "idLugar": "841d3731-5012-40bf-ace7-e30338823d17",
           "id": "fef7a464-5bcb-4b08-88e5-5a7887404737",
-          "creado": "2026-08-19T11:03:03.314Z"
+          "creado": "2026-08-19T11:03:03.314Z",
+          "imagen": null
         },
         {
           "titulo": "Shiro-Hige's Cream Puff Factory",
@@ -4058,7 +4254,8 @@
           "notas": "De tu lista de Google Maps · está en Shimokitazawa, y ese día ya vas por ahí",
           "idLugar": "0c3608db-31ac-42d6-aafc-cb4c776bf14c",
           "id": "f06ee311-e48b-487a-9dfb-20ad2822a347",
-          "creado": "2026-08-19T11:03:03.316Z"
+          "creado": "2026-08-19T11:03:03.316Z",
+          "imagen": null
         },
         {
           "titulo": "teamLab Borderless Azabudai",
@@ -4069,7 +4266,8 @@
           "notas": "De tu lista de Google Maps · está en Torre de Tokio, y ese día ya vas por ahí (encaje flojo, compruébalo)",
           "idLugar": "bb2a5774-6c98-43b8-b2ae-7faaa75d3c24",
           "id": "902c6f7d-b706-4e85-b4ef-958f60925f1f",
-          "creado": "2026-08-19T11:03:03.317Z"
+          "creado": "2026-08-19T11:03:03.317Z",
+          "imagen": null
         },
         {
           "titulo": "Pikachu Sweets Cafe",
@@ -4080,7 +4278,8 @@
           "notas": "De tu lista de Google Maps · está en Ikebukuro, y ese día ya vas por ahí",
           "idLugar": "dd9b8007-aa71-48d9-8b03-044a3ae90b78",
           "id": "49964d80-139d-4223-9e80-5299d500f560",
-          "creado": "2026-08-19T11:03:03.319Z"
+          "creado": "2026-08-19T11:03:03.319Z",
+          "imagen": null
         },
         {
           "titulo": "Kirby Cafe",
@@ -4091,7 +4290,8 @@
           "notas": "De tu lista de Google Maps · está en Skytree, y ese día ya vas por ahí",
           "idLugar": "62e6f039-7d8d-49ec-b824-0c55caff5bc8",
           "id": "3eca82ca-9ff7-42cb-a25a-08545f94533b",
-          "creado": "2026-08-19T11:03:03.321Z"
+          "creado": "2026-08-19T11:03:03.321Z",
+          "imagen": null
         },
         {
           "titulo": "Cruce de Shibuya",
@@ -4102,7 +4302,19 @@
           "notas": "De tu lista de Google Maps · está en Shibuya, y ese día ya vas por ahí",
           "idLugar": "82192426-4092-45ce-b794-b64bec0b9568",
           "id": "1baa43a3-f7e6-42b2-a8ea-74cf1a9c4110",
-          "creado": "2026-08-19T11:03:03.322Z"
+          "creado": "2026-08-19T11:03:03.322Z",
+          "imagen": null
+        },
+        {
+          "titulo": "Brigde of good Hope きぼうのおおはし, 御殿場プレミアム Fukasawa, Gotemba, Shizuoka 412-0023, Japón",
+          "fecha": "2026-12-02",
+          "hora": "",
+          "tipo": "otro",
+          "duracion": "30m",
+          "lugar": "Gotemba",
+          "notas": "Foto del Fuji",
+          "id": "706a62f3-ff29-4846-adfb-1fe21b5b36c4",
+          "creado": "2026-11-09T17:45:22.530Z"
         }
       ],
       "gastos": [],
