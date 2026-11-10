@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "actualizado": "2026-11-09",
+  "actualizado": "2026-11-10",
   "viajeActivo": "tokio-2026",
   "viajes": [
     {
@@ -304,7 +304,7 @@
         },
         {
           "id": "r-101",
-          "estado": "pendiente",
+          "estado": "confirmada",
           "proveedor": "",
           "localizador": "",
           "desde": {
@@ -314,7 +314,10 @@
             "lon": 139.7906
           },
           "hasta": null,
-          "precio": null,
+          "precio": {
+            "cantidad": 117.6,
+            "moneda": "EUR"
+          },
           "pagado": false,
           "detalles": {
             "asiento": "",
@@ -324,10 +327,10 @@
             "personas": 0,
             "direccion": "Toyosu"
           },
-          "notas": "SIN RESERVAR - Nota en el móvil para reservar",
+          "notas": "RESERVADO - 4 entradas",
           "tipo": "actividad",
           "titulo": "TeamLab Planets",
-          "inicio": "2026-12-13",
+          "inicio": "2026-12-13T09:30",
           "fin": "",
           "excluirGasto": false,
           "imagen": null
@@ -4284,14 +4287,15 @@
         {
           "titulo": "Kirby Cafe",
           "fecha": "2026-12-09",
-          "hora": "",
+          "hora": "15:15",
           "tipo": "actividad",
           "lugar": "Skytree",
-          "notas": "De tu lista de Google Maps · está en Skytree, y ese día ya vas por ahí",
+          "notas": "Reservado: KT61209151531AF",
           "idLugar": "62e6f039-7d8d-49ec-b824-0c55caff5bc8",
           "id": "3eca82ca-9ff7-42cb-a25a-08545f94533b",
           "creado": "2026-08-19T11:03:03.321Z",
-          "imagen": null
+          "imagen": null,
+          "duracion": ""
         },
         {
           "titulo": "Cruce de Shibuya",
@@ -4315,6 +4319,17 @@
           "notas": "Foto del Fuji",
           "id": "706a62f3-ff29-4846-adfb-1fe21b5b36c4",
           "creado": "2026-11-09T17:45:22.530Z"
+        },
+        {
+          "titulo": "Santuario Takagi",
+          "fecha": "2026-12-09",
+          "hora": "",
+          "tipo": "actividad",
+          "duracion": "",
+          "lugar": "",
+          "notas": "2 Chome-37-9 Oshiage, Sumida City, Tokyo 131-0045, Japón \nSantuario Onigiri cerca de Kirby Cafe",
+          "id": "27575f7a-3953-4113-8509-800204915eaf",
+          "creado": "2026-11-09T18:48:40.231Z"
         }
       ],
       "gastos": [],
